@@ -1,4 +1,4 @@
-from doubly_linked_list import DoublyLinkedList, Node
+from Doubly_Linked_List.Basics.doubly_linked_list import DoublyLinkedList, Node
 
 print("=== Test 1: Basic Append and Display ===")
 dll = DoublyLinkedList()
