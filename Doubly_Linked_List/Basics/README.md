@@ -1,8 +1,11 @@
+recur
+
 # Doubly Linked List
 
 ## Theory
 
 A Doubly Linked List is a linear data structure where each node contains:
+
 - **data** - the value stored in the node
 - **prev** - a reference to the previous node
 - **next** - a reference to the next node
@@ -38,11 +41,11 @@ graph LR
 function insert_before(new_node, existing_node):
     if new_node is in list:
         remove(new_node)
-    
+  
     new_node.next = existing_node
     new_node.prev = existing_node.prev
     existing_node.prev = new_node
-    
+  
     if new_node.prev is not None:
         new_node.prev.next = new_node
     else:
