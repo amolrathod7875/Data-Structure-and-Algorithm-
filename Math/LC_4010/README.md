@@ -124,16 +124,16 @@ The early break optimization can significantly reduce the number of pairs checke
 flowchart TD
     A[Input: nums array] --> B[Sort nums in descending order]
     B --> C[Initialize max_strength = 0]
-    C --> D[For each i from 0 to n-1]
-    D --> E[For each j from i+1 to n-1]
-    E --> F{nums[i] * nums[j] <= max_strength?}
+    C --> D["For each i from 0 to n-1"]
+    D --> E["For each j from i+1 to n-1"]
+    E --> F{"nums[i] * nums[j] <= max_strength?"}
     F -->|Yes| G[Break inner loop]
-    F -->|No| H[Compute g = gcd(nums[i], nums[j])]
-    H --> I[Compute strength = (a*b) // g^2]
-    I --> J{strength > max_strength?}
+    F -->|No| H["Compute g = gcd(nums[i], nums[j])"]
+    H --> I["Compute strength = (nums[i] * nums[j]) // g^2"]
+    I --> J{"strength > max_strength?"}
     J -->|Yes| K[Update max_strength]
-    J -->|No| L
-    K --> L[Continue inner loop]
+    J -->|No| L[Continue inner loop]
+    K --> L
     L --> E
     G --> M{More i?}
     M -->|Yes| D

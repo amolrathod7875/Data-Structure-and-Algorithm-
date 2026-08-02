@@ -62,7 +62,7 @@ class RecentCounter:
 
 ---
 
-## Flowchart
+## Flowchart"
 
 ```mermaid
 flowchart TD
