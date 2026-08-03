@@ -22,6 +22,7 @@ Output: 34
 ```
 
 **Explanation:**
+
 - The two largest numbers are `7` and `6`, their product = `42`
 - The two smallest numbers are `2` and `4`, their product = `8`
 - Product difference = `42 - 8 = 34`
@@ -36,6 +37,7 @@ Output: 64
 ```
 
 **Explanation:**
+
 - The two largest numbers are `9` and `8`, their product = `72`
 - The two smallest numbers are `2` and `4`, their product = `8`
 - Product difference = `72 - 8 = 64`
@@ -47,10 +49,12 @@ Output: 64
 ### Key Insight
 
 To maximize `(a * b) - (c * d)`:
+
 - We want the **first product** to be as **large** as possible → multiply the two largest numbers
 - We want the **second product** to be as **small** as possible → multiply the two smallest numbers
 
 After sorting the array in ascending order:
+
 - The two largest elements are at indices `-1` and `-2`
 - The two smallest elements are at indices `0` and `1`
 
@@ -70,8 +74,8 @@ class Solution:
 
 ## Complexity Analysis
 
-| | Time | Space |
-|--|------|-------|
+|                                | Time                                         | Space                                |
+| ------------------------------ | -------------------------------------------- | ------------------------------------ |
 | **maxProductDifference** | **O(n log n)** — dominated by sorting | **O(1)** extra (in-place sort) |
 
 ---
@@ -80,12 +84,12 @@ class Solution:
 
 ```mermaid
 flowchart TD
-    A[Input: nums array] --> B[Sort nums in ascending order]
-    B --> C[max1 = nums[-1]]
-    C --> D[max2 = nums[-2]]
-    D --> E[min1 = nums[0]]
-    E --> F[min2 = nums[1]]
-    F --> G[Return max1*max2 - min1*min2]
+    A["Input: nums array"] --> B["Sort nums in ascending order"]
+    B --> C["max1 = nums[-1]"]
+    C --> D["max2 = nums[-2]"]
+    D --> E["min1 = nums[0]"]
+    E --> F["min2 = nums[1]"]
+    F --> G["Return (max1 * max2) - (min1 * min2)"]
 ```
 
 ---
@@ -103,10 +107,10 @@ Sorted:   [2, 4, 5, 6, 7]
 
 ### Step 2: Identify extremes
 
-| Category | Indices | Values | Product |
-|----------|---------|--------|---------|
-| Two largest | -2, -1 | 6, 7 | 42 |
-| Two smallest | 0, 1 | 2, 4 | 8 |
+| Category     | Indices | Values | Product |
+| ------------ | ------- | ------ | ------- |
+| Two largest  | -2, -1  | 6, 7   | 42      |
+| Two smallest | 0, 1    | 2, 4   | 8       |
 
 ### Step 3: Calculate difference
 
