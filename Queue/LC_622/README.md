@@ -150,34 +150,34 @@ class MyCircularQueue:
 
 ```mermaid
 flowchart TD
-    A[enQueue value] --> B{Is queue full?}
-    B -->|Yes| C[Return False]
-    B -->|No| D[queue[rear] = value]
-    D --> E[rear = (rear + 1) % capacity]
-    E --> F[size += 1]
-    F --> G[Return True]
-
-    H[deQueue] --> I{Is queue empty?}
-    I -->|Yes| J[Return False]
-    I -->|No| K[front = (front + 1) % capacity]
-    K --> L[size -= 1]
-    L --> M[Return True]
-
-    N[Front] --> O{Is queue empty?}
-    O -->|Yes| P[Return -1]
-    O -->|No| Q[Return queue[front]]
-
-    R[Rear] --> S{Is queue empty?}
-    S -->|Yes| T[Return -1]
-    S -->|No| U[Return queue[(rear - 1 + capacity) % capacity]]
-
-    V[isEmpty] --> W{size == 0?}
-    W -->|Yes| X[Return True]
-    W -->|No| Y[Return False]
-
-    Z[isFull] --> AA{size == capacity?}
-    AA -->|Yes| AB[Return True]
-    AA -->|No| AC[Return False]
+    A["enQueue(value)"] --> B{"Is queue full?"}
+    B -->|Yes| C["Return False"]
+    B -->|No| D["queue[rear] = value"]
+    D --> E["rear = (rear + 1) % capacity"]
+    E --> F["size += 1"]
+    F --> G["Return True"]
+  
+    H["deQueue()"] --> I{"Is queue empty?"}
+    I -->|Yes| J["Return False"]
+    I -->|No| K["front = (front + 1) % capacity"]
+    K --> L["size -= 1"]
+    L --> M["Return True"]
+  
+    N["Front()"] --> O{"Is queue empty?"}
+    O -->|Yes| P["Return -1"]
+    O -->|No| Q["Return queue[front]"]
+  
+    R["Rear()"] --> S{"Is queue empty?"}
+    S -->|Yes| T["Return -1"]
+    S -->|No| U["Return queue[(rear - 1 + capacity) % capacity]"]
+  
+    V["isEmpty()"] --> W{"size == 0?"}
+    W -->|Yes| X["Return True"]
+    W -->|No| Y["Return False"]
+  
+    Z["isFull()"] --> AA{"size == capacity?"}
+    AA -->|Yes| AB["Return True"]
+    AA -->|No| AC["Return False"]
 ```
 
 ---
