@@ -70,8 +70,8 @@ class Solution:
 
 ## Complexity Analysis
 
-| | Time | Space |
-|--|------|-------|
+|                     | Time                                             | Space                                                 |
+| ------------------- | ------------------------------------------------ | ----------------------------------------------------- |
 | **isAnagram** | **O(n)** — two passes through the strings | **O(1)** — at most 26 lowercase letters stored |
 
 ---
@@ -80,18 +80,18 @@ class Solution:
 
 ```mermaid
 flowchart TD
-    A[Input: strings s, t] --> B{len(s) == len(t)?}
-    B -->|No| C[Return False]
-    B -->|Yes| D[Build frequency map from s]
-    D --> E[For each ch in t]
-    E --> F{ch in map?}
+    A["Input: strings s, t"] --> B{"len(s) == len(t)?"}
+    B -->|No| C["Return False"]
+    B -->|Yes| D["Build frequency map from s"]
+    D --> E["For each ch in t"]
+    E --> F{"ch in map?"}
     F -->|No| C
-    F -->|Yes| G[map[ch] -= 1]
-    G --> H{map[ch] < 0?}
+    F -->|Yes| G["map[ch] -= 1"]
+    G --> H{"map[ch] < 0?"}
     H -->|Yes| C
-    H -->|No| I{More chars in t?}
+    H -->|No| I{"More chars in t?"}
     I -->|Yes| E
-    I -->|No| J[Return True]
+    I -->|No| J["Return True"]
 ```
 
 ---
@@ -103,24 +103,24 @@ flowchart TD
 ### Step 1: Build frequency map from `s`
 
 | Character | Count |
-|-----------|-------|
-| a | 3 |
-| n | 1 |
-| g | 1 |
-| r | 1 |
-| m | 1 |
+| --------- | ----- |
+| a         | 3     |
+| n         | 1     |
+| g         | 1     |
+| r         | 1     |
+| m         | 1     |
 
 ### Step 2: Scan `t` and decrement
 
-| Character | Action | Count after |
-|-----------|--------|-------------|
-| n | decrement n | n: 0 |
-| a | decrement a | a: 2 |
-| g | decrement g | g: 0 |
-| a | decrement a | a: 1 |
-| r | decrement r | r: 0 |
-| a | decrement a | a: 0 |
-| m | decrement m | m: 0 |
+| Character | Action      | Count after |
+| --------- | ----------- | ----------- |
+| n         | decrement n | n: 0        |
+| a         | decrement a | a: 2        |
+| g         | decrement g | g: 0        |
+| a         | decrement a | a: 1        |
+| r         | decrement r | r: 0        |
+| a         | decrement a | a: 0        |
+| m         | decrement m | m: 0        |
 
 All counts end at 0, no negatives → **Return True**
 
