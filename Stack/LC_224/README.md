@@ -33,7 +33,8 @@ Use a **stack** to handle parentheses and a running evaluation:
    - If the character is a **digit**, build the number: `num = num * 10 + int(ch)`.
    - If the character is `+` or `-`:
      - Apply the current sign to the current number and add to `result`.
-     - Update the sign (`+` → 1, `-` → -1).
+     - If a number was just parsed (`num > 0`), set the new sign: `+` → 1, `-` → -1.
+     - If no number was parsed (`num == 0`), it's a unary operator: `+` keeps the sign, `-` flips the sign.
      - Reset `num`.
    - If the character is `(`:
      - Push the current `result` and `sign` onto the stack.
@@ -58,11 +59,15 @@ def calculate(s: str) -> int:
             num = num * 10 + int(ch)
         elif ch == '+':
             result += sign * num
-            sign = 1
+            if num > 0:
+                sign = 1
             num = 0
         elif ch == '-':
             result += sign * num
-            sign = -1
+            if num > 0:
+                sign = -1
+            else:
+                sign = -sign
             num = 0
         elif ch == '(':
             stack.append(result)

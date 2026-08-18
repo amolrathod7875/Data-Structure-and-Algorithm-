@@ -43,7 +43,8 @@ class TestBasicCalculator(unittest.TestCase):
         self.assertEqual(self.solution.calculate("-(3+4)"), -7)
 
     def test_spaces_in_expression(self):
-        self.assertEqual(self.solution.calculate(" 1 + 2 * 3 "), 7)
+        self.assertEqual(self.solution.calculate(" 1 + 2 "), 3)
+        self.assertEqual(self.solution.calculate(" 3 + 5 - 2 "), 6)
 
     def test_large_expression(self):
         self.assertEqual(self.solution.calculate("10+(5-(3+2))"), 10)
@@ -61,7 +62,7 @@ class TestBasicCalculator(unittest.TestCase):
         self.assertEqual(self.solution.calculate("1--1"), 2)
 
     def test_complex_with_spaces(self):
-        self.assertEqual(self.solution.calculate("-(1+(4+5+2)-3)+(6+8)"), 15)
+        self.assertEqual(self.solution.calculate("-(1+(4+5+2)-3)+(6+8)"), 5)
 
 
 if __name__ == "__main__":

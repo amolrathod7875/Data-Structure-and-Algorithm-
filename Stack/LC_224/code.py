@@ -1,31 +1,50 @@
 class Solution:
     def calculate(self, s: str) -> int:
-        stack = []
-        num = 0
-        result = 0
-        sign = 1
         s = s.replace(' ', '')
-        for ch in s:
+        n = len(s)
+        nums = []   # operand stack
+        ops = []    # operator stack: '+', '-', '('
+
+        def apply():
+            b = nums.pop()
+            a = nums.pop()
+            op = ops.pop()
+            if op == '+':
+                nums.append(a + b)
+            else:  # '-'
+                nums.append(a - b)
+
+        i = 0
+        while i < n:
+            ch = s[i]
             if ch.isdigit():
-                num = num * 10 + int(ch)
-            elif ch == '+':
-                result += sign * num
-                sign = 1
                 num = 0
-            elif ch == '-':
-                result += sign * num
-                sign = -1
-                num = 0
+                while i < n and s[i].isdigit():
+                    num = num * 10 + int(s[i])
+                    i += 1
+                nums.append(num)
+                continue
             elif ch == '(':
-                stack.append(result)
-                stack.append(sign)
-                result = 0
-                sign = 1
-                num = 0
+                ops.append(ch)
             elif ch == ')':
-                result += sign * num
-                result *= stack.pop()
-                result += stack.pop()
-                num = 0
-                sign = 1
-        return result + sign * num
+                while ops and ops[-1] != '(':
+                    apply()
+                ops.pop()                      # discard '('
+            elif ch in '+-':
+                is_unary = (i == 0) or (s[i - 1] in '+-(')
+                if ch == '-' and is_unary:
+                    nums.append(0)             # represent unary minus as 0 - x
+                    ops.append('-')
+                elif ch == '+' and is_unary:
+                    pass                       # unary plus is a no-op
+                else:
+                    # binary: flush equal-precedence operators first
+                    while ops and ops[-1] in '+-':
+                        apply()
+                    ops.append(ch)
+            i += 1
+
+        while ops:
+            apply()
+
+        return nums[0]
