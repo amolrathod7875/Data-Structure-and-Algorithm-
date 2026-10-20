@@ -34,25 +34,28 @@ problem (or a self-contained data-structure implementation):
 ## How to Run
 
 Tests import solutions as packages (`from <Category>.<Problem>.code import Solution`),
-so run them from the **repository root**.
-
-Run a single problem's tests:
+so run them from the **repository root** with `-m`, which puts the root on `sys.path`:
 
 ```bash
-python Heaps/LC_215/test.py
+python -m Heaps.LC_215.test
 ```
 
-Or run all tests with pytest (installed automatically on Python 3.11+ via the
-`python -m` namespace package import):
+Folders written in the `unittest` style (`from code import ...`) import their sibling
+module by name, so they are run from their own folder:
 
 ```bash
-# from the repo root
-python -m pytest -q
+cd Array/GFG_Kth_Largest_element && python test.py
 ```
 
-> Tip: if you prefer plain Python, you can run every `test.py` from the root:
+Both styles can also be run from the repository root with `PYTHONPATH`:
+
+```bash
+PYTHONPATH=. python Heaps/LC_215/test.py
+```
+
+> Tip: to run every `test.py` from the root:
 > ```bash
-> for f in $(find . -name test.py); do echo "== $f =="; python "$f"; done
+> for f in $(find . -name test.py); do echo "== $f =="; PYTHONPATH=. python "$f"; done
 > ```
 
 ## Problem Index
@@ -65,6 +68,7 @@ python -m pytest -q
 | `LC_1929` | LC | Concatenation of Array |
 | `LC_3701` | LC | Alternating Sum of Array |
 | `LC_3925` | LC | Concatenate (Reversed) Array |
+| `Rotate_Array_By_One` | GFG | Rotate Array by One |
 | `k largest elements in an array` | GFG | K Largest Elements in an Array |
 
 ### Doubly Linked List
@@ -149,7 +153,7 @@ python -m pytest -q
 
 ## Stats
 
-- **9** categories · **45** problems/data-structure implementations
+- **9** categories · **46** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
