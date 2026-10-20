@@ -94,16 +94,16 @@ class Solution:
 
 ```mermaid
 flowchart TD
-    A[Input: arr array of length n] --> B{n <= 1?}
-    B -->|Yes| C[Return: nothing to rotate]
-    B -->|No| D[last = arr[-1]]
-    D --> E[Initialize i = n - 1]
+    A["Input: arr array of length n"] --> B{"n <= 1?"}
+    B -->|Yes| C["Return: nothing to rotate"]
+    B -->|No| D["last = arr[-1]"]
+    D --> E["Initialize i = n - 1"]
     E --> F["arr[i] = arr[i - 1]"]
-    F --> G{i > 0?}
-    G -->|Yes| H[i = i - 1]
+    F --> G{"i > 0?"}
+    G -->|Yes| H["i = i - 1"]
     H --> F
     G -->|No| I["arr[0] = last"]
-    I --> J[Output: arr rotated right by one]
+    I --> J["Output: arr rotated right by one"]
 ```
 
 ---

@@ -101,8 +101,8 @@ flowchart TD
     A[Input: seats, students] --> B[Sort seats ascending]
     B --> C[Sort students ascending]
     C --> D[Initialize total_moves = 0]
-    D --> E[For each pair seat[i], student[i]]
-    E --> F[Add |seat[i] - student[i]| to total]
+    D --> E["For each pair seat[i], student[i]"]
+    E --> F{"Add abs(seat[i] - student[i]) to total"}
     F --> G{More pairs?}
     G -->|Yes| E
     G -->|No| H[Return total_moves]

@@ -118,14 +118,14 @@ class Solution:
 
 ```mermaid
 flowchart TD
-    A[Input: nums array and k] --> B[n = len(nums)]
-    B --> C{n <= 1?}
-    C -->|Yes| D[Return: nothing to rotate]
-    C -->|No| E[k = k % n]
-    E --> F[Reverse nums[0 .. n-1]]
-    F --> G[Reverse nums[0 .. k-1]]
-    G --> H[Reverse nums[k .. n-1]]
-    H --> I[Output: nums rotated right by k]
+    A["Input: nums array and k"] --> B["n = len(nums)"]
+    B --> C{"n <= 1?"}
+    C -->|Yes| D["Return: nothing to rotate"]
+    C -->|No| E["k = k % n"]
+    E --> F["Reverse nums[0 .. n-1]"]
+    F --> G["Reverse nums[0 .. k-1]"]
+    G --> H["Reverse nums[k .. n-1]"]
+    H --> I["Output: nums rotated right by k"]
 ```
 
 ---
