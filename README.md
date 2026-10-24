@@ -73,6 +73,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_3925` | LC | Concatenate (Reversed) Array |
 | `LC_3194` | LC | Minimum Average of Smallest and Largest Elements |
 | `Array_Of_Pairs` | GFG | Array of Pairs |
+| `Check_Identical_Arrays` | GFG | Check Identical Arrays |
 | `End_Insert` | GFG | Insert at End of Array |
 | `Elements_Less_Than_K` | GFG | Elements Less Than K |
 | `Get_Smaller` | GFG | Get Smaller in Array |
@@ -162,7 +163,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 ## Stats
 
-- **9** categories · **54** problems/data-structure implementations
+- **9** categories · **55** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
