@@ -65,6 +65,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | Folder | Source | Problem |
 | --- | --- | --- |
 | `GFG_Kth_Largest_element` | GFG | Kth Largest Element |
+| `GFG_Replace_0s_With_5` | GFG | Replace All 0's With 5 |
 | `LC_189` | LC | Rotate Array |
 | `LC_1929` | LC | Concatenation of Array |
 | `LC_3701` | LC | Alternating Sum of Array |
@@ -160,7 +161,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 ## Stats
 
-- **9** categories · **52** problems/data-structure implementations
+- **9** categories · **53** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
