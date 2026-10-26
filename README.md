@@ -70,7 +70,6 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_1929` | LC | Concatenation of Array |
 | `LC_1877` | LC | Minimize Maximum Pair Sum in Array |
 | `LC_3701` | LC | Alternating Sum of Array |
-| `LC_268` | LC | Missing Number |
 | `LC_283` | LC | Move Zeroes |
 | `LC_3925` | LC | Concatenate (Reversed) Array |
 | `LC_3194` | LC | Minimum Average of Smallest and Largest Elements |
@@ -121,6 +120,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 | Folder | Source | Problem |
 | --- | --- | --- |
+| `LC_268` | LC | Missing Number |
 | `LC_4010` | LC | Maximum Pair Strength (gcd-based) |
 
 ### Queue

@@ -198,7 +198,7 @@ class Solution:
 ## File Structure
 
 ```
-Array/
+Math/
 └── LC_268/
     ├── code.py    # Solution.missingNumber using arithmetic series sum
     ├── test.py    # Runnable tests (print-based assertions)
