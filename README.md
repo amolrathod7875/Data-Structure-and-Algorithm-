@@ -72,6 +72,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_1877` | LC | Minimize Maximum Pair Sum in Array |
 | `LC_3701` | LC | Alternating Sum of Array |
 | `LC_283` | LC | Move Zeroes |
+| `Move_All_Zeroes_to_End` | GFG | Move All Zeroes to End |
 | `LC_3925` | LC | Concatenate (Reversed) Array |
 | `LC_3194` | LC | Minimum Average of Smallest and Largest Elements |
 | `Array_Of_Pairs` | GFG | Array of Pairs |
@@ -168,7 +169,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 ## Stats
 
-- **9** categories · **60** problems/data-structure implementations
+- **9** categories · **61** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
