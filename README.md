@@ -80,6 +80,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `Elements_Less_Than_K` | GFG | Elements Less Than K |
 | `Get_Smaller` | GFG | Get Smaller in Array |
 | `Rotate_Array_By_One` | GFG | Rotate Array by One |
+| `Second_Largest` | GFG | Second Largest |
 | `Smallest_in_Array` | GFG | Smallest in Array |
 | `Sum_of_Array` | GFG | Sum of Array |
 | `k largest elements in an array` | GFG | K Largest Elements in an Array |
@@ -167,7 +168,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 ## Stats
 
-- **9** categories · **59** problems/data-structure implementations
+- **9** categories · **60** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
