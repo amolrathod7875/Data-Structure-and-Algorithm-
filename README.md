@@ -81,6 +81,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `End_Insert` | GFG | Insert at End of Array |
 | `Elements_Less_Than_K` | GFG | Elements Less Than K |
 | `Get_Smaller` | GFG | Get Smaller in Array |
+| `Reverse_Array` | GFG | Reverse Array |
 | `Rotate_Array_By_One` | GFG | Rotate Array by One |
 | `Second_Largest` | GFG | Second Largest |
 | `Smallest_in_Array` | GFG | Smallest in Array |
@@ -170,7 +171,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 ## Stats
 
-- **9** categories · **62** problems/data-structure implementations
+- **9** categories · **63** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
