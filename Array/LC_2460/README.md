@@ -65,7 +65,7 @@ The problem has two distinct phases:
 
 1. **Operations pass**: iterate left to right, merging equal adjacent pairs. The operation is applied **sequentially** — once `nums[i]` is modified, the next comparison uses the updated value. This means a chain like `[2, 2, 2]` becomes `[4, 0, 2]` (not `[4, 4, 0]`), because after merging indices 0 and 1, index 1 is now 0, so index 2's value 2 doesn't match.
 
-2. **Zero-shift pass**: move all zeros to the end using the two-pointer technique (same as `Move_All_Zeroes_to_End`), preserving the relative order of non-zeros.
+2. **Zero-shift pass**: move all zeros to the end using the two-pointer technique (same as `GFG_Move_All_Zeroes_to_End`), preserving the relative order of non-zeros.
 
 ### Algorithm
 

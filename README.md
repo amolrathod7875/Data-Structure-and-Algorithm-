@@ -73,20 +73,20 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_3701` | LC | Alternating Sum of Array |
 | `LC_2460` | LC | Apply Operations to an Array |
 | `LC_283` | LC | Move Zeroes |
-| `Move_All_Zeroes_to_End` | GFG | Move All Zeroes to End |
+| `GFG_Move_All_Zeroes_to_End` | GFG | Move All Zeroes to End |
 | `LC_3925` | LC | Concatenate (Reversed) Array |
 | `LC_3194` | LC | Minimum Average of Smallest and Largest Elements |
-| `Array_Of_Pairs` | GFG | Array of Pairs |
-| `Check_Identical_Arrays` | GFG | Check Identical Arrays |
-| `End_Insert` | GFG | Insert at End of Array |
-| `Elements_Less_Than_K` | GFG | Elements Less Than K |
-| `Get_Smaller` | GFG | Get Smaller in Array |
-| `Reverse_Array` | GFG | Reverse Array |
-| `Rotate_Array_By_One` | GFG | Rotate Array by One |
-| `Second_Largest` | GFG | Second Largest |
-| `Smallest_in_Array` | GFG | Smallest in Array |
-| `Sum_of_Array` | GFG | Sum of Array |
-| `k largest elements in an array` | GFG | K Largest Elements in an Array |
+| `GFG_Array_Of_Pairs` | GFG | Array of Pairs |
+| `GFG_Check_Identical_Arrays` | GFG | Check Identical Arrays |
+| `GFG_End_Insert` | GFG | Insert at End of Array |
+| `GFG_Elements_Less_Than_K` | GFG | Elements Less Than K |
+| `GFG_Get_Smaller` | GFG | Get Smaller in Array |
+| `GFG_Reverse_Array` | GFG | Reverse Array |
+| `GFG_Rotate_Array_By_One` | GFG | Rotate Array by One |
+| `GFG_Second_Largest` | GFG | Second Largest |
+| `GFG_Smallest_in_Array` | GFG | Smallest in Array |
+| `GFG_Sum_of_Array` | GFG | Sum of Array |
+| `GFG_K_Largest_Elements_in_Array` | GFG | K Largest Elements in an Array |
 
 ### Doubly Linked List
 

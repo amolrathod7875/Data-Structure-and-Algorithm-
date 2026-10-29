@@ -182,7 +182,7 @@ The `test.py` covers: the two LeetCode examples, `k = 0`, `k = n`, `k > n`, a si
 | `nums[:] = nums[-k:] + nums[:-k]` | O(n) | O(n) | One line; allocates a new list |
 | Cyclic replacement | O(n) | O(n) | Uses `nums[(i + k) % n]`; needs a visited marker |
 | Extra buffer | O(n) | O(n) | Copy into a second array, then back |
-| Rotate by one, `k` times | O(n·k) | O(1) | Too slow — see `Array/Rotate_Array_By_One` |
+| Rotate by one, `k` times | O(n·k) | O(1) | Too slow — see `Array/GFG_Rotate_Array_By_One` |
 
 ---
 
@@ -204,7 +204,7 @@ The `test.py` covers: the two LeetCode examples, `k = 0`, `k = n`, `k > n`, a si
 
 **Answer**: Slicing (`nums[-k:] + nums[:-k]`) is simpler but allocates a second list, making it **O(n) space**. The reversal trick achieves the same result with **O(1) extra space**, which matters when the array is large or memory is constrained.
 
-### Q5. How is this related to `Array/Rotate_Array_By_One`?
+### Q5. How is this related to `Array/GFG_Rotate_Array_By_One`?
 
 **Answer**: Rotating by one is just the `k = 1` case of this problem. That folder shifts elements one position to the right with a single backward pass, while this generalises to any `k` using reversals.
 

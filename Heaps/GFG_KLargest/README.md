@@ -4,7 +4,7 @@
 
 Given an array `arr` and an integer `k`, return the **k largest elements** of the array.
 
-This is the **heap-based** solution to the same problem solved earlier with plain sorting (see `Array/k largest elements in an array`). Here we use a **binary heap** instead of fully sorting the array.
+This is the **heap-based** solution to the same problem solved earlier with plain sorting (see `Array/GFG_K_Largest_Elements_in_Array`). Here we use a **binary heap** instead of fully sorting the array.
 
 ## Approach: Min-Heap of Size k
 
