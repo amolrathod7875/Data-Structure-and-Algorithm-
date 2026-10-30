@@ -1,4 +1,4 @@
-from Array.LC_189.code import Solution
+from Array.LC_189.Three_Reversals.code import Solution
 
 
 def run_test(nums, k, expected):

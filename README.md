@@ -66,7 +66,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | --- | --- | --- |
 | `GFG_Kth_Largest_element` | GFG | Kth Largest Element |
 | `GFG_Replace_0s_With_5` | GFG | Replace All 0's With 5 |
-| `LC_189` | LC | Rotate Array |
+| `LC_189` | LC | Rotate Array (3 reversals / slicing) |
 | `LC_215` | LC | Kth Largest Element in an Array |
 | `LC_1929` | LC | Concatenation of Array |
 | `LC_1877` | LC | Minimize Maximum Pair Sum in Array |

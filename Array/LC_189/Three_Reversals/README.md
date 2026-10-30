@@ -30,6 +30,7 @@ Output: [5, 6, 7, 1, 2, 3, 4]
 ```
 
 **Explanation:**
+
 ```
 The last 3 elements (5, 6, 7) wrap around to the front.
 ```
@@ -53,6 +54,7 @@ Output: [1, 2, 3]
 ```
 
 **Explanation:**
+
 ```
 k = 3 equals the length of the array, so a full rotation returns the original order.
 ```
@@ -106,8 +108,8 @@ class Solution:
 
 ## Complexity Analysis
 
-| | Time | Space |
-|--|------|-------|
+|                  | Time                                                                            | Space                                                                  |
+| ---------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | **rotate** | **O(n)** — three reversals touch each element a constant number of times | **O(1)** — the rotation is in place; only two pointers are used |
 
 > Time is optimal: Ω(n) elements must be moved, so no in-place solution can beat O(n).
@@ -136,12 +138,12 @@ flowchart TD
 
 ### Step-by-step
 
-| Step | Action | nums |
-|------|--------|------|
-| 0 | initial state | `[1, 2, 3, 4, 5, 6, 7]` |
-| 1 | `reverse_range(0, 6)` | `[7, 6, 5, 4, 3, 2, 1]` |
-| 2 | `reverse_range(0, 2)` | `[5, 6, 7, 4, 3, 2, 1]` |
-| 3 | `reverse_range(3, 6)` | `[5, 6, 7, 1, 2, 3, 4]` |
+| Step | Action                  | nums                      |
+| ---- | ----------------------- | ------------------------- |
+| 0    | initial state           | `[1, 2, 3, 4, 5, 6, 7]` |
+| 1    | `reverse_range(0, 6)` | `[7, 6, 5, 4, 3, 2, 1]` |
+| 2    | `reverse_range(0, 2)` | `[5, 6, 7, 4, 3, 2, 1]` |
+| 3    | `reverse_range(3, 6)` | `[5, 6, 7, 1, 2, 3, 4]` |
 
 ### Final result
 
@@ -156,7 +158,7 @@ nums = [5, 6, 7, 1, 2, 3, 4]
 From the **repository root**:
 
 ```bash
-python -m Array.LC_189.test
+python -m Array.LC_189.Three_Reversals.test
 ```
 
 Expected output:
@@ -176,13 +178,13 @@ The `test.py` covers: the two LeetCode examples, `k = 0`, `k = n`, `k > n`, a si
 
 ## Alternative Approaches
 
-| Approach | Time | Space | Notes |
-|----------|------|-------|-------|
-| **Three reversals** (this file) | **O(n)** | **O(1)** | Optimal in place; no extra allocation |
-| `nums[:] = nums[-k:] + nums[:-k]` | O(n) | O(n) | One line; allocates a new list |
-| Cyclic replacement | O(n) | O(n) | Uses `nums[(i + k) % n]`; needs a visited marker |
-| Extra buffer | O(n) | O(n) | Copy into a second array, then back |
-| Rotate by one, `k` times | O(n·k) | O(1) | Too slow — see `Array/GFG_Rotate_Array_By_One` |
+| Approach                              | Time           | Space          | Notes                                              |
+| ------------------------------------- | -------------- | -------------- | -------------------------------------------------- |
+| **Three reversals** (this file) | **O(n)** | **O(1)** | Optimal in place; no extra allocation              |
+| `nums[:] = nums[-k:] + nums[:-k]`   | O(n)           | O(n)           | One line; allocates a new list — see `Array/LC_189/Slicing` |
+| Cyclic replacement                    | O(n)           | O(n)           | Uses `nums[(i + k) % n]`; needs a visited marker |
+| Extra buffer                          | O(n)           | O(n)           | Copy into a second array, then back                |
+| Rotate by one, `k` times            | O(n·k)        | O(1)           | Too slow — see `Array/GFG_Rotate_Array_By_One`  |
 
 ---
 
@@ -215,7 +217,8 @@ The `test.py` covers: the two LeetCode examples, `k = 0`, `k = n`, `k > n`, a si
 ```
 Array/
 └── LC_189/
-    ├── code.py    # Solution.rotate - rotate right by k using three reversals
-    ├── test.py    # Runnable tests (print-based assertions)
-    └── README.md  # Documentation
+    └── Three_Reversals/
+        ├── code.py    # Solution.rotate - rotate right by k using three reversals
+        ├── test.py    # Runnable tests (print-based assertions)
+        └── README.md  # Documentation
 ```
