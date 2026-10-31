@@ -1,4 +1,4 @@
-from Array.Next_Permutation.code import Solution
+from Array.GFG_Next_Permutation.code import Solution
 
 
 def run_test(arr, expected):
