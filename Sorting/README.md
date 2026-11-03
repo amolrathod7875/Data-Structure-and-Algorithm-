@@ -1,6 +1,6 @@
 # Sorting
 
-Theory and implementations of common sorting algorithms.
+Theory, working, and step-by-step simulations of common sorting algorithms.
 
 ## Algorithms
 
@@ -30,30 +30,51 @@ Theory and implementations of common sorting algorithms.
 - Memory constrained: Heap Sort.
 - Integer keys with small range: Counting / Radix Sort.
 
-## Run
+## Working and Simulation
 
-From repository root:
-
-```bash
-python -m Sorting.LC_910.test
-```
-
-## Working of Algorithms
+Example input: `[5, 3, 8, 4, 2]`
 
 ### Bubble Sort
-Repeatedly compare adjacent elements and swap if out of order. Largest element bubbles to the end each pass. Stop early if no swaps in a pass.
+Repeatedly compare adjacent elements and swap if out of order. Largest element bubbles to the end each pass.
+
+Simulation:
+- Pass 1: [3, 5, 4, 2, 8]
+- Pass 2: [3, 4, 2, 5, 8]
+- Pass 3: [3, 2, 4, 5, 8]
+- Pass 4: [2, 3, 4, 5, 8]
 
 ### Selection Sort
 Find the minimum in the unsorted portion and swap it with the first unsorted position.
 
+Simulation:
+- i=0: min 2 -> [2, 3, 8, 4, 5]
+- i=1: min 3 -> [2, 3, 8, 4, 5]
+- i=2: min 4 -> [2, 3, 4, 8, 5]
+- i=3: min 5 -> [2, 3, 4, 5, 8]
+
 ### Insertion Sort
 Build a sorted prefix; take next element and insert it into correct position in prefix by shifting.
+
+Simulation:
+- Insert 3: [3, 5, 8, 4, 2]
+- Insert 8: [3, 5, 8, 4, 2]
+- Insert 4: [3, 4, 5, 8, 2]
+- Insert 2: [2, 3, 4, 5, 8]
 
 ### Merge Sort
 Divide array into halves, recursively sort, then merge two sorted halves by comparing front elements.
 
+Simulation:
+- Split: [5,3] [8,4,2]
+- Sort halves: [3,5] [2,4,8]
+- Merge: [2, 3, 4, 5, 8]
+
 ### Quick Sort
 Pick a pivot, partition elements into <= pivot and > pivot, recursively sort both partitions.
+
+Simulation (pivot = last):
+- Partition around 2: [2 | 5,3,8,4] -> recurse right [3,4,5,8]
+- Result: [2, 3, 4, 5, 8]
 
 ### Heap Sort
 Build a max-heap, repeatedly extract max to end, then heapify remaining.
@@ -64,33 +85,10 @@ Count occurrences of each key, compute prefix sums for positions, place elements
 ### Radix Sort
 Sort by least significant digit using a stable sort (e.g., counting sort), repeat for each digit.
 
-## Step-by-Step Simulation
+## Run
 
-Example input: `[5, 3, 8, 4, 2]`
+From repository root:
 
-### Bubble Sort
-- Pass 1: [3, 5, 4, 2, 8]
-- Pass 2: [3, 4, 2, 5, 8]
-- Pass 3: [3, 2, 4, 5, 8]
-- Pass 4: [2, 3, 4, 5, 8]
-
-### Selection Sort
-- i=0: min 2 -> [2, 3, 8, 4, 5]
-- i=1: min 3 -> [2, 3, 8, 4, 5]
-- i=2: min 4 -> [2, 3, 4, 8, 5]
-- i=3: min 5 -> [2, 3, 4, 5, 8]
-
-### Insertion Sort
-- Insert 3: [3, 5, 8, 4, 2]
-- Insert 8: [3, 5, 8, 4, 2]
-- Insert 4: [3, 4, 5, 8, 2]
-- Insert 2: [2, 3, 4, 5, 8]
-
-### Merge Sort
-- Split: [5,3] [8,4,2]
-- Sort halves: [3,5] [2,4,8]
-- Merge: [2, 3, 4, 5, 8]
-
-### Quick Sort (pivot = last)
-- Partition around 2: [2 | 5,3,8,4] -> recurse left none, right [3,4,5,8]
-- Result: [2, 3, 4, 5, 8]
+```bash
+python -m Sorting.LC_910.test
+```
