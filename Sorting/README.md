@@ -37,3 +37,29 @@ From repository root:
 ```bash
 python -m Sorting.LC_910.test
 ```
+
+## Working of Algorithms
+
+### Bubble Sort
+Repeatedly compare adjacent elements and swap if out of order. Largest element bubbles to the end each pass. Stop early if no swaps in a pass.
+
+### Selection Sort
+Find the minimum in the unsorted portion and swap it with the first unsorted position.
+
+### Insertion Sort
+Build a sorted prefix; take next element and insert it into correct position in prefix by shifting.
+
+### Merge Sort
+Divide array into halves, recursively sort, then merge two sorted halves by comparing front elements.
+
+### Quick Sort
+Pick a pivot, partition elements into <= pivot and > pivot, recursively sort both partitions.
+
+### Heap Sort
+Build a max-heap, repeatedly extract max to end, then heapify remaining.
+
+### Counting Sort
+Count occurrences of each key, compute prefix sums for positions, place elements into output in stable order.
+
+### Radix Sort
+Sort by least significant digit using a stable sort (e.g., counting sort), repeat for each digit.
