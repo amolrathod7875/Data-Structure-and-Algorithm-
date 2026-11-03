@@ -63,3 +63,34 @@ Count occurrences of each key, compute prefix sums for positions, place elements
 
 ### Radix Sort
 Sort by least significant digit using a stable sort (e.g., counting sort), repeat for each digit.
+
+## Step-by-Step Simulation
+
+Example input: `[5, 3, 8, 4, 2]`
+
+### Bubble Sort
+- Pass 1: [3, 5, 4, 2, 8]
+- Pass 2: [3, 4, 2, 5, 8]
+- Pass 3: [3, 2, 4, 5, 8]
+- Pass 4: [2, 3, 4, 5, 8]
+
+### Selection Sort
+- i=0: min 2 -> [2, 3, 8, 4, 5]
+- i=1: min 3 -> [2, 3, 8, 4, 5]
+- i=2: min 4 -> [2, 3, 4, 8, 5]
+- i=3: min 5 -> [2, 3, 4, 5, 8]
+
+### Insertion Sort
+- Insert 3: [3, 5, 8, 4, 2]
+- Insert 8: [3, 5, 8, 4, 2]
+- Insert 4: [3, 4, 5, 8, 2]
+- Insert 2: [2, 3, 4, 5, 8]
+
+### Merge Sort
+- Split: [5,3] [8,4,2]
+- Sort halves: [3,5] [2,4,8]
+- Merge: [2, 3, 4, 5, 8]
+
+### Quick Sort (pivot = last)
+- Partition around 2: [2 | 5,3,8,4] -> recurse left none, right [3,4,5,8]
+- Result: [2, 3, 4, 5, 8]
