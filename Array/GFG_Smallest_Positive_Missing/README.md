@@ -1,4 +1,4 @@
-# Smallest Positive Missing
+# GFG Smallest Positive Missing
 
 ## Problem
 

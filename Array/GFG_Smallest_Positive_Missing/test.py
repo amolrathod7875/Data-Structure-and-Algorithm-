@@ -1,4 +1,4 @@
-from Array.Smallest_Positive_Missing.code import Solution
+from Array.GFG_Smallest_Positive_Missing.code import Solution
 
 
 def run_test(arr, expected):
