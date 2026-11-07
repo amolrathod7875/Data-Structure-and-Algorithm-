@@ -1,4 +1,4 @@
-from Array.LC_153.code import Solution
+from Searching.LC_153.code import Solution
 
 
 def run_test(nums, expected):

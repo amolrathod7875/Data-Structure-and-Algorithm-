@@ -15,5 +15,5 @@ O(log n) time, O(1) space.
 ## Run Tests
 
 ```bash
-python -m Array.LC_153.test
+python -m Searching.LC_153.test
 ```
