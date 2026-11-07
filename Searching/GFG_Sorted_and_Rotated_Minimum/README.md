@@ -15,5 +15,5 @@ O(log n) time, O(1) space.
 ## Run Tests
 
 ```bash
-python -m Array.GFG_Sorted_and_Rotated_Minimum.test
+python -m Searching.GFG_Sorted_and_Rotated_Minimum.test
 ```

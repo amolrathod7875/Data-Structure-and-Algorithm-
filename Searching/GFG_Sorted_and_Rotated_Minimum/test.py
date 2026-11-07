@@ -1,4 +1,4 @@
-from Array.GFG_Sorted_and_Rotated_Minimum.code import Solution
+from Searching.GFG_Sorted_and_Rotated_Minimum.code import Solution
 
 
 def run_test(arr, expected):
