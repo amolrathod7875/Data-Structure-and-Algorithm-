@@ -150,6 +150,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | Folder | Source | Problem |
 | --- | --- | --- |
 | `LC_268` | LC | Missing Number |
+| `LC_69` | LC | Sqrt(x) |
 | `LC_4010` | LC | Maximum Pair Strength (gcd-based) |
 
 ### Queue
@@ -188,6 +189,9 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | --- | --- | --- |
 | `LC_1913` | LC | Maximum Product Difference Between Two Pairs |
 | `LC_2037` | LC | Minimum Number of Moves to Seat Everyone |
+| `GFG_Sort_0s_1s_2s` | GFG | Sort 0s 1s 2s |
+| `LC_75` | LC | Sort Colors |
+| `LC_910` | LC | Smallest Range II |
 
 ### Stack
 
@@ -202,6 +206,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_224` | LC | Basic Calculator |
 | `LC_225` | LC | Implement Stack using Queues |
 | `LC_227` | LC | Basic Calculator II |
+| `LC_496` | LC | Next Greater Element I |
 
 ## Stats
 
