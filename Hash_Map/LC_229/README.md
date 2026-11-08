@@ -15,5 +15,5 @@ O(n) time, O(n) space.
 ## Run Tests
 
 ```bash
-python -m Array.LC_229.test
+python -m Hash_Map.LC_229.test
 ```

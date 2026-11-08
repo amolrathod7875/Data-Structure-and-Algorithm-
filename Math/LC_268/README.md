@@ -134,7 +134,7 @@ flowchart TD
 From the **repository root**:
 
 ```bash
-python -m Array.LC_268.test
+python -m Math.LC_268.test
 ```
 
 Expected output:

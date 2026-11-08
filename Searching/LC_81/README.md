@@ -15,5 +15,5 @@ O(n) worst, O(log n) average; O(1) space.
 ## Run Tests
 
 ```bash
-python -m Array.LC_81.test
+python -m Searching.LC_81.test
 ```

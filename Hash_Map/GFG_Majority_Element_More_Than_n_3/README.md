@@ -15,5 +15,5 @@ O(n) time, O(n) space.
 ## Run Tests
 
 ```bash
-python -m Array.GFG_Majority_Element_More_Than_n_3.test
+python -m Hash_Map.GFG_Majority_Element_More_Than_n_3.test
 ```
