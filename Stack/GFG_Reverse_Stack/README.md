@@ -79,3 +79,13 @@ python test.py
 | `Stack` | Custom stack class with `push`, `pop`, `is_empty` operations. |
 | `insert_at_bottom(stack, item)` | Helper function to insert an item at the bottom of the stack recursively. |
 | `reverse_stack(stack)` | Main function that reverses the stack using only recursion. |
+
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> D["Process elements"]
+    D --> E{"More elements?"}
+    E -->|Yes| F["Process current"]
+    F --> E
+    E -->|No| G["Return result"]
+```

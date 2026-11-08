@@ -77,3 +77,11 @@ python test.py
 | `Stack` | Custom stack class with `push`, `pop`, `is_empty` operations. |
 | `SortedInsert(st, x)` | Helper function to insert an element into a sorted stack while maintaining sorted order. |
 | `SortStack(st)` | Main function that sorts the stack using only recursion. |
+
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> C["Sort array"]
+    C --> D["Process elements"]
+    D --> G["Return result"]
+```

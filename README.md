@@ -136,7 +136,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | Folder | Source | Problem |
 | --- | --- | --- |
 | `Basics` | — | Min/Max Heap (core implementation) |
-| `GFG_Check if an Array is Max Heap` | GFG | Check if an Array Is a Max Heap |
+| `GFG_Check_If_An_Array_Is_Max_Heap` | GFG | Check if an Array Is a Max Heap |
 | `GFG_Heap_Sort` | GFG | Heap Sort |
 | `GFG_Height_Of_Heap` | GFG | Height of Heap |
 | `GFG_KLargest` | GFG | K Largest Elements |
@@ -198,7 +198,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | Folder | Source | Problem |
 | --- | --- | --- |
 | `Basics` | — | Stack (core implementation) |
-| `GFG_Infix Expression Evaluation` | GFG | Infix Expression Evaluation |
+| `GFG_Infix_Expression_Evaluation` | GFG | Infix Expression Evaluation |
 | `GFG_Reverse_Stack` | GFG | Reverse a Stack |
 | `GFG_Sort_Stack` | GFG | Sort a Stack |
 | `LC_150` | LC | Evaluate Reverse Polish Notation |

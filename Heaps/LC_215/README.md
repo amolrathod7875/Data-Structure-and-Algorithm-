@@ -21,3 +21,13 @@ Output: 4
 ## Constraints
 - `1 <= k <= nums.length <= 10^4`
 - `-10^4 <= nums[i] <= 10^4`
+
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> D["Process elements"]
+    D --> E{"More elements?"}
+    E -->|Yes| F["Process current"]
+    F --> E
+    E -->|No| G["Return result"]
+```

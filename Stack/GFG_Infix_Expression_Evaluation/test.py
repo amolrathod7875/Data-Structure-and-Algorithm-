@@ -1,9 +1,4 @@
-import sys
-import os
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-from code import evaluateInfix
+from Stack.GFG_Infix_Expression_Evaluation.code import evaluateInfix
 
 def test_evaluateInfix():
     test_cases = [

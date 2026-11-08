@@ -133,3 +133,10 @@ Heaps/
     ├── test.py    # Unit tests (unittest)
     └── README.md  # Documentation
 ```
+
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> D["Process elements"]
+    D --> G["Return result"]
+```

@@ -12,6 +12,16 @@ Sum all positive adjacent price differences.
 
 O(n) time, O(1) space.
 
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> D["Process elements"]
+    D --> E{"More elements?"}
+    E -->|Yes| F["Process current"]
+    F --> E
+    E -->|No| G["Return result"]
+```
+
 ## Run Tests
 
 ```bash

@@ -102,3 +102,11 @@ Array/
     ├── test.py    # Unit tests (unittest)
     └── README.md  # Documentation
 ```
+
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> C["Sort array"]
+    C --> D["Process elements"]
+    D --> G["Return result"]
+```

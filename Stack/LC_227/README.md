@@ -97,3 +97,13 @@ The test suite covers:
 - Large numbers
 - Zero operands
 - Negative results
+
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> D["Process elements"]
+    D --> E{"More elements?"}
+    E -->|Yes| F["Process current"]
+    F --> E
+    E -->|No| G["Return result"]
+```

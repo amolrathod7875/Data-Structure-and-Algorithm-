@@ -23,6 +23,16 @@ Iterate over the array and print each element with `end=" "`.
 |--|------|-------|
 | **arrayTraversal** | **O(n)** | **O(1)** |
 
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> D["Process elements"]
+    D --> E{"More elements?"}
+    E -->|Yes| F["Process current"]
+    F --> E
+    E -->|No| G["Return result"]
+```
+
 ## Run Tests
 
 ```bash

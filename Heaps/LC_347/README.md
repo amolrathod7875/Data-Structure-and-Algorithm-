@@ -22,3 +22,13 @@ Output: [1]
 
 ## Follow Up
 Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
+
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> D["Process elements"]
+    D --> E{"More elements?"}
+    E -->|Yes| F["Process current"]
+    F --> E
+    E -->|No| G["Return result"]
+```

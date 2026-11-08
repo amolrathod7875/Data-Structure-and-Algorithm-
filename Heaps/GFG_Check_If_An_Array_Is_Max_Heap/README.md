@@ -113,8 +113,18 @@ Root (9) is smaller than its left child (15), violating the max heap property.
 
 ```
 Heaps/
-└── GFG_Check if an Array is Max Heap/
+└── GFG_Check_If_An_Array_Is_Max_Heap/
     ├── code.py    # isMaxHeap implementation
     ├── test.py    # Unit tests
     └── README.md  # Documentation
+```
+
+```mermaid
+flowchart TD
+    A["Input"] --> B["Initialize"]
+    B --> D["Process elements"]
+    D --> E{"More elements?"}
+    E -->|Yes| F["Process current"]
+    F --> E
+    E -->|No| G["Return result"]
 ```
