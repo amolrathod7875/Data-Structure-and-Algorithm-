@@ -27,6 +27,7 @@ problem (or a self-contained data-structure implementation):
 | `Heaps` | Heap (min/max) problems & basics |
 | `Math` | Math / number-theory problems |
 | `Queue` | Queue, circular queue, deque & stream problems |
+| `Searching` | Searching & binary search problems |
 | `Singly_LInked_List` | Singly linked list problems |
 | `Sorting` | Sorting-related problems |
 | `Stack` | Stack, expression evaluation & design problems |
@@ -88,6 +89,26 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `GFG_Sum_of_Array` | GFG | Sum of Array |
 | `GFG_K_Largest_Elements_in_Array` | GFG | K Largest Elements in an Array |
 
+| GFG_Alternates_in_Array | GFG | Alternates in Array |
+| GFG_Array_Traversal | GFG | Array Traversal |
+| GFG_Ceil_in_Sorted_Array | GFG | Ceil in Sorted Array |
+| GFG_Count_Occurrences_in_Sorted | GFG | Count Occurrences in Sorted Array |
+| GFG_Insert_Interval | GFG | Insert Interval |
+| GFG_Kadanes_Algorithm | GFG | Kadane's Algorithm |
+| GFG_Merge_Without_Extra_Space | GFG | Merge Without Extra Space |
+| GFG_Minimize_the_Heights | GFG | Minimize the Heights |
+| GFG_Next_Permutation | GFG | Next Permutation |
+| GFG_Non_Overlapping_Intervals | GFG | Non-Overlapping Intervals |
+| GFG_Overlapping_Intervals | GFG | Overlapping Intervals |
+| GFG_Smallest_Positive_Missing | GFG | Smallest Positive Missing |
+| GFG_Stock_Buy_and_Sell_Max_One_Transaction | GFG | Stock Buy and Sell - Max One Transaction |
+| GFG_Stock_Buy_and_Sell_Multiple_Transaction | GFG | Stock Buy and Sell - Multiple Transactions |
+| LC_56 | LC | Merge Intervals |
+| LC_1011 | LC | Capacity To Ship Packages Within D Days |
+| LC_1288 | LC | Remove Covered Intervals |
+| LC_1470 | LC | Shuffle the Array |
+| LC_1480 | LC | Running Sum of 1d Array |
+
 ### Doubly Linked List
 
 | Folder | Source | Problem |
@@ -99,11 +120,13 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 | Folder | Source | Problem |
 | --- | --- | --- |
+| `GFG_Majority_Element_More_Than_n_3` | GFG | Majority Element - More Than n/3 |
 | `LC_1832` | LC | Check if the Sentence Is Pangram |
 | `LC_217` | LC | Contains Duplicate |
 | `LC_219` | LC | Contains Duplicate II |
 | `LC_242` | LC | Valid Anagram |
 | `LC_2657` | LC | Find the Prefix Common Array of Two Arrays |
+| `LC_229` | LC | Majority Element II |
 | `LC_349` | LC | Intersection of Two Arrays |
 | `LC_350` | LC | Intersection of Two Arrays II |
 | `LC_3731` | LC | Find Missing Elements in Range |
@@ -142,6 +165,17 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_641` | LC | Design Circular Deque |
 | `LC_933` | LC | Number of Recent Calls |
 
+### Searching
+
+| Folder | Source | Problem |
+| --- | --- | --- |
+| `GFG_Peak_in_Array` | GFG | Peak in Array |
+| `GFG_Search_in_Rotated_Sorted_Array` | GFG | Search in Rotated Sorted Array |
+| `GFG_Sorted_and_Rotated_Minimum` | GFG | Sorted and Rotated Minimum |
+| `LC_33` | LC | Search in Rotated Sorted Array |
+| `LC_81` | LC | Search in Rotated Sorted Array II |
+| `LC_153` | LC | Find Minimum in Rotated Sorted Array |
+
 ### Singly Linked List
 
 | Folder | Source | Problem |
@@ -171,7 +205,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 ## Stats
 
-- **9** categories · **63** problems/data-structure implementations
+- **10** categories · **93** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---

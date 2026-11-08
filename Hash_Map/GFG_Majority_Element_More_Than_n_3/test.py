@@ -1,4 +1,4 @@
-from Array.GFG_Majority_Element_More_Than_n_3.code import Solution
+from Hash_Map.GFG_Majority_Element_More_Than_n_3.code import Solution
 
 
 def run_test(arr, expected):

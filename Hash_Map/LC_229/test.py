@@ -1,4 +1,4 @@
-from Array.LC_229.code import Solution
+from Hash_Map.LC_229.code import Solution
 
 
 def run_test(nums, expected):
