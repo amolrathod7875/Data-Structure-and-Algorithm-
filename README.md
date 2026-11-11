@@ -145,6 +145,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_215` | LC | Kth Largest Element in an Array |
 | `LC_347` | LC | Top K Frequent Elements |
 | `LC_1046` | LC | Last Stone Weight |
+| `LC_378` | LC | Kth Smallest Element in a Sorted Matrix |
 
 ### Math
 
