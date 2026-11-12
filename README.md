@@ -89,26 +89,25 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `GFG_Smallest_in_Array` | GFG | Smallest in Array |
 | `GFG_Sum_of_Array` | GFG | Sum of Array |
 | `GFG_K_Largest_Elements_in_Array` | GFG | K Largest Elements in an Array |
-
-| GFG_Alternates_in_Array | GFG | Alternates in Array |
-| GFG_Array_Traversal | GFG | Array Traversal |
-| GFG_Ceil_in_Sorted_Array | GFG | Ceil in Sorted Array |
-| GFG_Count_Occurrences_in_Sorted | GFG | Count Occurrences in Sorted Array |
-| GFG_Insert_Interval | GFG | Insert Interval |
-| GFG_Kadanes_Algorithm | GFG | Kadane's Algorithm |
-| GFG_Merge_Without_Extra_Space | GFG | Merge Without Extra Space |
-| GFG_Minimize_the_Heights | GFG | Minimize the Heights |
-| GFG_Next_Permutation | GFG | Next Permutation |
-| GFG_Non_Overlapping_Intervals | GFG | Non-Overlapping Intervals |
-| GFG_Overlapping_Intervals | GFG | Overlapping Intervals |
-| GFG_Smallest_Positive_Missing | GFG | Smallest Positive Missing |
-| GFG_Stock_Buy_and_Sell_Max_One_Transaction | GFG | Stock Buy and Sell - Max One Transaction |
-| GFG_Stock_Buy_and_Sell_Multiple_Transaction | GFG | Stock Buy and Sell - Multiple Transactions |
-| LC_56 | LC | Merge Intervals |
-| LC_1011 | LC | Capacity To Ship Packages Within D Days |
-| LC_1288 | LC | Remove Covered Intervals |
-| LC_1470 | LC | Shuffle the Array |
-| LC_1480 | LC | Running Sum of 1d Array |
+| `GFG_Alternates_in_Array` | GFG | Alternates in Array |
+| `GFG_Array_Traversal` | GFG | Array Traversal |
+| `GFG_Ceil_in_Sorted_Array` | GFG | Ceil in Sorted Array |
+| `GFG_Count_Occurrences_in_Sorted` | GFG | Count Occurrences in Sorted Array |
+| `GFG_Insert_Interval` | GFG | Insert Interval |
+| `GFG_Kadanes_Algorithm` | GFG | Kadane's Algorithm |
+| `GFG_Merge_Without_Extra_Space` | GFG | Merge Without Extra Space |
+| `GFG_Minimize_the_Heights` | GFG | Minimize the Heights |
+| `GFG_Next_Permutation` | GFG | Next Permutation |
+| `GFG_Non_Overlapping_Intervals` | GFG | Non-Overlapping Intervals |
+| `GFG_Overlapping_Intervals` | GFG | Overlapping Intervals |
+| `GFG_Smallest_Positive_Missing` | GFG | Smallest Positive Missing |
+| `GFG_Stock_Buy_and_Sell_Max_One_Transaction` | GFG | Stock Buy and Sell - Max One Transaction |
+| `GFG_Stock_Buy_and_Sell_Multiple_Transaction` | GFG | Stock Buy and Sell - Multiple Transactions |
+| `LC_56` | LC | Merge Intervals |
+| `LC_1011` | LC | Capacity To Ship Packages Within D Days |
+| `LC_1288` | LC | Remove Covered Intervals |
+| `LC_1470` | LC | Shuffle the Array |
+| `LC_1480` | LC | Running Sum of 1d Array |
 
 ### Doubly Linked List
 
