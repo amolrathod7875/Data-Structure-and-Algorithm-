@@ -31,6 +31,7 @@ problem (or a self-contained data-structure implementation):
 | `Singly_LInked_List` | Singly linked list problems |
 | `Sorting` | Sorting-related problems |
 | `Stack` | Stack, expression evaluation & design problems |
+| `BinaryTree` | Binary tree problems & basics |
 
 ## How to Run
 
@@ -210,9 +211,18 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_227` | LC | Basic Calculator II |
 | `LC_496` | LC | Next Greater Element I |
 
+### BinaryTree
+
+| Folder | Source | Problem |
+| --- | --- | --- |
+| `GFG_Size_of_Binary_Tree` | GFG | Size of Binary Tree |
+| `LC_104` | LC | Maximum Depth of Binary Tree |
+| `LC_222` | LC | Count Complete Tree Nodes |
+| `GFG_Height_of_Binary_Tree` | GFG | Height of Binary Tree |
+
 ## Stats
 
-- **10** categories · **93** problems/data-structure implementations
+- **11** categories · **97** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
