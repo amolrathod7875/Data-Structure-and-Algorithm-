@@ -6,7 +6,7 @@ Return maximum width (nodes) at any tree level.
 
 ## Approach
 
-Preorder traversal, count nodes per level, return max.
+Use BFS to count nodes per level, return max.
 
 ## Complexity
 

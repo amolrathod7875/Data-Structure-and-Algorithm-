@@ -9,15 +9,18 @@ class Node:
 
 class Solution:
     def maxWidth(self, root):
+        if not root:
+            return 0
+        
+        queue = [(root, 0)]
         level_count = {}
         
-        def preorder(node, level):
-            if node is None:
-                return
+        while queue:
+            node, level = queue.pop(0)
             level_count[level] = level_count.get(level, 0) + 1
-            preorder(node.left, level + 1)
-            preorder(node.right, level + 1)
+            if node.left:
+                queue.append((node.left, level + 1))
+            if node.right:
+                queue.append((node.right, level + 1))
         
-        preorder(root, 0)
-        
-        return max(level_count.values(), default=0)
+        return max(level_count.values())
