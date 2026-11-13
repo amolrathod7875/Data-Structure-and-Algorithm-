@@ -1,9 +1,10 @@
-from BinaryTree.GFG_Maximum_Width_of_Tree.code import Solution, Node
+from BinaryTree.GFG_Maximum_Width_of_Tree.code import Solution
 
 
 def build_tree(values):
     if not values:
         return None
+    from BinaryTree.GFG_Maximum_Width_of_Tree.code import Node
     root = Node(values[0])
     from collections import deque
     q = deque([root])
