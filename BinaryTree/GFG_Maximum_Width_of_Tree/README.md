@@ -2,15 +2,15 @@
 
 ## Problem
 
-Return the maximum width (nodes count) at any level.
+Return maximum width (nodes) at any tree level.
 
 ## Approach
 
-Preorder traversal counting nodes per level.
+Preorder traversal, count nodes per level, return max.
 
 ## Complexity
 
-O(n) time, O(h) space (recursion depth).
+O(n) time, O(h) space.
 
 ## Run Tests
 

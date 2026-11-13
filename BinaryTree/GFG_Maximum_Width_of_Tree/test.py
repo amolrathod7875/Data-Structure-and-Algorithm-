@@ -4,7 +4,13 @@ from BinaryTree.GFG_Maximum_Width_of_Tree.code import Solution
 def build_tree(values):
     if not values:
         return None
-    from BinaryTree.GFG_Maximum_Width_of_Tree.code import Node
+    
+    class Node:
+        def __init__(self, val):
+            self.data = val
+            self.left = None
+            self.right = None
+    
     root = Node(values[0])
     from collections import deque
     q = deque([root])
