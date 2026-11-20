@@ -1,5 +1,4 @@
 # Data-Structure-and-Algorithm-
-
 A curated collection of Data Structure and Algorithm solutions implemented in Python.
 Problems are sourced from [LeetCode (LC)](https://leetcode.com/) and [GeeksforGeeks (GFG)](https://www.geeksforgeeks.org/),
 along with handwritten **Basics** implementations of core data structures.
@@ -22,6 +21,7 @@ problem (or a self-contained data-structure implementation):
 | Category | Description |
 | --- | --- |
 | `Array` | Array manipulation problems |
+| `BinaryTree` | Binary tree problems & basics |
 | `Doubly_Linked_List` | Doubly linked list design & basics |
 | `Hash_Map` | Hash map / hashing problems |
 | `Heaps` | Heap (min/max) problems & basics |
@@ -31,7 +31,6 @@ problem (or a self-contained data-structure implementation):
 | `Singly_LInked_List` | Singly linked list problems |
 | `Sorting` | Sorting-related problems |
 | `Stack` | Stack, expression evaluation & design problems |
-| `BinaryTree` | Binary tree problems & basics |
 
 ## How to Run
 
@@ -66,48 +65,93 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 | Folder | Source | Problem |
 | --- | --- | --- |
-| `GFG_Kth_Largest_element` | GFG | Kth Largest Element |
-| `GFG_Replace_0s_With_5` | GFG | Replace All 0's With 5 |
-| `LC_189` | LC | Rotate Array (3 reversals / slicing) |
-| `LC_215` | LC | Kth Largest Element in an Array |
-| `LC_1929` | LC | Concatenation of Array |
-| `LC_1877` | LC | Minimize Maximum Pair Sum in Array |
-| `LC_3701` | LC | Alternating Sum of Array |
-| `LC_2460` | LC | Apply Operations to an Array |
-| `LC_283` | LC | Move Zeroes |
-| `GFG_Move_All_Zeroes_to_End` | GFG | Move All Zeroes to End |
-| `LC_3925` | LC | Concatenate (Reversed) Array |
-| `LC_3194` | LC | Minimum Average of Smallest and Largest Elements |
-| `GFG_Array_Of_Pairs` | GFG | Array of Pairs |
-| `GFG_Check_Identical_Arrays` | GFG | Check Identical Arrays |
-| `GFG_End_Insert` | GFG | Insert at End of Array |
-| `GFG_Elements_Less_Than_K` | GFG | Elements Less Than K |
-| `GFG_Get_Smaller` | GFG | Get Smaller in Array |
-| `GFG_Reverse_Array` | GFG | Reverse Array |
-| `GFG_Rotate_Array_By_One` | GFG | Rotate Array by One |
-| `GFG_Second_Largest` | GFG | Second Largest |
-| `GFG_Smallest_in_Array` | GFG | Smallest in Array |
-| `GFG_Sum_of_Array` | GFG | Sum of Array |
-| `GFG_K_Largest_Elements_in_Array` | GFG | K Largest Elements in an Array |
+| `Alternates_in_Array` | — | Alternates in Array |
+| `Array_Traversal` | — | Array Traversal |
 | `GFG_Alternates_in_Array` | GFG | Alternates in Array |
+| `GFG_Array_Of_Pairs` | GFG | Array of Pairs |
 | `GFG_Array_Traversal` | GFG | Array Traversal |
 | `GFG_Ceil_in_Sorted_Array` | GFG | Ceil in Sorted Array |
-| `GFG_Count_Occurrences_in_Sorted` | GFG | Count Occurrences in Sorted Array |
+| `GFG_Check_Identical_Arrays` | GFG | Check Identical Arrays |
+| `GFG_Count_Occurrences_in_Sorted` | GFG | Count Occurrences in Sorted |
+| `GFG_Elements_Less_Than_K` | GFG | Elements Less Than K |
+| `GFG_End_Insert` | GFG | Insert at End of Array |
+| `GFG_Get_Smaller` | GFG | Get Smaller in Array |
 | `GFG_Insert_Interval` | GFG | Insert Interval |
+| `GFG_K_Largest_Elements_in_Array` | GFG | K Largest Elements in an Array |
 | `GFG_Kadanes_Algorithm` | GFG | Kadane's Algorithm |
+| `GFG_Kth_Largest_element` | GFG | Kth Largest Element |
+| `GFG_Majority_Element_More_Than_n_3` | GFG | Majority Element - More Than n/3 |
 | `GFG_Merge_Without_Extra_Space` | GFG | Merge Without Extra Space |
 | `GFG_Minimize_the_Heights` | GFG | Minimize the Heights |
+| `GFG_Move_All_Zeroes_to_End` | GFG | Move All Zeroes to End |
 | `GFG_Next_Permutation` | GFG | Next Permutation |
 | `GFG_Non_Overlapping_Intervals` | GFG | Non-Overlapping Intervals |
 | `GFG_Overlapping_Intervals` | GFG | Overlapping Intervals |
+| `GFG_Replace_0s_With_5` | GFG | Replace All 0's With 5 |
+| `GFG_Reverse_Array` | GFG | Reverse Array |
+| `GFG_Rotate_Array_By_One` | GFG | Rotate Array by One |
+| `GFG_Second_Largest` | GFG | Second Largest |
 | `GFG_Smallest_Positive_Missing` | GFG | Smallest Positive Missing |
+| `GFG_Smallest_in_Array` | GFG | Smallest in Array |
 | `GFG_Stock_Buy_and_Sell_Max_One_Transaction` | GFG | Stock Buy and Sell - Max One Transaction |
 | `GFG_Stock_Buy_and_Sell_Multiple_Transaction` | GFG | Stock Buy and Sell - Multiple Transactions |
-| `LC_56` | LC | Merge Intervals |
+| `GFG_Sum_of_Array` | GFG | Sum of Array |
 | `LC_1011` | LC | Capacity To Ship Packages Within D Days |
 | `LC_1288` | LC | Remove Covered Intervals |
 | `LC_1470` | LC | Shuffle the Array |
 | `LC_1480` | LC | Running Sum of 1d Array |
+| `LC_1877` | LC | Minimize Maximum Pair Sum in Array |
+| `LC_189` | LC | Rotate Array |
+| `LC_1929` | LC | Concatenation of Array |
+| `LC_215` | LC | Kth Largest Element in an Array |
+| `LC_229` | LC | Majority Element II |
+| `LC_2460` | LC | Apply Operations to an Array |
+| `LC_283` | LC | Move Zeroes |
+| `LC_3194` | LC | Minimum Average of Smallest and Largest Elements |
+| `LC_3701` | LC | Alternating Sum of Array |
+| `LC_3925` | LC | Concatenate (Reversed) Array |
+| `LC_56` | LC | Merge Intervals |
+| `LC_81` | LC | Search in Rotated Sorted Array II |
+
+### BinaryTree
+
+| Folder | Source | Problem |
+| --- | --- | --- |
+| `GFG_Balanced_Tree_Check` | GFG | Balanced Tree Check |
+| `GFG_Construct_Tree_from_Inorder_and_Preorder` | GFG | Construct Tree from Inorder & Preorder |
+| `GFG_Diameter_of_Binary_Tree` | GFG | Diameter of Binary Tree |
+| `GFG_Height_of_Binary_Tree` | GFG | Height of Binary Tree |
+| `GFG_Identical_Trees` | GFG | Identical Trees |
+| `GFG_Iterative_Inorder` | GFG | Iterative Inorder Traversal |
+| `GFG_Iterative_Preorder` | GFG | Iterative Preorder Traversal |
+| `GFG_Left_View_of_Binary_Tree` | GFG | Left View of Binary Tree |
+| `GFG_Maximum_Path_Sum` | GFG | Maximum Path Sum |
+| `GFG_Maximum_Width_of_Tree` | GFG | Maximum Width of Binary Tree |
+| `GFG_Right_View_of_Binary_Tree` | GFG | Right View of Binary Tree |
+| `GFG_Root_to_Leaf_Path_Sum` | GFG | Root to Leaf Path Sum |
+| `GFG_Serialize_and_Deserialize_Binary_Tree` | GFG | Serialize and Deserialize a Binary Tree |
+| `GFG_Size_of_Binary_Tree` | GFG | Size of Binary Tree |
+| `GFG_Sum_Nodes_on_Longest_Path` | GFG | Sum Nodes on Longest Path |
+| `GFG_Sum_Tree` | GFG | Sum Tree |
+| `GFG_Tree_Boundary_Traversal` | GFG | Tree Boundary Traversal |
+| `GFG_Two_Mirror_Trees` | GFG | Two Mirror Trees |
+| `LC_100` | LC | Same Tree |
+| `LC_101` | LC | Symmetric Tree |
+| `LC_104` | LC | Maximum Depth of Binary Tree |
+| `LC_105` | LC | Construct Binary Tree from Preorder and Inorder Traversal |
+| `LC_106` | LC | Construct Binary Tree from Inorder and Postorder Traversal |
+| `LC_112` | LC | Path Sum |
+| `LC_113` | LC | Path Sum II |
+| `LC_124` | LC | Binary Tree Maximum Path Sum |
+| `LC_222` | LC | Count Complete Tree Nodes |
+| `LC_2265` | LC | Count Nodes Equal to Average of Subtree |
+| `LC_257` | LC | Binary Tree Paths |
+| `LC_297` | LC | Serialize and Deserialize Binary Tree |
+| `LC_508` | LC | Most Frequent Subtree Sum |
+| `LC_515` | LC | Find Largest Value in Each Tree Row |
+| `LC_543` | LC | Diameter of Binary Tree |
+| `LC_637` | LC | Average of Levels in Binary Tree |
+| `LC_889` | LC | Construct Binary Tree from Preorder and Postorder Traversal |
 
 ### Doubly Linked List
 
@@ -124,9 +168,9 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_1832` | LC | Check if the Sentence Is Pangram |
 | `LC_217` | LC | Contains Duplicate |
 | `LC_219` | LC | Contains Duplicate II |
+| `LC_229` | LC | Majority Element II |
 | `LC_242` | LC | Valid Anagram |
 | `LC_2657` | LC | Find the Prefix Common Array of Two Arrays |
-| `LC_229` | LC | Majority Element II |
 | `LC_349` | LC | Intersection of Two Arrays |
 | `LC_350` | LC | Intersection of Two Arrays II |
 | `LC_3731` | LC | Find Missing Elements in Range |
@@ -142,9 +186,9 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `GFG_KLargest` | GFG | K Largest Elements |
 | `GFG_Min_Cost_to_Connect_Ropes` | GFG | Min Cost to Connect Ropes |
 | `GFG_Nearly_Sorted` | GFG | Sort a Nearly Sorted (K-Sorted) Array |
+| `LC_1046` | LC | Last Stone Weight |
 | `LC_215` | LC | Kth Largest Element in an Array |
 | `LC_347` | LC | Top K Frequent Elements |
-| `LC_1046` | LC | Last Stone Weight |
 | `LC_378` | LC | Kth Smallest Element in a Sorted Matrix |
 
 ### Math
@@ -152,8 +196,8 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | Folder | Source | Problem |
 | --- | --- | --- |
 | `LC_268` | LC | Missing Number |
-| `LC_69` | LC | Sqrt(x) |
 | `LC_4010` | LC | Maximum Pair Strength (gcd-based) |
+| `LC_69` | LC | Sqrt(x) |
 
 ### Queue
 
@@ -175,9 +219,9 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `GFG_Peak_in_Array` | GFG | Peak in Array |
 | `GFG_Search_in_Rotated_Sorted_Array` | GFG | Search in Rotated Sorted Array |
 | `GFG_Sorted_and_Rotated_Minimum` | GFG | Sorted and Rotated Minimum |
+| `LC_153` | LC | Find Minimum in Rotated Sorted Array |
 | `LC_33` | LC | Search in Rotated Sorted Array |
 | `LC_81` | LC | Search in Rotated Sorted Array II |
-| `LC_153` | LC | Find Minimum in Rotated Sorted Array |
 
 ### Singly Linked List
 
@@ -189,9 +233,9 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 | Folder | Source | Problem |
 | --- | --- | --- |
+| `GFG_Sort_0s_1s_2s` | GFG | Sort 0s 1s 2s |
 | `LC_1913` | LC | Maximum Product Difference Between Two Pairs |
 | `LC_2037` | LC | Minimum Number of Moves to Seat Everyone |
-| `GFG_Sort_0s_1s_2s` | GFG | Sort 0s 1s 2s |
 | `LC_75` | LC | Sort Colors |
 | `LC_910` | LC | Smallest Range II |
 
@@ -210,18 +254,9 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_227` | LC | Basic Calculator II |
 | `LC_496` | LC | Next Greater Element I |
 
-### BinaryTree
-
-| Folder | Source | Problem |
-| --- | --- | --- |
-| `GFG_Size_of_Binary_Tree` | GFG | Size of Binary Tree |
-| `LC_104` | LC | Maximum Depth of Binary Tree |
-| `LC_222` | LC | Count Complete Tree Nodes |
-| `GFG_Height_of_Binary_Tree` | GFG | Height of Binary Tree |
-
 ## Stats
 
-- **11** categories · **97** problems/data-structure implementations
+- **11** categories · **138** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
