@@ -141,6 +141,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_104` | LC | Maximum Depth of Binary Tree |
 | `LC_105` | LC | Construct Binary Tree from Preorder and Inorder Traversal |
 | `LC_106` | LC | Construct Binary Tree from Inorder and Postorder Traversal |
+| `LC_110` | LC | Balanced Binary Tree |
 | `LC_111` | LC | Minimum Depth of Binary Tree |
 | `LC_112` | LC | Path Sum |
 | `LC_113` | LC | Path Sum II |
