@@ -124,6 +124,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `GFG_Identical_Trees` | GFG | Identical Trees |
 | `GFG_Iterative_Inorder` | GFG | Iterative Inorder Traversal |
 | `GFG_Iterative_Preorder` | GFG | Iterative Preorder Traversal |
+| `GFG_Leaves_at_Same_Level` | GFG | Leaves at Same Level or Not |
 | `GFG_Left_View_of_Binary_Tree` | GFG | Left View of Binary Tree |
 | `GFG_Maximum_Path_Sum` | GFG | Maximum Path Sum |
 | `GFG_Maximum_Width_of_Tree` | GFG | Maximum Width of Binary Tree |
