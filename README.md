@@ -154,6 +154,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_515` | LC | Find Largest Value in Each Tree Row |
 | `LC_543` | LC | Diameter of Binary Tree |
 | `LC_637` | LC | Average of Levels in Binary Tree |
+| `LC_872` | LC | Leaf-Similar Trees |
 | `LC_889` | LC | Construct Binary Tree from Preorder and Postorder Traversal |
 
 ### Doubly Linked List
