@@ -128,6 +128,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `GFG_Left_View_of_Binary_Tree` | GFG | Left View of Binary Tree |
 | `GFG_Maximum_Path_Sum` | GFG | Maximum Path Sum |
 | `GFG_Maximum_Width_of_Tree` | GFG | Maximum Width of Binary Tree |
+| `GFG_Nodes_Without_Sibling` | GFG | Nodes Without Sibling |
 | `GFG_Right_View_of_Binary_Tree` | GFG | Right View of Binary Tree |
 | `GFG_Root_to_Leaf_Path_Sum` | GFG | Root to Leaf Path Sum |
 | `GFG_Serialize_and_Deserialize_Binary_Tree` | GFG | Serialize and Deserialize a Binary Tree |
