@@ -157,6 +157,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_637` | LC | Average of Levels in Binary Tree |
 | `LC_872` | LC | Leaf-Similar Trees |
 | `LC_889` | LC | Construct Binary Tree from Preorder and Postorder Traversal |
+| `LC_993` | LC | Cousins in Binary Tree |
 
 ### Doubly Linked List
 
