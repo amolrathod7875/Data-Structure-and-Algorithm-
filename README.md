@@ -31,6 +31,7 @@ problem (or a self-contained data-structure implementation):
 | `Singly_LInked_List` | Singly linked list problems |
 | `Sorting` | Sorting-related problems |
 | `Stack` | Stack, expression evaluation & design problems |
+| `String` | String validation and manipulation problems |
 
 ## How to Run
 
@@ -122,6 +123,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `GFG_Diameter_of_Binary_Tree` | GFG | Diameter of Binary Tree |
 | `GFG_Height_of_Binary_Tree` | GFG | Height of Binary Tree |
 | `GFG_Identical_Trees` | GFG | Identical Trees |
+| `GFG_Invert_Tree` | GFG | Invert Tree (Convert to Mirror Tree) |
 | `GFG_Iterative_Inorder` | GFG | Iterative Inorder Traversal |
 | `GFG_Iterative_Preorder` | GFG | Iterative Preorder Traversal |
 | `GFG_Leaves_at_Same_Level` | GFG | Leaves at Same Level or Not |
@@ -260,9 +262,15 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_227` | LC | Basic Calculator II |
 | `LC_496` | LC | Next Greater Element I |
 
+### String
+
+| Folder | Source | Problem |
+| --- | --- | --- |
+| `LC_2124` | LC | Check if All A's Appears Before All B's |
+
 ## Stats
 
-- **11** categories · **138** problems/data-structure implementations
+- **12** categories · **141** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
