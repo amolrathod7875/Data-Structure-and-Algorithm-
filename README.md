@@ -99,6 +99,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `GFG_Sum_of_Array` | GFG | Sum of Array |
 | `LC_1011` | LC | Capacity To Ship Packages Within D Days |
 | `LC_1288` | LC | Remove Covered Intervals |
+| `LC_1352` | LC | Product of the Last K Numbers |
 | `LC_1470` | LC | Shuffle the Array |
 | `LC_1480` | LC | Running Sum of 1d Array |
 | `LC_1877` | LC | Minimize Maximum Pair Sum in Array |
@@ -150,6 +151,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_113` | LC | Path Sum II |
 | `LC_124` | LC | Binary Tree Maximum Path Sum |
 | `LC_222` | LC | Count Complete Tree Nodes |
+| `LC_226` | LC | Invert Binary Tree |
 | `LC_2265` | LC | Count Nodes Equal to Average of Subtree |
 | `LC_257` | LC | Binary Tree Paths |
 | `LC_297` | LC | Serialize and Deserialize Binary Tree |
@@ -270,7 +272,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 ## Stats
 
-- **12** categories · **141** problems/data-structure implementations
+- **12** categories · **143** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
