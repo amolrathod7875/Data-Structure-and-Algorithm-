@@ -110,6 +110,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_2460` | LC | Apply Operations to an Array |
 | `LC_283` | LC | Move Zeroes |
 | `LC_3194` | LC | Minimum Average of Smallest and Largest Elements |
+| `LC_3411` | LC | Maximum Subarray With Equal Products |
 | `LC_3701` | LC | Alternating Sum of Array |
 | `LC_3925` | LC | Concatenate (Reversed) Array |
 | `LC_56` | LC | Merge Intervals |
@@ -268,11 +269,12 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 | Folder | Source | Problem |
 | --- | --- | --- |
+| `LC_1071` | LC | Greatest Common Divisor of Strings |
 | `LC_2124` | LC | Check if All A's Appears Before All B's |
 
 ## Stats
 
-- **12** categories · **143** problems/data-structure implementations
+- **12** categories · **145** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
