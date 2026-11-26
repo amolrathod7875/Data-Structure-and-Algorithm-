@@ -206,7 +206,9 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 | Folder | Source | Problem |
 | --- | --- | --- |
+| `LC_1510` | LC | Stone Game IV |
 | `LC_268` | LC | Missing Number |
+| `LC_3360` | LC | Stone Removal Game |
 | `LC_4010` | LC | Maximum Pair Strength (gcd-based) |
 | `LC_69` | LC | Sqrt(x) |
 
@@ -274,7 +276,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 ## Stats
 
-- **12** categories · **145** problems/data-structure implementations
+- **12** categories · **147** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
