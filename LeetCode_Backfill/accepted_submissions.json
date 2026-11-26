@@ -1,7 +1,7 @@
 {
   "audit_date": "2026-11-26",
   "account": "AmolRathod78",
-  "status": "in_progress",
+  "status": "complete",
   "solved_count": 245,
   "practice_history_count": 247,
   "already_represented": 78,
@@ -1331,12 +1331,238 @@
   ],
   "submissions": [
     {
+      "id": 1,
+      "title": "Two Sum",
+      "problem_url": "/problems/two-sum/",
+      "url": "https://leetcode.com/problems/two-sum/submissions/1844240952/",
+      "language": "Python3",
+      "code": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        num_avail = {}\n        for i in range(len(nums)):\n            val = target - nums[i]\n            if val in num_avail:\n                return [i,num_avail[val]]\n            else:\n                num_avail[nums[i]] = i\n        return []\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2,
+      "title": "Add Two Numbers",
+      "problem_url": "/problems/add-two-numbers/",
+      "url": "https://leetcode.com/problems/add-two-numbers/submissions/2077844133/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:\n        dummy = ListNode(0)\n        curr = dummy\n        carry = 0\n\n        while l1 or l2 or carry :\n            x = l1.val if l1 else 0\n            y = l2.val if l2 else 0\n            total = x + y + carry \n            carry = total // 10\n            curr.next = ListNode(total % 10)\n            curr = curr.next \n            if l1 :\n                l1 = l1.next\n            if l2:\n                l2 = l2.next\n        return dummy.next",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3,
+      "title": "Longest Substring Without Repeating Characters",
+      "problem_url": "/problems/longest-substring-without-repeating-characters/",
+      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/2002909004/",
+      "language": "Python3",
+      "code": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n            max_length = 0\n            start = 0\n            seen = {}\n            for i in range(len(s)):\n                char = s[i]\n                if char in seen:\n                    start = max(start,seen[char] + 1)\n                max_length = max(max_length, i - start + 1)\n                seen[char] = i\n\n            return max_length\n            \n\n\n",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 9,
+      "title": "Palindrome Number",
+      "problem_url": "/problems/palindrome-number/",
+      "url": "https://leetcode.com/problems/palindrome-number/submissions/2066341532/",
+      "language": "Python3",
+      "code": "class Solution:\n    def isPalindrome(self, x: int) -> bool:\n        return str(x) == str(x)[::-1]",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 11,
+      "title": "Container With Most Water",
+      "problem_url": "/problems/container-with-most-water/",
+      "url": "https://leetcode.com/problems/container-with-most-water/submissions/1476544815/",
+      "language": "C++",
+      "code": "class Solution {\npublic:\n    int maxArea(vector<int>& height) {\n        int left_limit = 0;\n        int right_limit = height.size() -1;\n        int max_water = 0;\n        while(left_limit < right_limit)\n        {\n            int width = right_limit - left_limit;\n            int limiting_height = min(height[right_limit],height[left_limit]);\n            int current_water = width * limiting_height;\n            max_water = max(current_water,max_water);\n            height[left_limit] < height[right_limit] ? left_limit++ : right_limit--;\n\n            \n        }\n        return max_water;\n    }\n};",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 13,
+      "title": "Roman to Integer",
+      "problem_url": "/problems/roman-to-integer/",
+      "url": "https://leetcode.com/problems/roman-to-integer/submissions/2074769789/",
+      "language": "Python3",
+      "code": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        # 1. Map each Roman numeral to its integer value\n        roman_map = {\n            'I': 1,\n            'V': 5,\n            'X': 10,\n            'L': 50,\n            'C': 100,\n            'D': 500,\n            'M': 1000\n        }\n        \n        total = 0\n        \n        # 2. Iterate through the string\n        for i in range(len(s)):\n            # If the current numeral is less than the NEXT numeral, subtract it\n            if i + 1 < len(s) and roman_map[s[i]] < roman_map[s[i + 1]]:\n                total -= roman_map[s[i]]\n            # Otherwise, just add it to the total\n            else:\n                total += roman_map[s[i]]\n                \n        return total\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 15,
+      "title": "3Sum",
+      "problem_url": "/problems/3sum/",
+      "url": "https://leetcode.com/problems/3sum/submissions/1852980816/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def threeSum(self, nums):\n        nums.sort()\n        res = []\n        for i in range(len(nums)):\n            if i == 0 or nums[i-1] != nums[i]:\n                left = i+1\n                right = len(nums) - 1\n                while left < right:\n                    sumThree = nums[i] + nums[left] + nums[right]\n                    if sumThree == 0:\n                        res.append([nums[i],nums[left],nums[right]])\n                        left += 1\n                        while left<right and nums[left] == nums[left-1]:\n                            left += 1\n                    elif sumThree < 0:\n                        left += 1\n                    else:\n                        right -= 1\n        return res",
+      "verdict": "Accepted"
+    },
+    {
       "id": 16,
       "title": "3Sum Closest",
       "problem_url": "/problems/3sum-closest/",
       "url": "https://leetcode.com/problems/3sum-closest/submissions/2051184880/",
       "language": "Python3",
-      "code": "class Solution:\n    def threeSumClosest(self, nums: List[int], target: int) -> int:\n        closest = float('inf')\n        nums.sort() #O(N*LogN)\n        n = len(nums)\n        for i in range(n-2): #O(N)\n            left, right = i + 1, n - 1 \n            while left < right : #O(N^2)\n                total = nums[i] + nums[left] + nums[right]\n                if abs(total - target ) < abs(closest - target):\n                    closest = total\n                \n                if total < target:\n                    left += 1\n                elif total > target:\n                    right -= 1 \n                else:\n                    return target\n\n        return closest\n\n\n\n\n        "
+      "code": "class Solution:\n    def threeSumClosest(self, nums: List[int], target: int) -> int:\n        closest = float('inf')\n        nums.sort() #O(N*LogN)\n        n = len(nums)\n        for i in range(n-2): #O(N)\n            left, right = i + 1, n - 1 \n            while left < right : #O(N^2)\n                total = nums[i] + nums[left] + nums[right]\n                if abs(total - target ) < abs(closest - target):\n                    closest = total\n                \n                if total < target:\n                    left += 1\n                elif total > target:\n                    right -= 1 \n                else:\n                    return target\n\n        return closest\n\n\n\n\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 19,
+      "title": "Remove Nth Node From End of List",
+      "problem_url": "/problems/remove-nth-node-from-end-of-list/",
+      "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/2069759789/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:\n        length = 0\n        curr = head\n        while curr:\n            length += 1\n            curr = curr.next\n\n        if length == n :\n            return head.next\n        \n        step_take_in = length - n - 1\n        curr = head \n        \n        for _ in range(step_take_in):\n            curr = curr.next\n        \n        curr.next = curr.next.next\n\n        return head \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 21,
+      "title": "Merge Two Sorted Lists",
+      "problem_url": "/problems/merge-two-sorted-lists/",
+      "url": "https://leetcode.com/problems/merge-two-sorted-lists/submissions/2069814785/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:\n        dummy = ListNode()\n        current = dummy\n        while list1 and list2:\n            if list1.val < list2.val:\n                current.next = list1\n                list1 = list1.next\n            else:\n                current.next = list2\n                list2 = list2.next\n            current = current.next\n                \n        if list1: \n            current.next = list1\n        elif list2 :\n            current.next = list2\n\n        return dummy.next\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 24,
+      "title": "Swap Nodes in Pairs",
+      "problem_url": "/problems/swap-nodes-in-pairs/",
+      "url": "https://leetcode.com/problems/swap-nodes-in-pairs/submissions/2077865719/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        dummy = ListNode(0)\n        dummy.next = head\n        prev = dummy \n        while prev.next and prev.next.next:\n            first = prev.next\n            second = prev.next.next\n\n            first.next = second.next\n            second.next = first\n            prev.next = second\n            prev = first\n        return dummy.next",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 26,
+      "title": "Remove Duplicates from Sorted Array",
+      "problem_url": "/problems/remove-duplicates-from-sorted-array/",
+      "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/1475358513/",
+      "language": "C++",
+      "code": "class Solution {\npublic:\n    int removeDuplicates(vector<int>& nums) {\n        int k = 1;\n        for(int i =1;i<nums.size();i++)\n        {\n            if(nums[i] != nums[i-1])\n            {\n                nums[k] = nums[i];\n                k++;\n            }\n        }\n        return k;\n        \n    }\n};",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 27,
+      "title": "Remove Element",
+      "problem_url": "/problems/remove-element/",
+      "url": "https://leetcode.com/problems/remove-element/submissions/1475377542/",
+      "language": "C++",
+      "code": "class Solution {\npublic:\n    int removeElement(vector<int>& nums, int val) {\n        int j = 0;\n        for(int i =0;i<nums.size();i++)\n        {\n            if(nums[i] != val)\n            {\n                nums[j] = nums[i];\n                j++;\n            }\n        }\n        return j;\n    }\n};",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 31,
+      "title": "Next Permutation",
+      "problem_url": "/problems/next-permutation/",
+      "url": "https://leetcode.com/problems/next-permutation/submissions/2185926300/",
+      "language": "Python3",
+      "code": "class Solution:\n    def nextPermutation(self, nums: list[int]) -> None:\n        n = len(nums)\n        i = n - 2 \n        while i >= 0 and nums[i] >= nums[i + 1 ]:\n            i -= 1 \n        \n        if i >= 0 :\n            j = n - 1 \n            while nums[j] <= nums[i]:\n                j -= 1 \n            nums[i], nums[j] = nums[j], nums[i] \n        left, right = i + 1 , n - 1 \n        while left < right :\n            nums[left], nums[right] = nums[right], nums[left]\n            left += 1 \n            right -= 1 ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 34,
+      "title": "Find First and Last Position of Element in Sorted Array",
+      "problem_url": "/problems/find-first-and-last-position-of-element-in-sorted-array/",
+      "url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/submissions/2024470475/",
+      "language": "Python3",
+      "code": "from typing import List\n\nclass Solution:\n    def searchRange(self, nums: List[int], target: int) -> List[int]:\n        def find_bound(is_first: bool) -> int:\n            left, right = 0, len(nums) - 1\n            bound_index = -1\n            \n            while left <= right:\n                mid = (left + right) // 2\n                \n                if target > nums[mid]:\n                    left = mid + 1\n                elif target < nums[mid]:\n                    right = mid - 1\n                else:\n                    # Target found, record the index\n                    bound_index = mid\n                    # If looking for the first occurrence, keep searching left\n                    if is_first:\n                        right = mid - 1\n                    # If looking for the last occurrence, keep searching right\n                    else:\n                        left = mid + 1\n                        \n            return bound_index\n\n        # Find the first occurrence (left extreme)\n        left_extreme = find_bound(True)\n        \n        # Minor optimization: If the target isn't in the array at all, return early\n        if left_extreme == -1:\n            return [-1, -1]\n        \n        # Find the last occurrence (right extreme)\n        right_extreme = find_bound(False)\n        \n        return [left_extreme, right_extreme]",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 35,
+      "title": "Search Insert Position",
+      "problem_url": "/problems/search-insert-position/",
+      "url": "https://leetcode.com/problems/search-insert-position/submissions/1475393088/",
+      "language": "C++",
+      "code": "class Solution {\npublic:\n    int searchInsert(vector<int>& nums, int target) {\n        int left = 0;\n        int right = nums.size() - 1;\n        while (left<=right)\n        {\n            int mid = left + (right - left) / 2;\n            if(nums[mid] == target )\n            {\n                return mid;\n            }\n            else if (nums[mid]>target)\n            {\n                right = mid - 1;\n            }\n            else\n            {\n                left = mid + 1;\n            }\n        }\n        return left;\n        \n    }\n};",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 41,
+      "title": "First Missing Positive",
+      "problem_url": "/problems/first-missing-positive/",
+      "url": "https://leetcode.com/problems/first-missing-positive/submissions/2188443090/",
+      "language": "Python3",
+      "code": "class Solution:\n    def firstMissingPositive(self, nums: List[int]) -> int:\n        audit = set(nums)\n        missing = 1\n\n        while missing in audit:\n            missing += 1\n\n        return missing\n",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 49,
+      "title": "Group Anagrams",
+      "problem_url": "/problems/group-anagrams/",
+      "url": "https://leetcode.com/problems/group-anagrams/submissions/2004219360/",
+      "language": "Python3",
+      "code": "class Solution:\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        if len(strs) == 0:\n            return []\n        sorted_string = [''.join(sorted(i)) for i in strs]\n        hash = {}\n        for i in range(len(strs)):\n            if sorted_string[i] in hash:\n                hash[sorted_string[i]].append(strs[i])\n            else:\n                hash[sorted_string[i]] = [strs[i]]\n\n        return list(hash.values())",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 53,
+      "title": "Maximum Subarray",
+      "problem_url": "/problems/maximum-subarray/",
+      "url": "https://leetcode.com/problems/maximum-subarray/submissions/2187589591/",
+      "language": "Python3",
+      "code": "class Solution:\n    def maxSubArray(self, nums: list[int]) -> int:\n        res = nums[0] \n        maxEnding = nums[0]\n        for i in range(1, len(nums)):\n            maxEnding = max(maxEnding + nums[i], nums[i])\n            res = max(res, maxEnding)\n        return res\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 55,
+      "title": "Jump Game",
+      "problem_url": "/problems/jump-game/",
+      "url": "https://leetcode.com/problems/jump-game/submissions/1831849585/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def canJump(self, nums):\n        n = len(nums)\n        if n <= 1:\n            return True\n        max_reach = 0\n        for i in range(n-1):\n            if i > max_reach:\n                return False\n            \n            max_reach = max(max_reach,i+nums[i])\n            if max_reach >= n - 1:\n                return True \n        return False\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 57,
+      "title": "Insert Interval",
+      "problem_url": "/problems/insert-interval/",
+      "url": "https://leetcode.com/problems/insert-interval/submissions/2035253677/",
+      "language": "Python3",
+      "code": "class Solution:\n    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:\n        i = 0\n        n = len(intervals)\n        result = []\n        \n        while i < n and intervals[i][1] < newInterval[0]:\n            result.append(intervals[i])\n            i += 1\n        \n        while i < n and intervals[i][0] <= newInterval[1]:\n            newInterval[0] = min(newInterval[0],intervals[i][0])\n            newInterval[1] = max(newInterval[1],intervals[i][1])\n            i += 1\n        result.append(newInterval)\n\n        while i < n :\n            result.append(intervals[i])\n            i += 1\n        \n        return result \n\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 66,
+      "title": "Plus One",
+      "problem_url": "/problems/plus-one/",
+      "url": "https://leetcode.com/problems/plus-one/submissions/2077328196/",
+      "language": "Python3",
+      "code": "class Solution:\n    def plusOne(self, digits: list[int]) -> list[int]:\n        n = len(digits)\n        \n        # Traverse the array from right to left\n        for i in range(n - 1, -1, -1):\n            if digits[i] < 9:\n                digits[i] += 1\n                return digits # No carry needed, we are done\n            \n            # If the digit is 9, it becomes 0. The loop continues to carry the 1.\n            digits[i] = 0\n            \n        # If the loop finishes without returning, it means all digits were 9 (e.g., [9, 9, 9])\n        # We need an extra digit at the front (e.g., [1, 0, 0, 0])\n        return [1] + digits\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 70,
+      "title": "Climbing Stairs",
+      "problem_url": "/problems/climbing-stairs/",
+      "url": "https://leetcode.com/problems/climbing-stairs/submissions/1786240234/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def climbStairs(self, n):\n        if (n==1):\n            return 1 #if there is one single step then we can climb by one single way \n\n        a = 1\n        b = 2 \n        for i in range(3,n+1):\n            curr_step = a + b \n            #current step = a(1) + b(2)\n            a = b\n            #simple swapping\n            b = curr_step\n\n        return b\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 74,
+      "title": "Search a 2D Matrix",
+      "problem_url": "/problems/search-a-2d-matrix/",
+      "url": "https://leetcode.com/problems/search-a-2d-matrix/submissions/2025565867/",
+      "language": "Python3",
+      "code": "class Solution:\n    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:\n        top = 0\n        bottom = len(matrix) - 1\n        while top <= bottom :\n            mid = (top + bottom ) // 2\n            if matrix[mid][0] < target and matrix[mid][-1] > target :\n                break\n            elif matrix[mid][0] > target :\n                bottom = mid - 1 \n            else:\n                top = mid + 1 \n        row = (top + bottom ) // 2\n        left = 0\n        right = len(matrix[row]) - 1 \n        while left <= right :\n            mid = (left + right ) //2 \n            if matrix[row][mid] == target :\n                return True\n            elif matrix[row][mid] > target :\n                right = mid - 1\n            else :\n                left = mid + 1 \n        return False",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 82,
+      "title": "Remove Duplicates from Sorted List II",
+      "problem_url": "/problems/remove-duplicates-from-sorted-list-ii/",
+      "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/submissions/2083427062/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        dummy = ListNode(0)\n        dummy.next = head\n\n        prev = dummy \n        curr = head\n\n        while curr :\n            if curr.next and curr.val == curr.next.val :\n                while curr.next and curr.val == curr.next.val :\n                    curr = curr.next\n                prev.next = curr.next\n            else:\n                prev = prev.next\n            curr = curr.next\n        return dummy.next\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 83,
+      "title": "Remove Duplicates from Sorted List",
+      "problem_url": "/problems/remove-duplicates-from-sorted-list/",
+      "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/submissions/2083403824/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        curr = head\n        while curr and curr.next :\n            if curr.val == curr.next.val:\n                curr.next = curr.next.next\n            else:\n                curr = curr.next\n        return head\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 88,
@@ -1344,7 +1570,116 @@
       "problem_url": "/problems/merge-sorted-array/",
       "url": "https://leetcode.com/problems/merge-sorted-array/submissions/2049980383/",
       "language": "Python3",
-      "code": "class Solution:\n    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:\n        i = 0\n        j = 0\n        result = []\n        while i < m and j < n :\n            if nums1[i] <= nums2[j]:\n                result.append(nums1[i])\n                i += 1\n            else:\n                result.append(nums2[j])\n                j += 1\n        while i < m :\n            result.append(nums1[i])\n            i += 1\n        while j < n :\n            result.append(nums2[j])\n            j += 1\n        for k in range(len(result)):\n            nums1[k] = result[k]\n        "
+      "code": "class Solution:\n    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:\n        i = 0\n        j = 0\n        result = []\n        while i < m and j < n :\n            if nums1[i] <= nums2[j]:\n                result.append(nums1[i])\n                i += 1\n            else:\n                result.append(nums2[j])\n                j += 1\n        while i < m :\n            result.append(nums1[i])\n            i += 1\n        while j < n :\n            result.append(nums2[j])\n            j += 1\n        for k in range(len(result)):\n            nums1[k] = result[k]\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 94,
+      "title": "Binary Tree Inorder Traversal",
+      "problem_url": "/problems/binary-tree-inorder-traversal/",
+      "url": "https://leetcode.com/problems/binary-tree-inorder-traversal/submissions/2198478570/",
+      "language": "Python3",
+      "code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def inorderTraversal(self, root: TreeNode | None) -> list[int]:\n        ans = [] \n        stack = []\n        curr = root\n        while curr is not None or len(stack) > 0 :\n            while curr is not None :\n                stack.append(curr)\n                curr = curr.left\n            curr = stack.pop()\n            ans.append(curr.val)\n            curr = curr.right\n        return ans\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 121,
+      "title": "Best Time to Buy and Sell Stock",
+      "problem_url": "/problems/best-time-to-buy-and-sell-stock/",
+      "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/1848306922/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def maxProfit(self, prices):\n        j = 0\n        profit = 0\n        for i in range(1,len(prices)):\n            if prices[j] > prices[i]:\n                j = i\n            else:\n                profit = max(profit,prices[i] - prices[j])\n        return profit\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 122,
+      "title": "Best Time to Buy and Sell Stock II",
+      "problem_url": "/problems/best-time-to-buy-and-sell-stock-ii/",
+      "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/submissions/2186806109/",
+      "language": "Python3",
+      "code": "class Solution:\n    def maxProfit(self, prices: list[int]) -> int:\n        n = len(prices)\n        result = 0\n        i = 0\n\n        while i < n - 1:\n\n            while i < n - 1 and prices[i] >= prices[i + 1]:\n                i += 1\n            lmin = prices[i]\n\n            while i < n - 1 and prices[i] <= prices[i + 1]:\n                i += 1\n            lmax = prices[i]\n\n            result += (lmax - lmin)\n\n        return result",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 125,
+      "title": "Valid Palindrome",
+      "problem_url": "/problems/valid-palindrome/",
+      "url": "https://leetcode.com/problems/valid-palindrome/submissions/2002186224/",
+      "language": "Python3",
+      "code": "class Solution:\n    def isPalindrome(self, s: str) -> bool:\n        i = 0\n        j = len(s) - 1\n        while i < j :\n            if not s[i].isalnum():\n                i += 1\n            elif not s[j].isalnum():\n                j -= 1\n            else:\n                if s[i].lower() != s[j].lower():\n                    return False\n                i += 1\n                j -= 1\n        return True \n\n\n",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 134,
+      "title": "Gas Station",
+      "problem_url": "/problems/gas-station/",
+      "url": "https://leetcode.com/problems/gas-station/submissions/1835220211/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def canCompleteCircuit(self, gas, cost):\r\n        total_fuel = 0      \r\n        current_fuel = 0    # Fuel at current starting point\r\n        start = 0           # starting station\r\n        \r\n        for i in range(len(gas)):\r\n            total_fuel += gas[i] - cost[i]\r\n            current_fuel += gas[i] - cost[i]\r\n            \r\n            # If current candidate fails, next station is new candidate\r\n            if current_fuel < 0:\r\n                start = i + 1\r\n                current_fuel = 0\r\n        \r\n        # Only valid if total fuel isn't negative\r\n        return start if total_fuel >= 0 else -1\r\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 136,
+      "title": "Single Number",
+      "problem_url": "/problems/single-number/",
+      "url": "https://leetcode.com/problems/single-number/submissions/1474908365/",
+      "language": "C++",
+      "code": "class Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        int ans = 0;\n        for(int val : nums)\n        {\n            ans ^= val;\n        }\n        return ans;\n    }\n};",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 141,
+      "title": "Linked List Cycle",
+      "problem_url": "/problems/linked-list-cycle/",
+      "url": "https://leetcode.com/problems/linked-list-cycle/submissions/2069724179/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, x):\n#         self.val = x\n#         self.next = None\n\nclass Solution:\n    def hasCycle(self, head: Optional[ListNode]) -> bool:\n        slow = fast = head\n        while fast and fast.next :\n            slow = slow.next\n            fast = fast.next.next\n            if slow == fast :\n                return True\n        return False \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 142,
+      "title": "Linked List Cycle II",
+      "problem_url": "/problems/linked-list-cycle-ii/",
+      "url": "https://leetcode.com/problems/linked-list-cycle-ii/submissions/2075949628/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, x):\n#         self.val = x\n#         self.next = None\n\nclass Solution:\n    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        slow = fast = head\n        while fast and fast.next:\n            slow = slow.next\n            fast = fast.next.next\n\n            if slow == fast :\n                slow = head\n                while slow != fast:\n                    slow = slow.next\n                    fast = fast.next\n                return slow\n        return None",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 143,
+      "title": "Reorder List",
+      "problem_url": "/problems/reorder-list/",
+      "url": "https://leetcode.com/problems/reorder-list/submissions/2069789595/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def reorderList(self, head: Optional[ListNode]) -> None:\n        \"\"\"\n        Do not return anything, modify head in-place instead.\n        \"\"\"\n        \n        if not head or not head.next :\n            return \n        slow, fast = head, head.next\n        while fast and fast.next :\n            slow = slow.next\n            fast = fast.next.next\n        second = slow.next\n        slow.next = None\n        prev = None\n\n        while second :\n            temp = second.next\n            second.next = prev\n            prev = second\n            second = temp\n        first,second = head, prev\n        while second:\n            tmp1, tmp2 = first.next, second.next\n\n            first.next = second\n            second.next = tmp1 \n\n            first, second = tmp1, tmp2\n",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 144,
+      "title": "Binary Tree Preorder Traversal",
+      "problem_url": "/problems/binary-tree-preorder-traversal/",
+      "url": "https://leetcode.com/problems/binary-tree-preorder-traversal/submissions/2198491827/",
+      "language": "Python3",
+      "code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def preorderTraversal(self, root: TreeNode | None) -> list[int]:\n        ans = [] \n        right_ele = deque()\n        curr = root \n        while right_ele or curr is not None:\n            while curr is not None:\n                ans.append(curr.val)\n                if curr.right is not None:\n                    right_ele.append(curr.right)\n                curr = curr.left\n            if right_ele :\n                curr = right_ele.pop()\n        return ans",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 148,
+      "title": "Sort List",
+      "problem_url": "/problems/sort-list/",
+      "url": "https://leetcode.com/problems/sort-list/submissions/2073815100/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.ne\n\nclass Solution:\n    def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        if not head or not head.next:\n            return head\n\n        def split(head):\n            slow, fast = head, head.next\n            while fast and fast.next:\n                slow = slow.next\n                fast = fast.next.next\n            mid = slow.next\n            slow.next = None\n            return mid\n\n        def merge(l1, l2):\n            dummy = ListNode(0)\n            tail = dummy\n            while l1 and l2:\n                if l1.val < l2.val:\n                    tail.next = l1\n                    l1 = l1.next\n                else:\n                    tail.next = l2\n                    l2 = l2.next\n                tail = tail.next\n            tail.next = l1 or l2\n            return dummy.next\n\n        mid = split(head)\n        left = self.sortList(head)\n        right = self.sortList(mid)\n        return merge(left, right)",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 160,
+      "title": "Intersection of Two Linked Lists",
+      "problem_url": "/problems/intersection-of-two-linked-lists/",
+      "url": "https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/2075900346/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, x):\n#         self.val = x\n#         self.next = None\n\nclass Solution:\n    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:\n\n        if not headA or not headB:\n            return None \n\n        p1,p2 = headA, headB\n\n        while p1 is not p2:\n            if p1:\n                p1 = p1.next\n            else:\n                p1 = headB\n            \n            if p2:\n                p2 = p2.next\n            else:\n                p2 = headA\n        return p1\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 162,
@@ -1352,7 +1687,71 @@
       "problem_url": "/problems/find-peak-element/",
       "url": "https://leetcode.com/problems/find-peak-element/submissions/2037710809/",
       "language": "Python3",
-      "code": "class Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        low = 0\n        high = len(nums) - 1 \n        while low < high :\n            mid = (low + high) // 2\n            \n            if nums[mid] > nums[mid + 1]:\n                high = mid\n            else:\n                low = mid + 1\n        return low "
+      "code": "class Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        low = 0\n        high = len(nums) - 1 \n        while low < high :\n            mid = (low + high) // 2\n            \n            if nums[mid] > nums[mid + 1]:\n                high = mid\n            else:\n                low = mid + 1\n        return low ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 167,
+      "title": "Two Sum II - Input Array Is Sorted",
+      "problem_url": "/problems/two-sum-ii-input-array-is-sorted/",
+      "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/submissions/1848326835/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def twoSum(self, numbers, target):\n        left = 0\n        right = len(numbers) - 1\n        sum = 0\n        while right > left:\n            sum = numbers[left] + numbers[right]\n            if sum == target:\n                return [left+1,right+1]\n            elif sum < target:\n                left += 1\n            else:\n                right -= 1\n        return [0,0]\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 203,
+      "title": "Remove Linked List Elements",
+      "problem_url": "/problems/remove-linked-list-elements/",
+      "url": "https://leetcode.com/problems/remove-linked-list-elements/submissions/2075880412/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:\n        dummy = ListNode(next=head)\n        curr = dummy\n        while curr and curr.next :\n            if curr.next.val == val:\n                curr.next = curr.next.next\n            else:\n                curr = curr.next\n\n        return dummy.next\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 205,
+      "title": "Isomorphic Strings",
+      "problem_url": "/problems/isomorphic-strings/",
+      "url": "https://leetcode.com/problems/isomorphic-strings/submissions/1844941728/",
+      "language": "Python3",
+      "code": "class Solution:\n    def isIsomorphic(self, s: str, t: str) -> bool:\n        if len(s) != len(t):\n            return False\n        s_hash,t_hash = {},{}\n        for i in range(len(s)):\n            char_s = s[i]\n            char_t = t[i]\n            if char_s not in s_hash:\n                s_hash[char_s] = char_t\n            if char_t not in t_hash:\n                t_hash[char_t] = char_s\n            if s_hash[char_s] != char_t or t_hash[char_t] != char_s:\n                return False\n        return True\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 206,
+      "title": "Reverse Linked List",
+      "problem_url": "/problems/reverse-linked-list/",
+      "url": "https://leetcode.com/problems/reverse-linked-list/submissions/2075965250/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        prev = None \n        curr = head\n        while curr :\n            new_node = curr.next\n            curr.next = prev\n            prev = curr\n            curr = new_node\n        return prev\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 231,
+      "title": "Power of Two",
+      "problem_url": "/problems/power-of-two/",
+      "url": "https://leetcode.com/problems/power-of-two/submissions/1839416591/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def isPowerOfTwo(self, n):\r\n        if n <= 0:\r\n            return False\r\n        while n % 2 == 0:\r\n            n /= 2\r\n        return n == 1",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 234,
+      "title": "Palindrome Linked List",
+      "problem_url": "/problems/palindrome-linked-list/",
+      "url": "https://leetcode.com/problems/palindrome-linked-list/submissions/2069741936/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def isPalindrome(self, head: Optional[ListNode]) -> bool:\n        slow = fast = head\n        while fast and fast.next:\n            slow = slow.next\n            fast = fast.next.next\n\n        prev = None\n        curr = slow\n        while curr:\n            temp = curr.next\n            curr.next = prev\n            prev = curr \n            curr = temp \n        left = head\n        right = prev\n\n        while right :\n            if left.val != right.val:\n                return False\n            left = left.next\n            right = right.next\n        return True \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 237,
+      "title": "Delete Node in a Linked List",
+      "problem_url": "/problems/delete-node-in-a-linked-list/",
+      "url": "https://leetcode.com/problems/delete-node-in-a-linked-list/submissions/2070617197/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, x):\n#         self.val = x\n#         self.next = None\n\nclass Solution:\n    def deleteNode(self, node):\n        \"\"\"\n        :type node: ListNode\n        :rtype: void Do not return anything, modify node in-place instead.\n        \"\"\"\n        node.val, node.next = node.next.val, node.next.next\n",
+      "verdict": "Accepted"
     },
     {
       "id": 278,
@@ -1360,7 +1759,26 @@
       "problem_url": "/problems/first-bad-version/",
       "url": "https://leetcode.com/problems/first-bad-version/submissions/2057161581/",
       "language": "Python3",
-      "code": "# The isBadVersion API is already defined for you.\n# def isBadVersion(version: int) -> bool:\n\nclass Solution:\n    def firstBadVersion(self, n: int) -> int:\n        left = 1\n        right = n\n        \n        # Notice we use < instead of <= here\n        while left < right:\n            # (left + right) // 2 can cause integer overflow in languages like Java/C++, \n            # though Python handles arbitrarily large integers automatically. \n            # It's a good habit to write it this way:\n            mid = left + (right - left) // 2\n            \n            if isBadVersion(mid):\n                # The first bad version is at 'mid' or somewhere before it\n                right = mid\n            else:\n                # The first bad version is strictly after 'mid'\n                left = mid + 1\n                \n        # When left == right, we have found the boundary\n        return left\n        \n        "
+      "code": "# The isBadVersion API is already defined for you.\n# def isBadVersion(version: int) -> bool:\n\nclass Solution:\n    def firstBadVersion(self, n: int) -> int:\n        left = 1\n        right = n\n        \n        # Notice we use < instead of <= here\n        while left < right:\n            # (left + right) // 2 can cause integer overflow in languages like Java/C++, \n            # though Python handles arbitrarily large integers automatically. \n            # It's a good habit to write it this way:\n            mid = left + (right - left) // 2\n            \n            if isBadVersion(mid):\n                # The first bad version is at 'mid' or somewhere before it\n                right = mid\n            else:\n                # The first bad version is strictly after 'mid'\n                left = mid + 1\n                \n        # When left == right, we have found the boundary\n        return left\n        \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 326,
+      "title": "Power of Three",
+      "problem_url": "/problems/power-of-three/",
+      "url": "https://leetcode.com/problems/power-of-three/submissions/1840265476/",
+      "language": "Python3",
+      "code": "class Solution:\n    def isPowerOfThree(self, n: int) -> bool:\n        if n <= 0:\n            return False\n        while n % 3 == 0:\n            n /= 3\n        return n == 1\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 342,
+      "title": "Power of Four",
+      "problem_url": "/problems/power-of-four/",
+      "url": "https://leetcode.com/problems/power-of-four/submissions/1840267126/",
+      "language": "Python3",
+      "code": "class Solution:\n    def isPowerOfFour(self, n: int) -> bool:\n        if n<= 0:\n            return False\n        while n % 4 ==0 :\n            n /= 4\n        return n == 1\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 367,
@@ -1368,7 +1786,8 @@
       "problem_url": "/problems/valid-perfect-square/",
       "url": "https://leetcode.com/problems/valid-perfect-square/submissions/2040961414/",
       "language": "Python3",
-      "code": "class Solution:\n    def isPerfectSquare(self, num: int) -> bool:\n        return int(num ** 0.5 ) == num ** 0.5 \n        "
+      "code": "class Solution:\n    def isPerfectSquare(self, num: int) -> bool:\n        return int(num ** 0.5 ) == num ** 0.5 \n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 374,
@@ -1376,7 +1795,26 @@
       "problem_url": "/problems/guess-number-higher-or-lower/",
       "url": "https://leetcode.com/problems/guess-number-higher-or-lower/submissions/2060772893/",
       "language": "Python3",
-      "code": "# The guess API is already defined for you.\n# @param num, your guess\n# @return -1 if num is higher than the picked number\n#          1 if num is lower than the picked number\n#          otherwise return 0\n# def guess(num: int) -> int:\n\nclass Solution:\n    def guessNumber(self, n: int) -> int:\n        left = 1\n        right = n\n        \n        while left <= right:\n            # Use this formula to prevent potential integer overflow\n            # (though Python handles arbitrarily large integers, it's a good habit)\n            mid = left + (right - left) // 2 \n            \n            result = guess(mid)\n            \n            if result == 0:\n                # We found the number\n                return mid\n            elif result == 1:\n                # The picked number is higher, so search the right half\n                left = mid + 1\n            else:\n                # The picked number is lower, so search the left half\n                right = mid - 1\n                \n        return -1\n        "
+      "code": "# The guess API is already defined for you.\n# @param num, your guess\n# @return -1 if num is higher than the picked number\n#          1 if num is lower than the picked number\n#          otherwise return 0\n# def guess(num: int) -> int:\n\nclass Solution:\n    def guessNumber(self, n: int) -> int:\n        left = 1\n        right = n\n        \n        while left <= right:\n            # Use this formula to prevent potential integer overflow\n            # (though Python handles arbitrarily large integers, it's a good habit)\n            mid = left + (right - left) // 2 \n            \n            result = guess(mid)\n            \n            if result == 0:\n                # We found the number\n                return mid\n            elif result == 1:\n                # The picked number is higher, so search the right half\n                left = mid + 1\n            else:\n                # The picked number is lower, so search the left half\n                right = mid - 1\n                \n        return -1\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 383,
+      "title": "Ransom Note",
+      "problem_url": "/problems/ransom-note/",
+      "url": "https://leetcode.com/problems/ransom-note/submissions/2065217765/",
+      "language": "Python3",
+      "code": "class Solution:\n    def canConstruct(self, ransomNote: str, magazine: str) -> bool:\n        # Quick optimization: If the note is longer, it's impossible\n        if len(ransomNote) > len(magazine):\n            return False\n            \n        magazine_counts = {}\n        \n        # 1. Build the inventory\n        for char in magazine:\n            magazine_counts[char] = magazine_counts.get(char, 0) + 1\n            \n        # 2. Consume the inventory\n        for char in ransomNote:\n            # If the character isn't in our map, or the count has reached 0\n            if magazine_counts.get(char, 0) == 0:\n                return False\n            \n            # Deduct the used letter\n            magazine_counts[char] -= 1\n            \n        return True\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 435,
+      "title": "Non-overlapping Intervals",
+      "problem_url": "/problems/non-overlapping-intervals/",
+      "url": "https://leetcode.com/problems/non-overlapping-intervals/submissions/1831460268/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def eraseOverlapIntervals(self, intervals):\n        if not intervals:\n            return 0\n        intervals.sort(key=lambda x : x[1])\n        n = len(intervals)\n        kept_count = 1\n        last_end = intervals[0][1]\n        for i in range(1,n):\n            current_start = intervals[i][0]\n            if current_start >= last_end:\n                kept_count += 1 \n                last_end = intervals[i][1]\n\n        min_removals = n - kept_count\n        return min_removals",
+      "verdict": "Accepted"
     },
     {
       "id": 441,
@@ -1384,7 +1822,8 @@
       "problem_url": "/problems/arranging-coins/",
       "url": "https://leetcode.com/problems/arranging-coins/submissions/2041956159/",
       "language": "Python3",
-      "code": "class Solution:\n    def arrangeCoins(self, n: int) -> int:\n        row = 1 \n        while n >= row:\n            n -= row\n            row += 1\n        return row - 1         "
+      "code": "class Solution:\n    def arrangeCoins(self, n: int) -> int:\n        row = 1 \n        while n >= row:\n            n -= row\n            row += 1\n        return row - 1         ",
+      "verdict": "Accepted"
     },
     {
       "id": 442,
@@ -1392,7 +1831,143 @@
       "problem_url": "/problems/find-all-duplicates-in-an-array/",
       "url": "https://leetcode.com/problems/find-all-duplicates-in-an-array/submissions/2039489860/",
       "language": "Python3",
-      "code": "class Solution:\n    def findDuplicates(self, nums: List[int]) -> List[int]:\n        seen = set()\n        result = []\n\n        for num in nums:\n            if num in seen :\n                result.append(num)\n            else:\n                seen.add(num)\n        return result "
+      "code": "class Solution:\n    def findDuplicates(self, nums: List[int]) -> List[int]:\n        seen = set()\n        result = []\n\n        for num in nums:\n            if num in seen :\n                result.append(num)\n            else:\n                seen.add(num)\n        return result ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 448,
+      "title": "Find All Numbers Disappeared in an Array",
+      "problem_url": "/problems/find-all-numbers-disappeared-in-an-array/",
+      "url": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/submissions/2188453106/",
+      "language": "Python3",
+      "code": "class Solution:\n    def findDisappearedNumbers(self, nums: list[int]) -> list[int]:\n        audit = set(nums)\n        result = []\n        for missing in range(1, len(nums) + 1 ):\n            if missing not in audit:\n                result.append(missing)\n        return result",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 451,
+      "title": "Sort Characters By Frequency",
+      "problem_url": "/problems/sort-characters-by-frequency/",
+      "url": "https://leetcode.com/problems/sort-characters-by-frequency/submissions/2067573689/",
+      "language": "Python3",
+      "code": "class Solution:\n    def frequencySort(self, s: str) -> str:\n        freq = Counter(s)\n        result = []\n        for ch,count in sorted(freq.items(), key = lambda x: x[1], reverse=True):\n            result.append(ch * count)\n        return ''.join(result)",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 452,
+      "title": "Minimum Number of Arrows to Burst Balloons",
+      "problem_url": "/problems/minimum-number-of-arrows-to-burst-balloons/",
+      "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/submissions/1831847150/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def findMinArrowShots(self, points):\n        if not points :\n            return 0\n        arrow_count = 1\n        n = len(points)\n        points.sort(key=lambda x : x[1])\n        last_arrow_end = points[0][1]\n        for i in range(1,n):\n            current_state = points[i][0]\n            if current_state > last_arrow_end:\n                arrow_count += 1\n                last_arrow_end = points[i][1]\n        return arrow_count \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 540,
+      "title": "Single Element in a Sorted Array",
+      "problem_url": "/problems/single-element-in-a-sorted-array/",
+      "url": "https://leetcode.com/problems/single-element-in-a-sorted-array/submissions/1480666293/",
+      "language": "C++",
+      "code": "class Solution {\npublic:\n    int singleNonDuplicate(vector<int>& nums) {\n        int n = nums.size();\n        int left =0;\n        int right = n-1;\n        if (n == 1) return nums[0];\n        while(left <= right)\n        {\n            int mid = left + (right - left)/2;\n            if((mid == 0) && (nums[0] != nums[1])) return nums[mid];\n            if((mid == n-1) && (nums[n-1] != nums[n-2])) return nums[mid];\n            if((nums[mid-1] != nums[mid]) && (nums[mid] != nums[mid+1])) return nums[mid];\n            if(mid % 2 == 0)\n            {\n                if(nums[mid-1] == nums[mid])\n                {\n                    right = mid - 1;\n                }\n                else\n                {\n                    left = mid + 1;\n                }\n            }\n            else\n            {\n                if(nums[mid-1] == nums[mid])\n                {\n                    left = mid + 1;\n                }\n                else\n                {\n                    right = mid - 1;\n                }\n            }\n        }\n        return -1;\n    }\n};",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 561,
+      "title": "Array Partition",
+      "problem_url": "/problems/array-partition/",
+      "url": "https://leetcode.com/problems/array-partition/submissions/1844023683/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def arrayPairSum(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        nums.sort()\n        return sum(nums[::2])\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 594,
+      "title": "Longest Harmonious Subsequence",
+      "problem_url": "/problems/longest-harmonious-subsequence/",
+      "url": "https://leetcode.com/problems/longest-harmonious-subsequence/submissions/1840233996/",
+      "language": "Python3",
+      "code": "class Solution:\n    def findLHS(self, nums: List[int]) -> int:\n        nums.sort()\n        j = 0\n        count = 0\n        for i in range(len(nums)):\n            while nums[i] - nums[j] > 1:\n                j += 1\n            if nums[i] - nums[j] == 1:\n                count = max(count,i-j+1)\n        return count",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 621,
+      "title": "Task Scheduler",
+      "problem_url": "/problems/task-scheduler/",
+      "url": "https://leetcode.com/problems/task-scheduler/submissions/1834303275/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def leastInterval(self, tasks, n):\n        from collections import Counter\n        task_counts = Counter(tasks)\n        max_freq = max(task_counts.values())\n        max_freq_count = sum(1 for count in task_counts.values() if count == max_freq)\n        intervals = (max_freq - 1) * (n + 1) + max_freq_count\n        return max(intervals, len(tasks))\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 628,
+      "title": "Maximum Product of Three Numbers",
+      "problem_url": "/problems/maximum-product-of-three-numbers/",
+      "url": "https://leetcode.com/problems/maximum-product-of-three-numbers/submissions/2083464314/",
+      "language": "Python3",
+      "code": "class Solution:\n    def maximumProduct(self, nums: List[int]) -> int:\n        nums.sort()\n\n        positive = nums[-1] * nums[-2] * nums[-3]\n\n        negative = nums[0] * nums[1] * nums[-1]\n\n        return max(positive, negative)\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 704,
+      "title": "Binary Search",
+      "problem_url": "/problems/binary-search/",
+      "url": "https://leetcode.com/problems/binary-search/submissions/2025786431/",
+      "language": "Python3",
+      "code": "class Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        left = 0\n        right = len(nums) - 1 \n        while left<=right :\n            mid = (left + right ) // 2\n            if nums[mid] == target:\n                return mid\n            elif nums[mid] > target:\n                right = mid - 1\n            else:\n                left = mid + 1\n                \n        return -1\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 746,
+      "title": "Min Cost Climbing Stairs",
+      "problem_url": "/problems/min-cost-climbing-stairs/",
+      "url": "https://leetcode.com/problems/min-cost-climbing-stairs/submissions/1787115841/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def minCostClimbingStairs(self, cost):\n        n = len(cost)\n        memo = [-1] * n\n        def helper(index):\n            if index > n-1:\n                return 0\n            if memo[index] != -1:\n                return memo[index]\n            \n            onestep = cost[index] + helper(index + 1)\n            twostep = cost[index] + helper(index + 2)\n\n            memo[index] = min(onestep,twostep)\n\n            return memo[index]\n        return min(helper(0),helper(1))\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 757,
+      "title": "Set Intersection Size At Least Two",
+      "problem_url": "/problems/set-intersection-size-at-least-two/",
+      "url": "https://leetcode.com/problems/set-intersection-size-at-least-two/submissions/1834731314/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def intersectionSizeTwo(self, intervals):\r\n        \r\n        if not intervals:\r\n            return 0\r\n\r\n        # Sort by right endpoint ascending, and left endpoint descending\r\n        intervals.sort(key=lambda x: (x[1], -x[0]))\r\n\r\n        # s1 < s2 are the two largest selected integers so far\r\n        s1 = -10**18\r\n        s2 = -10**18\r\n        ans = 0\r\n\r\n        for a, b in intervals:\r\n            if s1 >= a:\r\n                # both s1 and s2 are inside [a, b]\r\n                continue\r\n            if s2 >= a:\r\n                # only s2 is inside [a, b], add one more point (b)\r\n                ans += 1\r\n                s1 = s2\r\n                s2 = b\r\n            else:\r\n                # neither s1 nor s2 is inside [a, b], add two points (b-1, b)\r\n                ans += 2\r\n                s1 = b - 1\r\n                s2 = b\r\n\r\n        return ans",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 779,
+      "title": "K-th Symbol in Grammar",
+      "problem_url": "/problems/k-th-symbol-in-grammar/",
+      "url": "https://leetcode.com/problems/k-th-symbol-in-grammar/submissions/1709614085/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def kthGrammar(self, n, k):\n        if n == 1 :\n            return 0\n        length = 2 ** (n-1)\n        mid = length // 2\n        if k <= mid:\n            return self.kthGrammar(n-1,k)\n        else :\n            return int(not self.kthGrammar(n-1,k-mid))",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 852,
+      "title": "Peak Index in a Mountain Array",
+      "problem_url": "/problems/peak-index-in-a-mountain-array/",
+      "url": "https://leetcode.com/problems/peak-index-in-a-mountain-array/submissions/1479811516/",
+      "language": "C++",
+      "code": "class Solution {\npublic:\n    int peakIndexInMountainArray(vector<int>& arr) {\n        int st = 1;\n        int end = arr.size()-2;\n        while (st <= end)\n        {\n            int mid =  st + (end - st) /2;\n            if(arr[mid-1] < arr[mid] && arr[mid] > arr[mid + 1])\n            {\n                return mid ;\n            }\n            if(arr[mid-1] < arr[mid])\n            {\n                st = mid + 1;\n            }\n            else\n            {\n                end = mid - 1;\n            }\n        }\n        return -1 ;\n    }\n};",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 876,
+      "title": "Middle of the Linked List",
+      "problem_url": "/problems/middle-of-the-linked-list/",
+      "url": "https://leetcode.com/problems/middle-of-the-linked-list/submissions/2069716261/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        slow = fast = head\n        while fast and fast.next:\n            slow = slow.next\n            fast = fast.next.next\n        return slow\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 881,
+      "title": "Boats to Save People",
+      "problem_url": "/problems/boats-to-save-people/",
+      "url": "https://leetcode.com/problems/boats-to-save-people/submissions/1832828927/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def numRescueBoats(self, people, limit):\n        people.sort()\n        boat_count = 0\n        left = 0\n        right = len(people) - 1\n\n        while left<=right:\n            boat_count += 1 \n            if people[left] + people[right] <= limit:\n                left += 1\n            right -= 1\n        return boat_count\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 888,
@@ -1400,7 +1975,17 @@
       "problem_url": "/problems/fair-candy-swap/",
       "url": "https://leetcode.com/problems/fair-candy-swap/submissions/2043476344/",
       "language": "Python3",
-      "code": "class Solution:\n    def fairCandySwap(self, aliceSizes: List[int], bobSizes: List[int]) -> List[int]:\n        aliceSizes.sort()\n        bobSizes.sort()\n        i = j = 0\n        target = (sum(bobSizes) - sum(aliceSizes)) // 2\n        while i < len(aliceSizes) and j < len(bobSizes) :\n            curr = bobSizes[j] - aliceSizes[i]\n\n            if curr == target:\n                return [aliceSizes[i],bobSizes[j]]\n            elif curr < target:\n                j += 1\n            else:\n                i += 1\n        return []"
+      "code": "class Solution:\n    def fairCandySwap(self, aliceSizes: List[int], bobSizes: List[int]) -> List[int]:\n        aliceSizes.sort()\n        bobSizes.sort()\n        i = j = 0\n        target = (sum(bobSizes) - sum(aliceSizes)) // 2\n        while i < len(aliceSizes) and j < len(bobSizes) :\n            curr = bobSizes[j] - aliceSizes[i]\n\n            if curr == target:\n                return [aliceSizes[i],bobSizes[j]]\n            elif curr < target:\n                j += 1\n            else:\n                i += 1\n        return []",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 896,
+      "title": "Monotonic Array",
+      "problem_url": "/problems/monotonic-array/",
+      "url": "https://leetcode.com/problems/monotonic-array/submissions/1696104780/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def isMonotonic(self, array):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: bool\n        \"\"\"\n        n = len(array)\n        if n == 0 :\n            return True\n\n        first = array[0]\n        last = array[n-1]\n\n        if (first > last):\n            for k in range (n-1):\n                if (array[k] < array[k+1]):\n                    return False\n        elif (first == last):\n            for k in range (n-1):\n                if (array[k] != array[k+1]):\n                    return False\n        else :\n            for k in range (n-1):\n                if (array[k] > array[k+1]):\n                    return False\n\n        return True",
+      "verdict": "Accepted"
     },
     {
       "id": 961,
@@ -1408,7 +1993,80 @@
       "problem_url": "/problems/n-repeated-element-in-size-2n-array/",
       "url": "https://leetcode.com/problems/n-repeated-element-in-size-2n-array/submissions/2062392041/",
       "language": "Python3",
-      "code": "class Solution:\n    def repeatedNTimes(self, nums: List[int]) -> int:\n        freq = Counter(nums)\n        ans = 0\n        target = (len(nums)) / 2\n        for key, value in freq.items():\n            if value >= target:\n                ans = max(ans,key) \n        return ans     "
+      "code": "class Solution:\n    def repeatedNTimes(self, nums: List[int]) -> int:\n        freq = Counter(nums)\n        ans = 0\n        target = (len(nums)) / 2\n        for key, value in freq.items():\n            if value >= target:\n                ans = max(ans,key) \n        return ans     ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 976,
+      "title": "Largest Perimeter Triangle",
+      "problem_url": "/problems/largest-perimeter-triangle/",
+      "url": "https://leetcode.com/problems/largest-perimeter-triangle/submissions/1844035445/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def largestPerimeter(self, nums):\n        nums.sort(reverse=True)\n        for i in range(len(nums) - 2):\n            if nums[i] < nums[i+1] + nums[i+2]:\n                return sum((nums[i],nums[i+1]),nums[i+2])\n        return 0\n                \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 977,
+      "title": "Squares of a Sorted Array",
+      "problem_url": "/problems/squares-of-a-sorted-array/",
+      "url": "https://leetcode.com/problems/squares-of-a-sorted-array/submissions/1696046029/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def sortedSquares(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: List[int]\n        \"\"\"\n        n = len(nums)\n        res = [0] * n\n        for i in range(n):\n            res[i] = nums[i] ** 2\n        res.sort()\n        return res",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 986,
+      "title": "Interval List Intersections",
+      "problem_url": "/problems/interval-list-intersections/",
+      "url": "https://leetcode.com/problems/interval-list-intersections/submissions/2035315917/",
+      "language": "Python3",
+      "code": "class Solution:\n    def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:\n        result = []\n        i = j = 0\n        n, m = len(firstList),len(secondList)\n        \n        while i < n and j < m :\n            start1, end1 = firstList[i]\n            start2, end2 = secondList[j]\n\n            low = max(start1,start2)\n            high = min(end1,end2)\n\n            if low <= high  :\n                result.append([low, high])\n\n            if end1 > end2:\n                j += 1\n            else:\n                i += 1\n\n        return result\n",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1015,
+      "title": "Smallest Integer Divisible by K",
+      "problem_url": "/problems/smallest-integer-divisible-by-k/",
+      "url": "https://leetcode.com/problems/smallest-integer-divisible-by-k/submissions/1838975764/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def smallestRepunitDivByK(self, k):\n        rem = 0\n        if k%2 == 0 or k%5 == 0:\n            return -1\n        for length in range(1,k+1):\n            rem = (rem * 10 + 1) % k\n            if rem ==0:\n                return length\n        return -1\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1018,
+      "title": "Binary Prefix Divisible By 5",
+      "problem_url": "/problems/binary-prefix-divisible-by-5/",
+      "url": "https://leetcode.com/problems/binary-prefix-divisible-by-5/submissions/1838122591/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def prefixesDivBy5(self, nums):\n        result = []     #empty list for storing the result\n        remainder = 0 \n        for bit in nums:\n            remainder = (remainder * 2 + bit) % 5\n            result.append(remainder == 0)\n        return result\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1029,
+      "title": "Two City Scheduling",
+      "problem_url": "/problems/two-city-scheduling/",
+      "url": "https://leetcode.com/problems/two-city-scheduling/submissions/1832831097/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def twoCitySchedCost(self, costs):\n        costs.sort(key=lambda x : x[0] - x[1])\n        n = len(costs)\n        total_cost = 0\n        for i in range(n//2):\n            total_cost += costs[i][0]\n        for i in range(n//2,n):\n            total_cost += costs[i][1]\n\n        return total_cost        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1047,
+      "title": "Remove All Adjacent Duplicates In String",
+      "problem_url": "/problems/remove-all-adjacent-duplicates-in-string/",
+      "url": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/submissions/1835191345/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def removeDuplicates(self, s):\r\n        # Use a stack to remove adjacent duplicates in one pass\r\n        stack = []\r\n        for ch in s:\r\n            if stack and stack[-1] == ch:\r\n                stack.pop()\r\n            else:\r\n                stack.append(ch)\r\n        return ''.join(stack)",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1051,
+      "title": "Height Checker",
+      "problem_url": "/problems/height-checker/",
+      "url": "https://leetcode.com/problems/height-checker/submissions/1835167195/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def heightChecker(self, heights):\r\n        n = len(heights)\r\n        count = 0\r\n        sort_ht = sorted(heights)\r\n        for i in range(n):\r\n            if heights[i] != sort_ht[i]:\r\n                count += 1\r\n\r\n        return count\r\n\r\n\r\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 1094,
@@ -1416,7 +2074,17 @@
       "problem_url": "/problems/car-pooling/",
       "url": "https://leetcode.com/problems/car-pooling/submissions/2035830073/",
       "language": "Python3",
-      "code": "class Solution:\n    def carPooling(self, trips: List[List[int]], capacity: int) -> bool:\n        timeline = [0] * 1002\n        for passanger, start, end in trips:\n            timeline[start] += passanger\n            timeline[end] -= passanger\n        seats = 0\n        for passanger_change in timeline:\n            seats += passanger_change \n            if seats > capacity:\n                return False\n        return True \n        "
+      "code": "class Solution:\n    def carPooling(self, trips: List[List[int]], capacity: int) -> bool:\n        timeline = [0] * 1002\n        for passanger, start, end in trips:\n            timeline[start] += passanger\n            timeline[end] -= passanger\n        seats = 0\n        for passanger_change in timeline:\n            seats += passanger_change \n            if seats > capacity:\n                return False\n        return True \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1185,
+      "title": "Day of the Week",
+      "problem_url": "/problems/day-of-the-week/",
+      "url": "https://leetcode.com/problems/day-of-the-week/submissions/1842168654/",
+      "language": "Python3",
+      "code": "class Solution:\n    def dayOfTheWeek(self, day: int, month: int, year: int) -> str:\n        from datetime import date\n        return date(year,month,day).strftime(\"%A\")\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 1189,
@@ -1424,7 +2092,8 @@
       "problem_url": "/problems/maximum-number-of-balloons/",
       "url": "https://leetcode.com/problems/maximum-number-of-balloons/submissions/2041863494/",
       "language": "Python3",
-      "code": "class Solution:\n    def maxNumberOfBalloons(self, text: str) -> int:\n        count = {'b':0,'a':0,'l':0,'n':0,'o':0}\n        \n        for char in text:\n            if char in count:\n                count[char] += 1\n        \n        return min (\n            count['b'],count['a'],count['l'] // 2,count['n'],count['o']//2\n    )"
+      "code": "class Solution:\n    def maxNumberOfBalloons(self, text: str) -> int:\n        count = {'b':0,'a':0,'l':0,'n':0,'o':0}\n        \n        for char in text:\n            if char in count:\n                count[char] += 1\n        \n        return min (\n            count['b'],count['a'],count['l'] // 2,count['n'],count['o']//2\n    )",
+      "verdict": "Accepted"
     },
     {
       "id": 1207,
@@ -1432,7 +2101,17 @@
       "problem_url": "/problems/unique-number-of-occurrences/",
       "url": "https://leetcode.com/problems/unique-number-of-occurrences/submissions/2062399373/",
       "language": "Python3",
-      "code": "class Solution:\n    def uniqueOccurrences(self, arr: List[int]) -> bool:\n        freq = Counter(arr)\n        return len(freq) == len(set(freq.values()))\n        "
+      "code": "class Solution:\n    def uniqueOccurrences(self, arr: List[int]) -> bool:\n        freq = Counter(arr)\n        return len(freq) == len(set(freq.values()))\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1262,
+      "title": "Greatest Sum Divisible by Three",
+      "problem_url": "/problems/greatest-sum-divisible-by-three/",
+      "url": "https://leetcode.com/problems/greatest-sum-divisible-by-three/submissions/1837561752/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def maxSumDivThree(self, nums):\r\n        dp = [0, float('-inf'), float('-inf')]\r\n\r\n        for num in nums:\r\n            ndp = dp[:]  # copy current bests\r\n            for r in range(3):\r\n                if dp[r] != float('-inf'):\r\n                    new_r = (r + num) % 3\r\n                    ndp[new_r] = max(ndp[new_r], dp[r] + num)\r\n            dp = ndp\r\n\r\n        # dp[0] holds the maximum sum divisible by 3\r\n        return dp[0] if dp[0] != float('-inf') else 0",
+      "verdict": "Accepted"
     },
     {
       "id": 1282,
@@ -1440,7 +2119,8 @@
       "problem_url": "/problems/group-the-people-given-the-group-size-they-belong-to/",
       "url": "https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/submissions/2062041392/",
       "language": "Python3",
-      "code": "class Solution:\n    def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:\n\n        temp_dict = defaultdict(list)\n        result = []\n\n        for i, size in enumerate(groupSizes):\n            temp_dict[size].append(i)\n            \n            if len(temp_dict[size]) == size:\n                result.append(temp_dict[size])\n                temp_dict[size] = []\n        return result\n        "
+      "code": "class Solution:\n    def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:\n\n        temp_dict = defaultdict(list)\n        result = []\n\n        for i, size in enumerate(groupSizes):\n            temp_dict[size].append(i)\n            \n            if len(temp_dict[size]) == size:\n                result.append(temp_dict[size])\n                temp_dict[size] = []\n        return result\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 1337,
@@ -1448,7 +2128,17 @@
       "problem_url": "/problems/the-k-weakest-rows-in-a-matrix/",
       "url": "https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/submissions/2053594558/",
       "language": "Python3",
-      "code": "class Solution:\n    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:\n        dic = [] \n        for  i in range(len(mat)):\n            soldier_count = 0 \n            for val in mat[i]:\n                if val == 1:\n                    soldier_count += 1\n                else:\n                    break\n\n            dic.append((soldier_count,i))\n        dic.sort()\n        result = []\n        for i in range(k):\n            result.append(dic[i][1])\n        return result\n        "
+      "code": "class Solution:\n    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:\n        dic = [] \n        for  i in range(len(mat)):\n            soldier_count = 0 \n            for val in mat[i]:\n                if val == 1:\n                    soldier_count += 1\n                else:\n                    break\n\n            dic.append((soldier_count,i))\n        dic.sort()\n        result = []\n        for i in range(k):\n            result.append(dic[i][1])\n        return result\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1342,
+      "title": "Number of Steps to Reduce a Number to Zero",
+      "problem_url": "/problems/number-of-steps-to-reduce-a-number-to-zero/",
+      "url": "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/submissions/1841880785/",
+      "language": "Python3",
+      "code": "class Solution:\n    def numberOfSteps(self, num: int) -> int:\n        count = 0\n        while num > 0:\n            if num % 2 == 0:\n                num //= 2\n            else:\n                num -= 1\n            count += 1\n        return count ",
+      "verdict": "Accepted"
     },
     {
       "id": 1346,
@@ -1456,7 +2146,8 @@
       "problem_url": "/problems/check-if-n-and-its-double-exist/",
       "url": "https://leetcode.com/problems/check-if-n-and-its-double-exist/submissions/2041926125/",
       "language": "Python3",
-      "code": "class Solution:\n    def checkIfExist(self, arr: List[int]) -> bool:\n        seen = set()\n        for num in arr:\n            if num * 2 in seen or (num % 2 == 0 and num // 2 in seen):\n                return True\n            seen.add(num)\n        return False"
+      "code": "class Solution:\n    def checkIfExist(self, arr: List[int]) -> bool:\n        seen = set()\n        for num in arr:\n            if num * 2 in seen or (num % 2 == 0 and num // 2 in seen):\n                return True\n            seen.add(num)\n        return False",
+      "verdict": "Accepted"
     },
     {
       "id": 1351,
@@ -1464,7 +2155,17 @@
       "problem_url": "/problems/count-negative-numbers-in-a-sorted-matrix/",
       "url": "https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/submissions/2045889948/",
       "language": "Python3",
-      "code": "class Solution:\n    def countNegatives(self, grid: List[List[int]]) -> int:\n        rows = len(grid)\n        elements = len(grid[0])\n        i = rows - 1\n        j = 0\n        count = 0\n        while i >=0 and j < elements:\n            if grid[i][j] < 0:\n                count += elements - j\n                i -= 1\n            else:\n                j += 1\n\n        return count"
+      "code": "class Solution:\n    def countNegatives(self, grid: List[List[int]]) -> int:\n        rows = len(grid)\n        elements = len(grid[0])\n        i = rows - 1\n        j = 0\n        count = 0\n        while i >=0 and j < elements:\n            if grid[i][j] < 0:\n                count += elements - j\n                i -= 1\n            else:\n                j += 1\n\n        return count",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1365,
+      "title": "How Many Numbers Are Smaller Than the Current Number",
+      "problem_url": "/problems/how-many-numbers-are-smaller-than-the-current-number/",
+      "url": "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/submissions/1845086923/",
+      "language": "Python3",
+      "code": "class Solution:\n    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:\n        sorted_num = sorted(nums)\n        smallest_count = {}\n        for i,num in enumerate (sorted_num):\n            if num not in smallest_count:\n                smallest_count[num] = i\n        return [smallest_count[num] for num in nums]",
+      "verdict": "Accepted"
     },
     {
       "id": 1385,
@@ -1472,7 +2173,53 @@
       "problem_url": "/problems/find-the-distance-value-between-two-arrays/",
       "url": "https://leetcode.com/problems/find-the-distance-value-between-two-arrays/submissions/2043514963/",
       "language": "Python3",
-      "code": "class Solution:\n    def findTheDistanceValue(self, arr1: List[int], arr2: List[int], d: int) -> int:\n        arr1.sort(),arr2.sort()\n        i = j = 0\n        count = 0 \n        while i < len(arr1) and j < len(arr2):\n            if abs(arr1[i] - arr2[j]) <= d:\n                i += 1\n            elif arr1[i] > arr2[j]:\n                j += 1\n            else:\n                i += 1\n                count += 1\n        if i < len(arr1):\n            count += len(arr1) - i\n        return count "
+      "code": "class Solution:\n    def findTheDistanceValue(self, arr1: List[int], arr2: List[int], d: int) -> int:\n        arr1.sort(),arr2.sort()\n        i = j = 0\n        count = 0 \n        while i < len(arr1) and j < len(arr2):\n            if abs(arr1[i] - arr2[j]) <= d:\n                i += 1\n            elif arr1[i] > arr2[j]:\n                j += 1\n            else:\n                i += 1\n                count += 1\n        if i < len(arr1):\n            count += len(arr1) - i\n        return count ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1394,
+      "title": "Find Lucky Integer in an Array",
+      "problem_url": "/problems/find-lucky-integer-in-an-array/",
+      "url": "https://leetcode.com/problems/find-lucky-integer-in-an-array/submissions/2067598628/",
+      "language": "Python3",
+      "code": "class Solution:\n    def findLucky(self, arr: List[int]) -> int:\n        freq = Counter(arr)\n\n        max_freq = -1 \n        for num, count in freq.items():\n            if num == count :\n                if num > max_freq:\n                    max_freq = num\n\n        return max_freq\n\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1436,
+      "title": "Destination City",
+      "problem_url": "/problems/destination-city/",
+      "url": "https://leetcode.com/problems/destination-city/submissions/1846831976/",
+      "language": "Python3",
+      "code": "class Solution:\n    def destCity(self, paths: List[List[str]]) -> str:\n        start = set()\n        for path in paths:\n            start.add(path[0])\n        for path in paths:\n            if path[1] not in start:\n                return path[1]\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1464,
+      "title": "Maximum Product of Two Elements in an Array",
+      "problem_url": "/problems/maximum-product-of-two-elements-in-an-array/",
+      "url": "https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/submissions/2083451135/",
+      "language": "Python3",
+      "code": "class Solution:\n    def maxProduct(self, nums: List[int]) -> int:\n        nums.sort()\n        result = 0\n        for i in range(len(nums)- 1 ):\n            j = i + 1 \n            if ((nums[i] - 1) * (nums[j] - 1)) > 0 :\n                result = max(result, ((nums[i] - 1) * (nums[j] - 1)))\n\n        return result",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1486,
+      "title": "XOR Operation in an Array",
+      "problem_url": "/problems/xor-operation-in-an-array/",
+      "url": "https://leetcode.com/problems/xor-operation-in-an-array/submissions/1839384735/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def xorOperation(self, n, start):\n        res = 0\n        for i in range(n):\n            num = start + 2 * i\n            res ^= num\n        return res\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1512,
+      "title": "Number of Good Pairs",
+      "problem_url": "/problems/number-of-good-pairs/",
+      "url": "https://leetcode.com/problems/number-of-good-pairs/submissions/1845048090/",
+      "language": "Python3",
+      "code": "class Solution:\n    def numIdenticalPairs(self, nums: List[int]) -> int:\n        n = len(nums)\n        count = 0\n        for i in range(n):\n            for j in range(i+1,n):\n                if nums[i] == nums[j]:\n                    count += 1\n        return count\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 1561,
@@ -1480,7 +2227,26 @@
       "problem_url": "/problems/maximum-number-of-coins-you-can-get/",
       "url": "https://leetcode.com/problems/maximum-number-of-coins-you-can-get/submissions/2038869468/",
       "language": "Python3",
-      "code": "class Solution:\n    def maxCoins(self, piles: List[int]) -> int:\n        piles.sort()\n        n = len(piles)\n        starter = n // 3 \n        result = 0\n        while starter < n :\n            result += piles[starter]\n            starter += 2\n        return result"
+      "code": "class Solution:\n    def maxCoins(self, piles: List[int]) -> int:\n        piles.sort()\n        n = len(piles)\n        starter = n // 3 \n        result = 0\n        while starter < n :\n            result += piles[starter]\n            starter += 2\n        return result",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1588,
+      "title": "Sum of All Odd Length Subarrays",
+      "problem_url": "/problems/sum-of-all-odd-length-subarrays/",
+      "url": "https://leetcode.com/problems/sum-of-all-odd-length-subarrays/submissions/1842953766/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def sumOddLengthSubarrays(self, arr):\r\n        n = len(arr)\r\n        total_sum = 0\r\n        for i in range(n):\r\n            # Number of subarrays starting at or before index i.\r\n            starts_before = i + 1\r\n            # Number of subarrays ending at or after index i.\r\n            ends_after = n - i\r\n\r\n            # The total number of subarrays that include arr[i] is starts_before * ends_after.\r\n            # We need to find how many of these have an odd length.\r\n            # The number of odd-length subarrays is ceil(total_subarrays / 2).\r\n            num_odd_subarrays = (starts_before * ends_after + 1) // 2\r\n            \r\n            total_sum += arr[i] * num_odd_subarrays\r\n            \r\n        return total_sum\r\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1590,
+      "title": "Make Sum Divisible by P",
+      "problem_url": "/problems/make-sum-divisible-by-p/",
+      "url": "https://leetcode.com/problems/make-sum-divisible-by-p/submissions/1842930861/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def minSubarray(self, nums, p):\r\n        n = len(nums)\r\n        target_rem = sum(nums) % p\r\n        if target_rem == 0:\r\n            return 0\r\n            \r\n        # A map to store the last seen index of a prefix sum remainder.\r\n        # We initialize with {0: -1} to handle cases where the subarray\r\n        # to be removed starts from index 0.\r\n        rem_map = {0: -1}\r\n        min_len = n  # Initialize with a value larger than any possible answer.\r\n        current_sum = 0\r\n        \r\n        for j in range(n):\r\n            current_sum += nums[j]\r\n            current_rem = current_sum % p\r\n            \r\n            # We need to find a prefix sum `rem_map[i]` such that (current_rem - rem_map[i]) % p == target_rem.\r\n            # This means rem_map[i] should be (current_rem - target_rem) % p.\r\n            needed_rem = (current_rem - target_rem + p) % p\r\n            if needed_rem in rem_map:\r\n                min_len = min(min_len, j - rem_map[needed_rem])\r\n            \r\n            rem_map[current_rem] = j\r\n            \r\n        # If min_len is still n, it means the only solution is to remove the whole array,\r\n        # which is not allowed. Or no solution was found.\r\n        return min_len if min_len < n else -1\r\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 1636,
@@ -1488,7 +2254,8 @@
       "problem_url": "/problems/sort-array-by-increasing-frequency/",
       "url": "https://leetcode.com/problems/sort-array-by-increasing-frequency/submissions/2054076253/",
       "language": "Python3",
-      "code": "class Solution:\n    def frequencySort(self, nums: List[int]) -> List[int]:\n        frequency = {}\n        for num in nums :\n            if num in frequency:\n                frequency[num] += 1\n            else:\n                frequency[num] = 1\n        return sorted(nums,key = lambda x : (frequency[x],-x))\n        "
+      "code": "class Solution:\n    def frequencySort(self, nums: List[int]) -> List[int]:\n        frequency = {}\n        for num in nums :\n            if num in frequency:\n                frequency[num] += 1\n            else:\n                frequency[num] = 1\n        return sorted(nums,key = lambda x : (frequency[x],-x))\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 1637,
@@ -1496,7 +2263,17 @@
       "problem_url": "/problems/widest-vertical-area-between-two-points-containing-no-points/",
       "url": "https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/submissions/2056000123/",
       "language": "Python3",
-      "code": "class Solution:\n    def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:\n        diff = 0\n        points.sort()\n        for i in range(1,len(points)):\n            diff = max(diff, points[i][0] - points[i-1][0])\n        return diff \n        "
+      "code": "class Solution:\n    def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:\n        diff = 0\n        points.sort()\n        for i in range(1,len(points)):\n            diff = max(diff, points[i][0] - points[i-1][0])\n        return diff \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1688,
+      "title": "Count of Matches in Tournament",
+      "problem_url": "/problems/count-of-matches-in-tournament/",
+      "url": "https://leetcode.com/problems/count-of-matches-in-tournament/submissions/1839407065/",
+      "language": "Python3",
+      "code": "class Solution:\n    def numberOfMatches(self, n: int) -> int:\n        t=0\n        while n > 1:\n            if n % 2 == 0:\n                n //= 2\n                t += n\n            else:\n                n //= 2\n                t += n+1\n        return t",
+      "verdict": "Accepted"
     },
     {
       "id": 1732,
@@ -1504,7 +2281,8 @@
       "problem_url": "/problems/find-the-highest-altitude/",
       "url": "https://leetcode.com/problems/find-the-highest-altitude/submissions/2038802241/",
       "language": "Python3",
-      "code": "class Solution:\n    def largestAltitude(self, gain: List[int]) -> int:\n        peak = 0\n        curr_height = 0\n        for alt in  gain:\n            curr_height += alt\n            peak = max(curr_height,peak)\n        return peak\n        "
+      "code": "class Solution:\n    def largestAltitude(self, gain: List[int]) -> int:\n        peak = 0\n        curr_height = 0\n        for alt in  gain:\n            curr_height += alt\n            peak = max(curr_height,peak)\n        return peak\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 1748,
@@ -1512,7 +2290,17 @@
       "problem_url": "/problems/sum-of-unique-elements/",
       "url": "https://leetcode.com/problems/sum-of-unique-elements/submissions/2062363109/",
       "language": "Python3",
-      "code": "class Solution:\n    def sumOfUnique(self, nums: List[int]) -> int:\n        seen = Counter(nums)\n        Sum = 0\n        for key, value in seen.items():\n            if value == 1:\n                Sum += key\n        return Sum "
+      "code": "class Solution:\n    def sumOfUnique(self, nums: List[int]) -> int:\n        seen = Counter(nums)\n        Sum = 0\n        for key, value in seen.items():\n            if value == 1:\n                Sum += key\n        return Sum ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1823,
+      "title": "Find the Winner of the Circular Game",
+      "problem_url": "/problems/find-the-winner-of-the-circular-game/",
+      "url": "https://leetcode.com/problems/find-the-winner-of-the-circular-game/submissions/1709607383/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def findTheWinner(self, n, k):\n        survivor = 0\n        for i in range(2,n+1):\n            survivor = (survivor + k) % i\n        return survivor + 1\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 1833,
@@ -1520,7 +2308,35 @@
       "problem_url": "/problems/maximum-ice-cream-bars/",
       "url": "https://leetcode.com/problems/maximum-ice-cream-bars/submissions/2040912219/",
       "language": "Python3",
-      "code": "class Solution:\n    def maxIceCream(self, costs: List[int], coins: int) -> int:\n        costs.sort()\n        count = 0\n        for cost in costs :\n            if coins >= cost:\n                coins -= cost\n                count += 1\n            else:\n                break\n        return count \n        "
+      "code": "class Solution:\n    def maxIceCream(self, costs: List[int], coins: int) -> int:\n        costs.sort()\n        count = 0\n        for cost in costs :\n            if coins >= cost:\n                coins -= cost\n                count += 1\n            else:\n                break\n        return count \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1863,
+      "title": "Sum of All Subset XOR Totals",
+      "problem_url": "/problems/sum-of-all-subset-xor-totals/",
+      "url": "https://leetcode.com/problems/sum-of-all-subset-xor-totals/submissions/1834742357/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def subsetXORSum(self, nums):\r\n        total = 0\r\n        n = len(nums)\r\n        \r\n        # Generate all 2^n subsets using bit manipulation\r\n        for mask in range(1 << n):  # 0 to 2^n - 1\r\n            xor_sum = 0\r\n            for i in range(n):\r\n                # If i-th bit is set in mask, include nums[i]\r\n                if mask & (1 << i):\r\n                    xor_sum ^= nums[i]\r\n            total += xor_sum\r\n        \r\n        return total\r\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1930,
+      "title": "Unique Length-3 Palindromic Subsequences",
+      "problem_url": "/problems/unique-length-3-palindromic-subsequences/",
+      "url": "https://leetcode.com/problems/unique-length-3-palindromic-subsequences/submissions/1835808695/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def countPalindromicSubsequence(self, s):\n        res = 0\n        for ci in range(ord('a'),ord('z')+1):\n            c = chr(ci)\n            left = s.find(c)\n            right =s.rfind(c)\n            if left != -1 and left < right:\n                mid = set(s[left+1:right])\n                res += len(mid)\n\n        return res",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 1979,
+      "title": "Find Greatest Common Divisor of Array",
+      "problem_url": "/problems/find-greatest-common-divisor-of-array/",
+      "url": "https://leetcode.com/problems/find-greatest-common-divisor-of-array/submissions/1842172774/",
+      "language": "Python3",
+      "code": "class Solution:\n    def findGCD(self, nums: List[int]) -> int:\n        import math \n        smallest = min(nums)\n        largest = max(nums)\n        return math.gcd(smallest,largest)",
+      "verdict": "Accepted"
     },
     {
       "id": 2006,
@@ -1528,7 +2344,8 @@
       "problem_url": "/problems/count-number-of-pairs-with-absolute-difference-k/",
       "url": "https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/submissions/2062059836/",
       "language": "Python3",
-      "code": "class Solution:\n    def countKDifference(self, nums: List[int], k: int) -> int:\n        count = 0\n        freq = {} \n        for num in nums:\n            target1 = num - k\n            target2 = num + k\n\n            if target1 in freq:\n                count += freq[target1]\n            if target2 in freq:\n                count += freq[target2]\n            \n            freq[num] = freq.get(num,0) + 1\n        return count "
+      "code": "class Solution:\n    def countKDifference(self, nums: List[int], k: int) -> int:\n        count = 0\n        freq = {} \n        for num in nums:\n            target1 = num - k\n            target2 = num + k\n\n            if target1 in freq:\n                count += freq[target1]\n            if target2 in freq:\n                count += freq[target2]\n            \n            freq[num] = freq.get(num,0) + 1\n        return count ",
+      "verdict": "Accepted"
     },
     {
       "id": 2089,
@@ -1536,7 +2353,8 @@
       "problem_url": "/problems/find-target-indices-after-sorting-array/",
       "url": "https://leetcode.com/problems/find-target-indices-after-sorting-array/submissions/2040923921/",
       "language": "Python3",
-      "code": "class Solution:\n    def targetIndices(self, nums: List[int], target: int) -> List[int]:\n        nums.sort()\n        result = []\n        for i, num in enumerate(nums):\n            if num == target:\n                result.append(i)\n        return result "
+      "code": "class Solution:\n    def targetIndices(self, nums: List[int], target: int) -> List[int]:\n        nums.sort()\n        result = []\n        for i, num in enumerate(nums):\n            if num == target:\n                result.append(i)\n        return result ",
+      "verdict": "Accepted"
     },
     {
       "id": 2094,
@@ -1544,7 +2362,17 @@
       "problem_url": "/problems/finding-3-digit-even-numbers/",
       "url": "https://leetcode.com/problems/finding-3-digit-even-numbers/submissions/2053661289/",
       "language": "Python3",
-      "code": "class Solution:\n    def findEvenNumbers(self, digits: List[int]) -> List[int]:\n        available = Counter(digits)\n        ans = []\n\n        for num in range(100, 1000, 2):\n            needed = Counter(map(int, str(num)))\n\n            valid = True\n            for d, cnt in needed.items():\n                if available[d] < cnt:\n                    valid = False\n                    break\n\n            if valid:\n                ans.append(num)\n\n        return ans"
+      "code": "class Solution:\n    def findEvenNumbers(self, digits: List[int]) -> List[int]:\n        available = Counter(digits)\n        ans = []\n\n        for num in range(100, 1000, 2):\n            needed = Counter(map(int, str(num)))\n\n            valid = True\n            for d, cnt in needed.items():\n                if available[d] < cnt:\n                    valid = False\n                    break\n\n            if valid:\n                ans.append(num)\n\n        return ans",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2154,
+      "title": "Keep Multiplying Found Values by Two",
+      "problem_url": "/problems/keep-multiplying-found-values-by-two/",
+      "url": "https://leetcode.com/problems/keep-multiplying-found-values-by-two/submissions/1834288094/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def findFinalValue(self, nums, original):\n        num_set = set(nums)\n        while original in num_set:\n            original *= 2\n        return original",
+      "verdict": "Accepted"
     },
     {
       "id": 2160,
@@ -1552,7 +2380,8 @@
       "problem_url": "/problems/minimum-sum-of-four-digit-number-after-splitting-digits/",
       "url": "https://leetcode.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/submissions/2056022752/",
       "language": "Python3",
-      "code": "class Solution:\n    def minimumSum(self, num: int) -> int:\n        digits = sorted(str(num))\n        num1 = int(digits[0] + digits[2])\n        num2 = int(digits[1] + digits[3])\n        return num1 + num2\n        "
+      "code": "class Solution:\n    def minimumSum(self, num: int) -> int:\n        digits = sorted(str(num))\n        num1 = int(digits[0] + digits[2])\n        num2 = int(digits[1] + digits[3])\n        return num1 + num2\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 2161,
@@ -1560,14 +2389,26 @@
       "problem_url": "/problems/partition-array-according-to-given-pivot/",
       "url": "https://leetcode.com/problems/partition-array-according-to-given-pivot/submissions/2053631605/",
       "language": "Python3",
-      "code": "class Solution:\n    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:\n        smaller = []\n        equal = []\n        larger = []\n        for num in nums :\n            if num < pivot :\n                smaller.append(num)\n            elif num == pivot :\n                equal.append(num)\n            else:\n                larger.append(num)\n        return smaller + equal + larger"
+      "code": "class Solution:\n    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:\n        smaller = []\n        equal = []\n        larger = []\n        for num in nums :\n            if num < pivot :\n                smaller.append(num)\n            elif num == pivot :\n                equal.append(num)\n            else:\n                larger.append(num)\n        return smaller + equal + larger",
+      "verdict": "Accepted"
     },
     {
       "id": 2169,
       "title": "Count Operations to Obtain Zero",
       "url": "https://leetcode.com/problems/count-operations-to-obtain-zero/submissions/1840275882/",
       "language": "Python3",
-      "code": "class Solution:\n    def countOperations(self, num1: int, num2: int) -> int:\n        operations = 0\n        while num1>0 and num2>0:\n            if num1 >= num2:\n                num1 -= num2\n            else:\n                num2 -= num1\n            operations += 1\n        return operations\n\n        "
+      "code": "class Solution:\n    def countOperations(self, num1: int, num2: int) -> int:\n        operations = 0\n        while num1>0 and num2>0:\n            if num1 >= num2:\n                num1 -= num2\n            else:\n                num2 -= num1\n            operations += 1\n        return operations\n\n        ",
+      "verdict": "Accepted",
+      "problem_url": "/problems/count-operations-to-obtain-zero/"
+    },
+    {
+      "id": 2181,
+      "title": "Merge Nodes in Between Zeros",
+      "problem_url": "/problems/merge-nodes-in-between-zeros/",
+      "url": "https://leetcode.com/problems/merge-nodes-in-between-zeros/submissions/2070602858/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def mergeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        write = head\n        curr = head.next \n        total = 0 \n        while curr :\n            if curr.val == 0:\n                write.next = curr\n                write = curr\n                write.val = total\n                total = 0\n            else:\n                total += curr.val\n            curr = curr.next\n        write.next = None\n        return head.next",
+      "verdict": "Accepted"
     },
     {
       "id": 2190,
@@ -1575,7 +2416,26 @@
       "problem_url": "/problems/most-frequent-number-following-key-in-an-array/",
       "url": "https://leetcode.com/problems/most-frequent-number-following-key-in-an-array/submissions/2054085505/",
       "language": "Python3",
-      "code": "class Solution:\n    def mostFrequent(self, nums: List[int], key: int) -> int:\n        freq = {}\n        for i in range(len(nums) -1):\n            if nums[i] == key:\n                target = nums[i+1]\n                freq[target] = freq.get(target,0) + 1\n        mx = 0\n        ans = -1 \n\n        for num,count in freq.items():\n            if count > mx:\n                mx = count \n                ans = num\n        return ans"
+      "code": "class Solution:\n    def mostFrequent(self, nums: List[int], key: int) -> int:\n        freq = {}\n        for i in range(len(nums) -1):\n            if nums[i] == key:\n                target = nums[i+1]\n                freq[target] = freq.get(target,0) + 1\n        mx = 0\n        ans = -1 \n\n        for num,count in freq.items():\n            if count > mx:\n                mx = count \n                ans = num\n        return ans",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2206,
+      "title": "Divide Array Into Equal Pairs",
+      "problem_url": "/problems/divide-array-into-equal-pairs/",
+      "url": "https://leetcode.com/problems/divide-array-into-equal-pairs/submissions/1846022532/",
+      "language": "Python3",
+      "code": "class Solution:\n    def divideArray(self, nums: List[int]) -> bool:\n        s = set()\n        for num in nums:\n            if num in s :\n                s.remove(num)\n            else:\n                s.add(num)\n        return len(s) == 0",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2210,
+      "title": "Count Hills and Valleys in an Array",
+      "problem_url": "/problems/count-hills-and-valleys-in-an-array/",
+      "url": "https://leetcode.com/problems/count-hills-and-valleys-in-an-array/submissions/1840261162/",
+      "language": "Python3",
+      "code": "class Solution:\n    def countHillValley(self, nums: List[int]) -> int:\n        count = 0\n        if len(nums) < 3:\n            return 0\n        unique_nums = [nums[0]]\n        for i in range(1,len(nums)):\n            if nums[i] != nums[i-1]:\n                unique_nums.append(nums[i])\n        if len(unique_nums) < 3:\n            return 0\n        for i in range(1,len(unique_nums) - 1):\n            if unique_nums[i] > unique_nums[i-1] and unique_nums[i] > unique_nums[i+1]:\n                count += 1\n            elif unique_nums[i] < unique_nums[i-1] and unique_nums[i] < unique_nums[i+1]:\n                count += 1\n        return count",
+      "verdict": "Accepted"
     },
     {
       "id": 2215,
@@ -1583,7 +2443,26 @@
       "problem_url": "/problems/find-the-difference-of-two-arrays/",
       "url": "https://leetcode.com/problems/find-the-difference-of-two-arrays/submissions/2059384204/",
       "language": "Python3",
-      "code": "class Solution:\n    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:\n        ansArr1 = []\n        ansArr2 = []\n        arr1 = set(nums1)\n        arr2 = set(nums2)\n        \n        for i in nums1:\n            if i not in arr2:\n                ansArr1.append(i)\n        for j in nums2:\n            if j not in arr1:\n                ansArr2.append(j)\n        return [list(set(ansArr1)),list(set(ansArr2))]"
+      "code": "class Solution:\n    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:\n        ansArr1 = []\n        ansArr2 = []\n        arr1 = set(nums1)\n        arr2 = set(nums2)\n        \n        for i in nums1:\n            if i not in arr2:\n                ansArr1.append(i)\n        for j in nums2:\n            if j not in arr1:\n                ansArr2.append(j)\n        return [list(set(ansArr1)),list(set(ansArr2))]",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2235,
+      "title": "Add Two Integers",
+      "problem_url": "/problems/add-two-integers/",
+      "url": "https://leetcode.com/problems/add-two-integers/submissions/1839372566/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def sum(self, num1, num2):\n        return num1 + num2",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2248,
+      "title": "Intersection of Multiple Arrays",
+      "problem_url": "/problems/intersection-of-multiple-arrays/",
+      "url": "https://leetcode.com/problems/intersection-of-multiple-arrays/submissions/2076063601/",
+      "language": "Python3",
+      "code": "class Solution:\n    def intersection(self, nums: List[List[int]]) -> List[int]:\n        counts = [0] * 1001 \n        result = []\n        for arr in nums:\n            for num in arr:\n                counts[num] += 1\n        n = len(nums)\n        for i in range(1,1001):\n            if counts[i] == n:\n                result.append(i)\n        return result\n\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 2341,
@@ -1591,7 +2470,8 @@
       "problem_url": "/problems/maximum-number-of-pairs-in-array/",
       "url": "https://leetcode.com/problems/maximum-number-of-pairs-in-array/submissions/2054093018/",
       "language": "Python3",
-      "code": "class Solution:\n    def numberOfPairs(self, nums: List[int]) -> List[int]:\n        freq = {}\n        for num in nums:\n            freq[num] = freq.get(num,0) + 1\n        \n        pairs = 0\n        left = 0\n\n        for count in freq.values():\n            pairs += count // 2\n            left += count % 2\n        return [pairs,left]"
+      "code": "class Solution:\n    def numberOfPairs(self, nums: List[int]) -> List[int]:\n        freq = {}\n        for num in nums:\n            freq[num] = freq.get(num,0) + 1\n        \n        pairs = 0\n        left = 0\n\n        for count in freq.values():\n            pairs += count // 2\n            left += count % 2\n        return [pairs,left]",
+      "verdict": "Accepted"
     },
     {
       "id": 2367,
@@ -1599,7 +2479,35 @@
       "problem_url": "/problems/number-of-arithmetic-triplets/",
       "url": "https://leetcode.com/problems/number-of-arithmetic-triplets/submissions/2053757778/",
       "language": "Python3",
-      "code": "class Solution:\n    def arithmeticTriplets(self, nums: List[int], diff: int) -> int:\n        dic = {}\n        count = 0 \n        for i in range(len(nums)): #O(n)\n            dic[nums[i]] = i\n        for num in nums : #O(n)\n            if (num + diff) in dic and (num + 2 * diff) in dic :\n                count += 1 \n        return count \n         "
+      "code": "class Solution:\n    def arithmeticTriplets(self, nums: List[int], diff: int) -> int:\n        dic = {}\n        count = 0 \n        for i in range(len(nums)): #O(n)\n            dic[nums[i]] = i\n        for num in nums : #O(n)\n            if (num + diff) in dic and (num + 2 * diff) in dic :\n                count += 1 \n        return count \n         ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2418,
+      "title": "Sort the People",
+      "problem_url": "/problems/sort-the-people/",
+      "url": "https://leetcode.com/problems/sort-the-people/submissions/1845112763/",
+      "language": "Python3",
+      "code": "class Solution:\n    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:\n        combined = list(zip(heights,names))\n        combined.sort(reverse=True,key=lambda x : x[0])\n        return [name for _, name in combined]\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2427,
+      "title": "Number of Common Factors",
+      "problem_url": "/problems/number-of-common-factors/",
+      "url": "https://leetcode.com/problems/number-of-common-factors/submissions/1842182942/",
+      "language": "Python3",
+      "code": "class Solution:\n    def commonFactors(self, a: int, b: int) -> int:\n        n = max(a,b)\n        count = 0\n        for i in range(1,n+1):\n            if a % i ==0 and b % i == 0:\n                count += 1\n        return count\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2435,
+      "title": "Paths in Matrix Whose Sum Is Divisible by K",
+      "problem_url": "/problems/paths-in-matrix-whose-sum-is-divisible-by-k/",
+      "url": "https://leetcode.com/problems/paths-in-matrix-whose-sum-is-divisible-by-k/submissions/1840214373/",
+      "language": "Python3",
+      "code": "class Solution:\n    def numberOfPaths(self, grid: list[list[int]], k: int) -> int:\n        MOD = 10**9 + 7\n        m = len(grid)\n        n = len(grid[0])\n        \n        dp = [[[0] * k for _ in range(n)] for _ in range(m)]\n        \n        dp[0][0][grid[0][0] % k] = 1\n        \n        for i in range(m):\n            for j in range(n):\n                current_val = grid[i][j]\n                \n                for r in range(k):\n                    \n                    if i == 0 and j == 0:\n                        continue\n                    \n                    r_prev = (r - current_val % k + k) % k\n                    \n                    if i > 0:\n                        dp[i][j][r] = (dp[i][j][r] + dp[i-1][j][r_prev]) % MOD\n                        \n                    if j > 0:\n                        dp[i][j][r] = (dp[i][j][r] + dp[i][j-1][r_prev]) % MOD\n\n        return dp[m-1][n-1][0]",
+      "verdict": "Accepted"
     },
     {
       "id": 2442,
@@ -1607,7 +2515,17 @@
       "problem_url": "/problems/count-number-of-distinct-integers-after-reverse-operations/",
       "url": "https://leetcode.com/problems/count-number-of-distinct-integers-after-reverse-operations/submissions/2062086749/",
       "language": "Python3",
-      "code": "class Solution:\n    def countDistinctIntegers(self, nums: List[int]) -> int:\n        seen = set(nums)\n\n        for num in nums:\n            reversedNum = int(str(num)[::-1])\n            seen.add(reversedNum)\n        return len(seen)"
+      "code": "class Solution:\n    def countDistinctIntegers(self, nums: List[int]) -> int:\n        seen = set(nums)\n\n        for num in nums:\n            reversedNum = int(str(num)[::-1])\n            seen.add(reversedNum)\n        return len(seen)",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2469,
+      "title": "Convert the Temperature",
+      "problem_url": "/problems/convert-the-temperature/",
+      "url": "https://leetcode.com/problems/convert-the-temperature/submissions/1834738158/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def convertTemperature(self, celsius):\r\n        \"\"\"\r\n        :type celsius: float\r\n        :rtype: List[float]\r\n        \"\"\"\r\n        # Kelvin = celsius + 273.15\r\n        # Fahrenheit = celsius * 1.8 + 32\r\n        kelvin = celsius + 273.15\r\n        fahrenheit = celsius * 1.8 + 32.0\r\n        return [kelvin, fahrenheit]",
+      "verdict": "Accepted"
     },
     {
       "id": 2475,
@@ -1615,7 +2533,17 @@
       "problem_url": "/problems/number-of-unequal-triplets-in-array/",
       "url": "https://leetcode.com/problems/number-of-unequal-triplets-in-array/submissions/2062381878/",
       "language": "Python3",
-      "code": "class Solution:\n    def unequalTriplets(self, nums: List[int]) -> int:\n        freq = Counter(nums)\n\n        left = 0\n        right = len(nums)\n        ans = 0\n\n        for cnt in freq.values():\n            right -= cnt\n            ans += left * cnt * right\n            left += cnt\n\n        return ans\n        "
+      "code": "class Solution:\n    def unequalTriplets(self, nums: List[int]) -> int:\n        freq = Counter(nums)\n\n        left = 0\n        right = len(nums)\n        ans = 0\n\n        for cnt in freq.values():\n            right -= cnt\n            ans += left * cnt * right\n            left += cnt\n\n        return ans\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2481,
+      "title": "Minimum Cuts to Divide a Circle",
+      "problem_url": "/problems/minimum-cuts-to-divide-a-circle/",
+      "url": "https://leetcode.com/problems/minimum-cuts-to-divide-a-circle/submissions/1841873246/",
+      "language": "Python3",
+      "code": "class Solution:\n    def numberOfCuts(self, n: int) -> int:\n        if n < 2:\n            return 0\n        if n % 2 == 0:\n            return n//2\n        else:\n            return n\n\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 2529,
@@ -1623,7 +2551,8 @@
       "problem_url": "/problems/maximum-count-of-positive-integer-and-negative-integer/",
       "url": "https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/submissions/2040934257/",
       "language": "Python3",
-      "code": "class Solution:\n    def maximumCount(self, nums: List[int]) -> int:\n        pos = neg = zero = 0\n        for num in nums :\n            if num == 0:\n                zero += 1\n            elif num > 0:\n                pos += 1\n            else:\n                neg += 1\n        return max(pos,neg)"
+      "code": "class Solution:\n    def maximumCount(self, nums: List[int]) -> int:\n        pos = neg = zero = 0\n        for num in nums :\n            if num == 0:\n                zero += 1\n            elif num > 0:\n                pos += 1\n            else:\n                neg += 1\n        return max(pos,neg)",
+      "verdict": "Accepted"
     },
     {
       "id": 2540,
@@ -1631,7 +2560,8 @@
       "problem_url": "/problems/minimum-common-value/",
       "url": "https://leetcode.com/problems/minimum-common-value/submissions/2041967980/",
       "language": "Python3",
-      "code": "class Solution:\n    def getCommon(self, nums1: List[int], nums2: List[int]) -> int:\n        i = j = 0\n        while i < len(nums1) and j < len(nums2):\n            if nums1[i] == nums2[j]:\n                return nums1[i]\n            elif nums1[i] < nums2[j]:\n                i += 1\n            else:\n                j += 1\n        return -1"
+      "code": "class Solution:\n    def getCommon(self, nums1: List[int], nums2: List[int]) -> int:\n        i = j = 0\n        while i < len(nums1) and j < len(nums2):\n            if nums1[i] == nums2[j]:\n                return nums1[i]\n            elif nums1[i] < nums2[j]:\n                i += 1\n            else:\n                j += 1\n        return -1",
+      "verdict": "Accepted"
     },
     {
       "id": 2545,
@@ -1639,7 +2569,35 @@
       "problem_url": "/problems/sort-the-students-by-their-kth-score/",
       "url": "https://leetcode.com/problems/sort-the-students-by-their-kth-score/submissions/2038821924/",
       "language": "Python3",
-      "code": "class Solution:\n    def sortTheStudents(self, score: List[List[int]], k: int) -> List[List[int]]:\n        score.sort(key = lambda x : x[k], reverse=True)\n        return score"
+      "code": "class Solution:\n    def sortTheStudents(self, score: List[List[int]], k: int) -> List[List[int]]:\n        score.sort(key = lambda x : x[k], reverse=True)\n        return score",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2651,
+      "title": "Calculate Delayed Arrival Time",
+      "problem_url": "/problems/calculate-delayed-arrival-time/",
+      "url": "https://leetcode.com/problems/calculate-delayed-arrival-time/submissions/1841869346/",
+      "language": "Python3",
+      "code": "class Solution:\n    def findDelayedArrivalTime(self, arrivalTime: int, delayedTime: int) -> int:\n        return (arrivalTime + delayedTime) % 24",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2652,
+      "title": "Sum Multiples",
+      "problem_url": "/problems/sum-multiples/",
+      "url": "https://leetcode.com/problems/sum-multiples/submissions/1841857093/",
+      "language": "Python3",
+      "code": "class Solution:\n    def sumOfMultiples(self, n: int) -> int:\n        if n<= 0:\n            return 0\n        sum = 0\n        for i in range(1,n+1):\n            if i%3 == 0 or i%5 == 0 or i%7 ==0:\n                sum += i\n        return sum",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2670,
+      "title": "Find the Distinct Difference Array",
+      "problem_url": "/problems/find-the-distinct-difference-array/",
+      "url": "https://leetcode.com/problems/find-the-distinct-difference-array/submissions/2067632691/",
+      "language": "Python3",
+      "code": "class Solution:\n    def distinctDifferenceArray(self, nums: List[int]) -> List[int]:\n        suffix_count = Counter(nums)\n        prefix_count = set()\n        result = []\n        for num in nums :\n            prefix_count.add(num)\n            suffix_count[num] -= 1\n            if suffix_count[num] == 0:\n                del suffix_count[num]\n            diff = len(prefix_count) - len(suffix_count)\n            result.append(diff)\n        return result",
+      "verdict": "Accepted"
     },
     {
       "id": 2784,
@@ -1647,7 +2605,17 @@
       "problem_url": "/problems/check-if-array-is-good/",
       "url": "https://leetcode.com/problems/check-if-array-is-good/submissions/2048843450/",
       "language": "Python3",
-      "code": "class Solution:\n    def isGood(self, nums: List[int]) -> bool:\n        n = len(nums) - 1\n        seen = set()\n        duplicate = False\n        for num in nums:\n            if num > n :\n                return False\n            if num in seen :\n                if num < n or duplicate:\n                    return False\n                duplicate =True \n                continue\n            seen.add(num)\n        return True \n        "
+      "code": "class Solution:\n    def isGood(self, nums: List[int]) -> bool:\n        n = len(nums) - 1\n        seen = set()\n        duplicate = False\n        for num in nums:\n            if num > n :\n                return False\n            if num in seen :\n                if num < n or duplicate:\n                    return False\n                duplicate =True \n                continue\n            seen.add(num)\n        return True \n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2807,
+      "title": "Insert Greatest Common Divisors in Linked List",
+      "problem_url": "/problems/insert-greatest-common-divisors-in-linked-list/",
+      "url": "https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/submissions/2070572860/",
+      "language": "Python3",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nfrom math import gcd\nclass Solution:\n    def insertGreatestCommonDivisors(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        curr = head\n        while curr and curr.next:\n            g = gcd(curr.val, curr.next.val)\n            new_node = ListNode(g, curr.next)\n            curr.next = new_node\n            curr = new_node.next\n        return head\n\n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 2824,
@@ -1655,7 +2623,26 @@
       "problem_url": "/problems/count-pairs-whose-sum-is-less-than-target/",
       "url": "https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/submissions/2040911588/",
       "language": "Python3",
-      "code": "class Solution:\n    def countPairs(self, nums: List[int], target: int) -> int:\n        nums.sort()\n        low = count = 0\n        high = len(nums) - 1 \n        while low < high :\n            if (nums[low] + nums[high] < target):\n                count += high - low\n                low += 1  \n            else:\n                high -= 1\n        return count "
+      "code": "class Solution:\n    def countPairs(self, nums: List[int], target: int) -> int:\n        nums.sort()\n        low = count = 0\n        high = len(nums) - 1 \n        while low < high :\n            if (nums[low] + nums[high] < target):\n                count += high - low\n                low += 1  \n            else:\n                high -= 1\n        return count ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2879,
+      "title": "Display the First Three Rows",
+      "problem_url": "/problems/display-the-first-three-rows/",
+      "url": "https://leetcode.com/problems/display-the-first-three-rows/submissions/1838537586/",
+      "language": "Pandas",
+      "code": "import pandas as pd\n\ndef selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:\n    return employees.head(3)",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 2884,
+      "title": "Modify Columns",
+      "problem_url": "/problems/modify-columns/",
+      "url": "https://leetcode.com/problems/modify-columns/submissions/1838542407/",
+      "language": "Pandas",
+      "code": "import pandas as pd\n\ndef modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:\n    employees['salary'] *= 2\n    return employees",
+      "verdict": "Accepted"
     },
     {
       "id": 2913,
@@ -1663,7 +2650,8 @@
       "problem_url": "/problems/subarrays-distinct-element-sum-of-squares-i/",
       "url": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-i/submissions/2062357283/",
       "language": "Python3",
-      "code": "class Solution:\n    def sumCounts(self, nums: List[int]) -> int:\n        Sum = 0\n        for i in range(len(nums)):\n            for j in range(i+1, len(nums) + 1):\n                subarray = nums[i:j]\n                Sum = Sum + len(set(subarray)) * len(set(subarray))\n        return Sum \n        "
+      "code": "class Solution:\n    def sumCounts(self, nums: List[int]) -> int:\n        Sum = 0\n        for i in range(len(nums)):\n            for j in range(i+1, len(nums) + 1):\n                subarray = nums[i:j]\n                Sum = Sum + len(set(subarray)) * len(set(subarray))\n        return Sum \n        ",
+      "verdict": "Accepted"
     },
     {
       "id": 2956,
@@ -1671,7 +2659,8 @@
       "problem_url": "/problems/find-common-elements-between-two-arrays/",
       "url": "https://leetcode.com/problems/find-common-elements-between-two-arrays/submissions/2059356839/",
       "language": "Python3",
-      "code": "class Solution:\n    def findIntersectionValues(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        ansArr1, ansArr2 = 0,0\n        for i in nums1:\n            if i in nums2:\n                ansArr1 += 1\n        for j in nums2:\n            if j in nums1:\n                ansArr2 += 1\n        return [ansArr1,ansArr2]"
+      "code": "class Solution:\n    def findIntersectionValues(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        ansArr1, ansArr2 = 0,0\n        for i in nums1:\n            if i in nums2:\n                ansArr1 += 1\n        for j in nums2:\n            if j in nums1:\n                ansArr2 += 1\n        return [ansArr1,ansArr2]",
+      "verdict": "Accepted"
     },
     {
       "id": 2974,
@@ -1679,7 +2668,8 @@
       "problem_url": "/problems/minimum-number-game/",
       "url": "https://leetcode.com/problems/minimum-number-game/submissions/2056051032/",
       "language": "Python3",
-      "code": "class Solution:\n    def numberGame(self, nums: List[int]) -> List[int]:\n        nums = sorted(nums)\n        for i in range(0, len(nums)-1,2):\n            nums[i],nums[i+1] = nums[i+1],nums[i]\n        return nums"
+      "code": "class Solution:\n    def numberGame(self, nums: List[int]) -> List[int]:\n        nums = sorted(nums)\n        for i in range(0, len(nums)-1,2):\n            nums[i],nums[i+1] = nums[i+1],nums[i]\n        return nums",
+      "verdict": "Accepted"
     },
     {
       "id": 3005,
@@ -1687,7 +2677,8 @@
       "problem_url": "/problems/count-elements-with-maximum-frequency/",
       "url": "https://leetcode.com/problems/count-elements-with-maximum-frequency/submissions/2059436144/",
       "language": "Python3",
-      "code": "class Solution:\n    def maxFrequencyElements(self, nums: List[int]) -> int:\n        freq = {}\n        for num in nums:\n            if num in freq:\n                freq[num] += 1\n            else:\n                freq[num] = 1\n        max_freq = 0\n        for count in freq.values():\n            if count > max_freq:\n                max_freq = count\n        total_max_freq_element = 0\n        for count in freq.values():\n            if count == max_freq:\n                total_max_freq_element += count\n        return total_max_freq_element"
+      "code": "class Solution:\n    def maxFrequencyElements(self, nums: List[int]) -> int:\n        freq = {}\n        for num in nums:\n            if num in freq:\n                freq[num] += 1\n            else:\n                freq[num] = 1\n        max_freq = 0\n        for count in freq.values():\n            if count > max_freq:\n                max_freq = count\n        total_max_freq_element = 0\n        for count in freq.values():\n            if count == max_freq:\n                total_max_freq_element += count\n        return total_max_freq_element",
+      "verdict": "Accepted"
     },
     {
       "id": 3020,
@@ -1695,7 +2686,8 @@
       "problem_url": "/problems/find-the-maximum-number-of-elements-in-subset/",
       "url": "https://leetcode.com/problems/find-the-maximum-number-of-elements-in-subset/submissions/2047884046/",
       "language": "Python3",
-      "code": "class Solution:\n    def maximumLength(self, nums: List[int]) -> int:\n        counts = {}\n        for num in nums:\n            counts[num] = counts.get(num, 0) + 1\n            \n        max_len = 1\n        \n        # 2. Handle the special case for '1'\n        if 1 in counts:\n            ones = counts[1]\n            if ones % 2 == 0:\n                ones -= 1\n            max_len = max(max_len, ones)\n            \n        # 3. Iterate through the unique numbers in our dictionary\n        for num in counts:\n            if num == 1:\n                continue\n            \n            curr = num\n            curr_len = 0\n            \n            # Use .get(curr, 0) to avoid KeyErrors if the square doesn't exist\n            while counts.get(curr, 0) >= 2 and counts.get(curr**2, 0) >= 1:\n                curr_len += 2       # Add one to the left, one to the right\n                curr = curr**2      # Move up to the next square\n            \n            # Add the peak element\n            curr_len += 1\n            \n            # Update the global maximum\n            max_len = max(max_len, curr_len)\n            \n        return max_len\n"
+      "code": "class Solution:\n    def maximumLength(self, nums: List[int]) -> int:\n        counts = {}\n        for num in nums:\n            counts[num] = counts.get(num, 0) + 1\n            \n        max_len = 1\n        \n        # 2. Handle the special case for '1'\n        if 1 in counts:\n            ones = counts[1]\n            if ones % 2 == 0:\n                ones -= 1\n            max_len = max(max_len, ones)\n            \n        # 3. Iterate through the unique numbers in our dictionary\n        for num in counts:\n            if num == 1:\n                continue\n            \n            curr = num\n            curr_len = 0\n            \n            # Use .get(curr, 0) to avoid KeyErrors if the square doesn't exist\n            while counts.get(curr, 0) >= 2 and counts.get(curr**2, 0) >= 1:\n                curr_len += 2       # Add one to the left, one to the right\n                curr = curr**2      # Move up to the next square\n            \n            # Add the peak element\n            curr_len += 1\n            \n            # Update the global maximum\n            max_len = max(max_len, curr_len)\n            \n        return max_len\n",
+      "verdict": "Accepted"
     },
     {
       "id": 3162,
@@ -1703,7 +2695,35 @@
       "problem_url": "/problems/find-the-number-of-good-pairs-i/",
       "url": "https://leetcode.com/problems/find-the-number-of-good-pairs-i/submissions/2059325472/",
       "language": "Python3",
-      "code": "class Solution:\n    def numberOfPairs(self, nums1: List[int], nums2: List[int], k: int) -> int:\n        count = 0\n        for i in range(len(nums1)):\n            for j in range(len(nums2)):\n                if (nums1[i] % (nums2[j] * k)) == 0 :\n                    count += 1\n        return count "
+      "code": "class Solution:\n    def numberOfPairs(self, nums1: List[int], nums2: List[int], k: int) -> int:\n        count = 0\n        for i in range(len(nums1)):\n            for j in range(len(nums2)):\n                if (nums1[i] % (nums2[j] * k)) == 0 :\n                    count += 1\n        return count ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3190,
+      "title": "Find Minimum Operations to Make All Elements Divisible by Three",
+      "problem_url": "/problems/find-minimum-operations-to-make-all-elements-divisible-by-three/",
+      "url": "https://leetcode.com/problems/find-minimum-operations-to-make-all-elements-divisible-by-three/submissions/1836634638/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def minimumOperations(self, nums):\r\n        count = 0\r\n        for i in range(len(nums)):\r\n            divisible = nums[i] % 3\r\n            if divisible != 0:\r\n                count += 1\r\n        return count\r\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3289,
+      "title": "The Two Sneaky Numbers of Digitville",
+      "problem_url": "/problems/the-two-sneaky-numbers-of-digitville/",
+      "url": "https://leetcode.com/problems/the-two-sneaky-numbers-of-digitville/submissions/1845038583/",
+      "language": "Python3",
+      "code": "class Solution:\n    def getSneakyNumbers(self, nums: List[int]) -> List[int]:\n        empty_set = set()\n        res = []\n        for id in nums:\n            if id in empty_set:\n                res.append(id)\n            else:\n                empty_set.add(id)\n        return res\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3381,
+      "title": "Maximum Subarray Sum With Length Divisible by K",
+      "problem_url": "/problems/maximum-subarray-sum-with-length-divisible-by-k/",
+      "url": "https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k/submissions/1841100083/",
+      "language": "Python",
+      "code": "class Solution(object):\r\n    def maxSubarraySum(self, nums, k):\r\n        n = len(nums)\r\n        prefix_sum = [0] * (n + 1)\r\n        for i in range(n):\r\n            prefix_sum[i+1] = prefix_sum[i] + nums[i]\r\n\r\n        # min_prefix_sum[r] will store the minimum prefix sum\r\n        # found so far for an index i where i % k == r.\r\n        min_prefix_sum = {}\r\n        max_sum = float('-inf')\r\n\r\n        for j in range(n + 1):\r\n            rem = j % k\r\n\r\n            # If we have seen this remainder before, it means we can form a\r\n            # subarray of length divisible by k.\r\n            if rem in min_prefix_sum:\r\n                # The subarray sum is the current prefix sum minus the minimum\r\n                # prefix sum seen for the same remainder.\r\n                current_sum = prefix_sum[j] - min_prefix_sum[rem]\r\n                max_sum = max(max_sum, current_sum)\r\n\r\n            # Update the minimum prefix sum for the current remainder.\r\n            min_prefix_sum[rem] = min(min_prefix_sum.get(rem, float('inf')), prefix_sum[j])\r\n        \r\n        return max_sum if max_sum != float('-inf') else 0",
+      "verdict": "Accepted"
     },
     {
       "id": 3467,
@@ -1711,7 +2731,8 @@
       "problem_url": "/problems/transform-array-by-parity/",
       "url": "https://leetcode.com/problems/transform-array-by-parity/submissions/2052446750/",
       "language": "Python3",
-      "code": "class Solution:\n    def transformArray(self, nums: List[int]) -> List[int]:\n        result = []\n\n        for num in nums:\n            if num % 2 == 0:\n                result.append(0)\n            else:\n                result.append(1)\n\n        low = mid = 0\n        high = len(result) - 1\n\n        while mid <= high:\n            if result[mid] == 0:\n                result[low], result[mid] = result[mid], result[low]\n                low += 1\n                mid += 1\n            else:  # result[mid] == 1\n                mid += 1\n\n        return result"
+      "code": "class Solution:\n    def transformArray(self, nums: List[int]) -> List[int]:\n        result = []\n\n        for num in nums:\n            if num % 2 == 0:\n                result.append(0)\n            else:\n                result.append(1)\n\n        low = mid = 0\n        high = len(result) - 1\n\n        while mid <= high:\n            if result[mid] == 0:\n                result[low], result[mid] = result[mid], result[low]\n                low += 1\n                mid += 1\n            else:  # result[mid] == 1\n                mid += 1\n\n        return result",
+      "verdict": "Accepted"
     },
     {
       "id": 3477,
@@ -1719,7 +2740,26 @@
       "problem_url": "/problems/fruits-into-baskets-ii/",
       "url": "https://leetcode.com/problems/fruits-into-baskets-ii/submissions/2043396688/",
       "language": "Python3",
-      "code": "class Solution:\n    def numOfUnplacedFruits(self, fruits: List[int], baskets: List[int]) -> int:\n        count = 0\n        for fruit in fruits :\n            placed = False\n            for j in range(len(baskets)):\n                if baskets[j] >= fruit:\n                    baskets[j] = -1\n                    placed = True\n                    break\n\n            if not placed:\n                count += 1\n\n        return count "
+      "code": "class Solution:\n    def numOfUnplacedFruits(self, fruits: List[int], baskets: List[int]) -> int:\n        count = 0\n        for fruit in fruits :\n            placed = False\n            for j in range(len(baskets)):\n                if baskets[j] >= fruit:\n                    baskets[j] = -1\n                    placed = True\n                    break\n\n            if not placed:\n                count += 1\n\n        return count ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3512,
+      "title": "Minimum Operations to Make Array Sum Divisible by K",
+      "problem_url": "/problems/minimum-operations-to-make-array-sum-divisible-by-k/",
+      "url": "https://leetcode.com/problems/minimum-operations-to-make-array-sum-divisible-by-k/submissions/1842164632/",
+      "language": "Python3",
+      "code": "class Solution:\n    def minOperations(self, nums: List[int], k: int) -> int:\n        sum = 0\n        rem = 0\n        for i in range(len(nums)):\n            sum += nums[i]\n            rem = sum % k\n        return rem\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3516,
+      "title": "Find Closest Person",
+      "problem_url": "/problems/find-closest-person/",
+      "url": "https://leetcode.com/problems/find-closest-person/submissions/1839371058/",
+      "language": "Python",
+      "code": "class Solution(object):\n    def findClosest(self, x, y, z):\n        x1 = abs(x - z)\n        y1 = abs(y - z)\n\n        if x1<y1:\n            return 1\n        elif x1>y1:\n            return 2\n        else:\n            return 0",
+      "verdict": "Accepted"
     },
     {
       "id": 3633,
@@ -1727,7 +2767,44 @@
       "problem_url": "/problems/earliest-finish-time-for-land-and-water-rides-i/",
       "url": "https://leetcode.com/problems/earliest-finish-time-for-land-and-water-rides-i/submissions/2043999306/",
       "language": "Python3",
-      "code": "class Solution:\n    def earliestFinishTime(self, landStartTime: List[int], landDuration: List[int], waterStartTime: List[int], waterDuration: List[int]) -> int:\n        minLand1 = float('inf')\n        for i in range(len(landStartTime)):\n            minLand1 = min(minLand1, landStartTime[i] + landDuration[i])\n            \n        result1 = float('inf')\n        for i in range(len(waterStartTime)):\n            waterStart = max(minLand1, waterStartTime[i])\n            result1 = min(result1, waterStart + waterDuration[i])\n            \n        minWater2 = float('inf')\n        for i in range(len(waterStartTime)):\n            minWater2 = min(minWater2, waterStartTime[i] + waterDuration[i])\n            \n        result2 = float('inf')\n        for i in range(len(landStartTime)):\n            landStart = max(minWater2, landStartTime[i])\n            result2 = min(result2, landStart + landDuration[i])\n            \n        return min(result1, result2)"
+      "code": "class Solution:\n    def earliestFinishTime(self, landStartTime: List[int], landDuration: List[int], waterStartTime: List[int], waterDuration: List[int]) -> int:\n        minLand1 = float('inf')\n        for i in range(len(landStartTime)):\n            minLand1 = min(minLand1, landStartTime[i] + landDuration[i])\n            \n        result1 = float('inf')\n        for i in range(len(waterStartTime)):\n            waterStart = max(minLand1, waterStartTime[i])\n            result1 = min(result1, waterStart + waterDuration[i])\n            \n        minWater2 = float('inf')\n        for i in range(len(waterStartTime)):\n            minWater2 = min(minWater2, waterStartTime[i] + waterDuration[i])\n            \n        result2 = float('inf')\n        for i in range(len(landStartTime)):\n            landStart = max(minWater2, landStartTime[i])\n            result2 = min(result2, landStart + landDuration[i])\n            \n        return min(result1, result2)",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3658,
+      "title": "GCD of Odd and Even Sums",
+      "problem_url": "/problems/gcd-of-odd-and-even-sums/",
+      "url": "https://leetcode.com/problems/gcd-of-odd-and-even-sums/submissions/1842179670/",
+      "language": "Python3",
+      "code": "class Solution:\n    def gcdOfOddEvenSums(self, n: int) -> int:\n        import math\n        sumOdd = n*n\n        sumEven = n * (n+1)\n        return math.gcd(sumOdd,sumEven)",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3668,
+      "title": "Restore Finishing Order",
+      "problem_url": "/problems/restore-finishing-order/",
+      "url": "https://leetcode.com/problems/restore-finishing-order/submissions/1845020853/",
+      "language": "Python3",
+      "code": "class Solution:\n    def recoverOrder(self, order: List[int], friends: List[int]) -> List[int]:\n        res_list = set(friends)\n        res = []\n        for id in order:\n            if id in res_list:\n                res.append(id)\n        return res\n        ",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3712,
+      "title": "Sum of Elements With Frequency Divisible by K",
+      "problem_url": "/problems/sum-of-elements-with-frequency-divisible-by-k/",
+      "url": "https://leetcode.com/problems/sum-of-elements-with-frequency-divisible-by-k/submissions/2076041559/",
+      "language": "Python3",
+      "code": "class Solution:\n    def sumDivisibleByK(self, nums: List[int], k: int) -> int:\n        result = 0\n        seen = Counter(nums)\n        for value, count in seen.items():\n            if count % k == 0:\n                result += (value * count)\n        return result",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3736,
+      "title": "Minimum Moves to Equal Array Elements III",
+      "problem_url": "/problems/minimum-moves-to-equal-array-elements-iii/",
+      "url": "https://leetcode.com/problems/minimum-moves-to-equal-array-elements-iii/submissions/2188511452/",
+      "language": "Python3",
+      "code": "\nclass Solution:\n    def minMoves(self, nums: List[int]) -> int:\n        result = 0\n        maximum = max(nums)\n\n        for num in nums:\n            result += maximum - num\n\n        return result\n",
+      "verdict": "Accepted"
     },
     {
       "id": 3754,
@@ -1735,7 +2812,17 @@
       "problem_url": "/problems/concatenate-non-zero-digits-and-multiply-by-sum-i/",
       "url": "https://leetcode.com/problems/concatenate-non-zero-digits-and-multiply-by-sum-i/submissions/1839426487/",
       "language": "Python3",
-      "code": "class Solution:\n    def sumAndMultiply(self, n: int) -> int:\n        n_str = str(n)\n        \n        x_str = \"\".join(digit for digit in n_str if digit != '0')\n        \n        if not x_str:\n            x = 0\n            sum_of_digits = 0\n        else:\n            x = int(x_str)\n            sum_of_digits = sum(int(digit) for digit in x_str)\n            \n        result = x * sum_of_digits\n        return result"
+      "code": "class Solution:\n    def sumAndMultiply(self, n: int) -> int:\n        n_str = str(n)\n        \n        x_str = \"\".join(digit for digit in n_str if digit != '0')\n        \n        if not x_str:\n            x = 0\n            sum_of_digits = 0\n        else:\n            x = int(x_str)\n            sum_of_digits = sum(int(digit) for digit in x_str)\n            \n        result = x * sum_of_digits\n        return result",
+      "verdict": "Accepted"
+    },
+    {
+      "id": 3755,
+      "title": "Find Maximum Balanced XOR Subarray Length",
+      "problem_url": "/problems/find-maximum-balanced-xor-subarray-length/",
+      "url": "https://leetcode.com/problems/find-maximum-balanced-xor-subarray-length/submissions/1839429698/",
+      "language": "Python3",
+      "code": "class Solution:\n    def maxBalancedSubarray(self, nums: List[int]) -> int:\n        n = nums\n        m = {(0, 0): 0}\n        l, x, b = 0, 0, 0\n        N = len(n)\n        \n        for k in range(1, N + 1):\n            num = n[k - 1]\n            x ^= num\n            b += 1 if num % 2 else -1\n                \n            s = (x, b)\n            \n            if s in m:\n                l = max(l, k - m[s])\n            else:\n                m[s] = k\n                \n        return l",
+      "verdict": "Accepted"
     },
     {
       "id": 3945,
@@ -1743,7 +2830,8 @@
       "problem_url": "/problems/digit-frequency-score/",
       "url": "https://leetcode.com/problems/digit-frequency-score/submissions/2053728197/",
       "language": "Python3",
-      "code": "class Solution:\n    def digitFrequencyScore(self, n: int) -> int:\n        frequency = {}\n        for ch in str(n):\n            digits = int(ch)\n            frequency[digits] = frequency.get(digits,0) + 1\n        score = 0\n        for digit, count in frequency.items():\n            score += digit * count\n        return score "
+      "code": "class Solution:\n    def digitFrequencyScore(self, n: int) -> int:\n        frequency = {}\n        for ch in str(n):\n            digits = int(ch)\n            frequency[digits] = frequency.get(digits,0) + 1\n        score = 0\n        for digit, count in frequency.items():\n            score += digit * count\n        return score ",
+      "verdict": "Accepted"
     }
   ]
 }
