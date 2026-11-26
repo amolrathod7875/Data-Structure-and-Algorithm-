@@ -113,6 +113,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_3411` | LC | Maximum Subarray With Equal Products |
 | `LC_3701` | LC | Alternating Sum of Array |
 | `LC_3925` | LC | Concatenate (Reversed) Array |
+| `LC_3934` | LC | Smallest Unique Subarray |
 | `LC_56` | LC | Merge Intervals |
 | `LC_81` | LC | Search in Rotated Sorted Array II |
 
@@ -276,7 +277,7 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 
 ## Stats
 
-- **12** categories · **147** problems/data-structure implementations
+- **12** categories · **148** problems/data-structure implementations
 - Each problem ships with a self-contained test.
 
 ---
