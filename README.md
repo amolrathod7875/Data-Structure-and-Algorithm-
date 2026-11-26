@@ -3,8 +3,10 @@ A curated collection of Data Structure and Algorithm solutions implemented in Py
 Problems are sourced from [LeetCode (LC)](https://leetcode.com/) and [GeeksforGeeks (GFG)](https://www.geeksforgeeks.org/),
 along with handwritten **Basics** implementations of core data structures.
 
-Every problem folder contains a `code.py` (or `basics.py`) solution and a `test.py`
-that exercises it.
+Topic problem folders contain a `code.py` (or `basics.py`) solution and a `test.py`
+that exercises it. Historical accepted submissions are indexed in
+[`LeetCode_Backfill`](LeetCode_Backfill/README.md), with original source code,
+language labels, and accepted-submission links.
 
 ## Repository Structure
 
@@ -32,6 +34,7 @@ problem (or a self-contained data-structure implementation):
 | `Sorting` | Sorting-related problems |
 | `Stack` | Stack, expression evaluation & design problems |
 | `String` | String validation and manipulation problems |
+| `LeetCode_Backfill` | Original accepted historical submissions and audit index |
 
 ## How to Run
 
@@ -275,10 +278,24 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_1071` | LC | Greatest Common Divisor of Strings |
 | `LC_2124` | LC | Check if All A's Appears Before All B's |
 
+### LeetCode Backfill
+
+The [backfill index](LeetCode_Backfill/README.md) contains **167** previously
+missing accepted submissions. Combined with the **78** solved problems already
+represented in the topic folders, this covers all **245** solved problems in
+the 26 November 2026 LeetCode Practice History snapshot.
+
+Verify coverage and archived source integrity from the repository root:
+
+```bash
+python LeetCode_Backfill/verify_sync.py
+```
+
 ## Stats
 
-- **12** categories · **148** problems/data-structure implementations
-- Each problem ships with a self-contained test.
+- **13** categories · **315** problems/data-structure implementations
+- Topic problem folders include tests; historical backfill sources preserve their
+  accepted LeetCode runtimes and are checked against the provenance archive.
 
 ---
 
