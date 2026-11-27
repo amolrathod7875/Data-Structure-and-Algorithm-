@@ -113,10 +113,12 @@ PYTHONPATH=. python Heaps/LC_215/test.py
 | `LC_2460` | LC | Apply Operations to an Array |
 | `LC_283` | LC | Move Zeroes |
 | `LC_3194` | LC | Minimum Average of Smallest and Largest Elements |
+| `LC_322` | LC | Coin Change |
 | `LC_3411` | LC | Maximum Subarray With Equal Products |
 | `LC_3701` | LC | Alternating Sum of Array |
 | `LC_3925` | LC | Concatenate (Reversed) Array |
 | `LC_3934` | LC | Smallest Unique Subarray |
+| `LC_3946` | LC | Maximum Number of Items From Sale I |
 | `LC_56` | LC | Merge Intervals |
 | `LC_81` | LC | Search in Rotated Sorted Array II |
 
@@ -293,7 +295,7 @@ python LeetCode_Backfill/verify_sync.py
 
 ## Stats
 
-- **13** categories · **315** problems/data-structure implementations
+- **13** categories · **317** problems/data-structure implementations
 - Topic problem folders include tests; historical backfill sources preserve their
   accepted LeetCode runtimes and are checked against the provenance archive.
 
