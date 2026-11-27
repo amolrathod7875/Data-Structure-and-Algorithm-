@@ -31,7 +31,8 @@ def main():
                        if source.is_file() and source.read_text().strip()]
             if sources:
                 existing_ids.add(int(match.group(1)))
-    assert existing_ids == set(archive['existing_repository_ids'])
+    # Later solutions may add topic folders beyond this historical snapshot.
+    assert set(archive['existing_repository_ids']) <= existing_ids
     assert len(existing_ids & solved_ids) == archive['already_represented'] == 78
     assert set(ids) == solved_ids - existing_ids
 
